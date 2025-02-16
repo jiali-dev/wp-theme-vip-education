@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) exit;
 
 							<div class="col-lg-3 col-md-3">
 								<div class="footer-widget">
-									<img src="assets/img/logo.png" class="img-footer" alt="" />
+									<img src="<? echo VIP_EDUCATION_IMAGES_URI . '/logo.png' ?>" class="img-footer" alt="" />
 									<div class="footer-add">
 										<p>تهران، خیابان سعادت آباد، خیابان کاج</p>
 										<p>+1 246-345-0695</p>
@@ -228,20 +228,7 @@ if (!defined('ABSPATH')) exit;
 		<!-- End Wrapper -->
 		<!-- ============================================================== -->
 
-		<!-- ============================================================== -->
-		<!-- All Jquery -->
-		<!-- ============================================================== -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/popper.min.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/select2.min.js"></script>
-		<script src="assets/js/slick.js"></script>
-		<script src="assets/js/jquery.counterup.min.js"></script>
-		<script src="assets/js/counterup.min.js"></script>
-		<script src="assets/js/custom.js"></script>
-		<!-- ============================================================== -->
-		<!-- This page plugins -->
-		<!-- ============================================================== -->
+		<!-- Insert Footer -->
         <?php wp_footer(  ); ?>
 	</body>
 
