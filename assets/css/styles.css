@@ -4070,6 +4070,7 @@ li.login-attri .account-drop a {
     flex-wrap: wrap;
     align-items: center;
 	overflow: hidden;
+    background:url(../images/banner-2.jpg) no-repeat
 }
 .half_banner {
     padding:70px 0;
