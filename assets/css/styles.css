@@ -1,10 +1,3 @@
-/*
-* Theme Name: LearnUp - Education HTML Template
-* Author: Themezhub
-* Version: 1.0
-* Last Change: 08 July 2020
-  Author URI    : https://themezhub.com/
--------------------------------------------------------------------*/
 /*------------- List Of Table -----------
 # Fonts
 # Preloader
@@ -20,45 +13,28 @@
 # Responsiveness Designs
 ------------- List Of Table ----------*/
 
-/* CSS Document */
-@import url(plugins/animation.css);
-@import url(plugins/bootstrap.min.css);
-@import url(plugins/daterangepicker.css);
-@import url(plugins/dropzone.css);
-@import url(plugins/light-box.css);
-@import url(plugins/ion.rangeSlider.min.css);
-@import url(plugins/magnifypopup.css);
-@import url(plugins/select2.css);
-@import url(plugins/slick.css);
-@import url(plugins/slick-theme.css);
-@import url(plugins/themify.css);
-@import url(plugins/morris.css);
-@import url(plugins/line-icons.css);
-@import url(plugins/iconfont.css);
-@import url(plugins/font-awesome.css);
-@import url(plugins/flaticon.css);
-
 /*------------------------------------
 	Fonts
 ------------------------------------*/
 @font-face {
 	font-family: IRANSans;
-	src: url('fonts/IRANSansWeb/IRANSansWeb.eot');
-	src: url('fonts/IRANSansWeb/IRANSansWeb.eot') format('embedded-opentype'), url('fonts/IRANSansWeb/IRANSansWeb(FaNum).woff') format('woff'), url('fonts/IRANSansWeb/IRANSansWeb.ttf') format('truetype');
+	src: url('../fonts/IRANSansWeb/IRANSansWeb.eot');
+	src: url('../fonts/IRANSansWeb/IRANSansWeb.eot') format('embedded-opentype'), url('../fonts/IRANSansWeb/IRANSansWeb(FaNum).woff') format('woff'), url('../fonts/IRANSansWeb/IRANSansWeb.ttf') format('truetype');
 	font-weight: 400;
 	font-style: normal
 }
+
 @font-face {
 	font-family: vazir;
-	src: url('fonts/vazir/Vazir.eot');
-	src: url('fonts/vazir/Vazir.eot') format('embedded-opentype'), url('fonts/vazir/Vazir-Meduim-FD.woff') format('woff'), url('fonts/vazir/Vazir.ttf') format('truetype');
+	src: url('../fonts/vazir/Vazir.eot');
+	src: url('../fonts/vazir/Vazir.eot') format('embedded-opentype'), url('../fonts/vazir/Vazir-Meduim-FD.woff') format('woff'), url('../fonts/vazir/Vazir.ttf') format('truetype');
 	font-weight: 400;
 	font-style: normal
 }
 @font-face {
 	font-family: vazir-bold;
-	src: url('fonts/vazir/Vazir-Bold.eot');
-	src: url('fonts/vazir/Vazir-Blod.eot') format('embedded-opentype'), url('fonts/vazir/Vazir-Bold-FD.woff') format('woff'), url('fonts/vazir/Vazir-Bold.ttf') format('truetype');
+	src: url('../fonts/vazir/Vazir-Bold.eot');
+	src: url('../fonts/vazir/Vazir-Blod.eot') format('embedded-opentype'), url('../fonts/vazir/Vazir-Bold-FD.woff') format('woff'), url('../fonts/vazir/Vazir-Bold.ttf') format('truetype');
 	font-weight: 400;
 	font-style: normal
 }
@@ -67,7 +43,7 @@
 ------------------------------------*/
 .preloader {
   background-color: #ffffff;
-  background-image: url("../img/loader.svg");
+  background-image: url("../images/loader.svg");
   background-position: center center;
   background-repeat: no-repeat;
   height: 100%;
@@ -166,7 +142,7 @@ p {
 }
 	
 .gray-bg{
-	background:#f7f7f7 url(../img/pat.png);
+	background:#f7f7f7 url(../images/pat.png);
 	background-repeat:repeat;
     background-position: center;
 }
