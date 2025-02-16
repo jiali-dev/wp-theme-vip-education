@@ -3,8 +3,6 @@
 // Exit if accessed directly
 if (!defined('ABSPATH')) exit;
 
-wp_head(); 
-
 ?>
 
 <!DOCTYPE html>
@@ -16,12 +14,7 @@ wp_head();
 
         <title>LearnUp - قالب HTML دوره آنلاین و آموزش</title>
 
-        <!-- Custom CSS -->
-        <link href="assets/css/styles.css" rel="stylesheet">
-
-		<!-- Custom Color Option -->
-		<link href="assets/css/colors.css" rel="stylesheet">
-
+        <?php wp_head(  ) ?>
     </head>
 
     <body class="red-skin rtl">
