@@ -16,6 +16,8 @@ if (!defined('ABSPATH')) exit;
 <?php get_template_part( 'partials/index/facts', 'facts' ) ?>
 <!-- Facts -->
 <?php get_template_part( 'partials/index/courses-slider', 'courses-slider' ) ?>
+<!-- Posts -->
+<?php get_template_part( 'partials/index/posts', 'posts' ) ?>
 
 <!-- Footer -->
 <?php get_footer(  ); ?>
