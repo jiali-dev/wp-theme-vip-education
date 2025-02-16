@@ -24,7 +24,7 @@ function vip_education_add_assets() {
     wp_enqueue_style('vip-education-styles', VIP_EDUCATION_CSS_URI . '/styles.css' , array(), '1.0.0', 'all');
     wp_enqueue_style('vip-education-colors', VIP_EDUCATION_CSS_URI . '/colors.css' , array(), '1.0.0', 'all');
     wp_enqueue_style('vip-education-animation', VIP_EDUCATION_PLUGINS_URI . '/animation/animation.css' , array(), '1.0.0', 'all');
-    wp_enqueue_style('vip-education-bootstrap', VIP_EDUCATION_PLUGINS_URI . '/bootstrap/bootstrap.css' , array(), '1.0.0', 'all');
+    wp_enqueue_style('vip-education-bootstrap', VIP_EDUCATION_PLUGINS_URI . '/bootstrap/bootstrap.min.css' , array(), '1.0.0', 'all');
     wp_enqueue_style('vip-education-daterangepicker', VIP_EDUCATION_PLUGINS_URI . '/daterangepicker/daterangepicker.css' , array(), '1.0.0', 'all');
     wp_enqueue_style('vip-education-dropzone', VIP_EDUCATION_PLUGINS_URI . '/dropzone/dropzone.css' , array(), '1.0.0', 'all');
     wp_enqueue_style('vip-education-light-box', VIP_EDUCATION_PLUGINS_URI . '/light-box/light-box.css' , array(), '1.0.0', 'all');
@@ -36,7 +36,7 @@ function vip_education_add_assets() {
     wp_enqueue_style('vip-education-themify', VIP_EDUCATION_PLUGINS_URI . '/themify/themify.css' , array(), '1.0.0', 'all');
     wp_enqueue_style('vip-education-morris', VIP_EDUCATION_PLUGINS_URI . '/morris/morris.css' , array(), '1.0.0', 'all');
     wp_enqueue_style('vip-education-line-icons', VIP_EDUCATION_PLUGINS_URI . '/line-icons/line-icons.css' , array(), '1.0.0', 'all');
-    wp_enqueue_style('vip-education-iconfont', VIP_EDUCATION_PLUGINS_URI . '/iconfont/iconfont.css' , array(), '1.0.0', 'all');
+    wp_enqueue_style('vip-education-iconfont', VIP_EDUCATION_PLUGINS_URI . '/icon-font/iconfont.css' , array(), '1.0.0', 'all');
     wp_enqueue_style('vip-education-font-awesome', VIP_EDUCATION_PLUGINS_URI . '/font-awesome/font-awesome.css' , array(), '1.0.0', 'all');
     wp_enqueue_style('vip-education-flaticon', VIP_EDUCATION_PLUGINS_URI . '/flaticon/flaticon.css' , array(), '1.0.0', 'all');
 
