@@ -22,8 +22,10 @@ if (!defined('ABSPATH')) exit;
 <?php get_template_part( 'partials/index/tech-posts', 'tech-posts' ) ?>
 <!-- VIP Plans -->
 <?php get_template_part( 'partials/index/vip-plans', 'vip-plans' ) ?>
-<!-- Testomonials -->
+<!-- Feedback -->
 <?php get_template_part( 'partials/index/feedback', 'feedback' ) ?>
+<!-- Newsletter -->
+<?php get_template_part( 'partials/index/newsletter', 'newsletter' ) ?>
 
 <!-- Footer -->
 <?php get_footer(  ); ?>
