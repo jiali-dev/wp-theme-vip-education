@@ -19,11 +19,11 @@ define('VIP_EDUCATION_HELPER_CLASS_PATH', VIP_EDUCATION_THEME_PATH . '/helper-cl
 
 // Add theme assets --> Register for globaly and enqueue for specific page
 function vip_education_add_assets() {
-    // Register styles
-    wp_register_style('vip-education-styles', VIP_EDUCATION_CSS_URI . '/styles.css' , array(), '1.0.0', 'all');
-    wp_register_style('vip-education-colors', VIP_EDUCATION_CSS_URI . '/colors.css' , array(), '1.0.0', 'all');
+    // Enqueue styles
+    wp_enqueue_style('vip-education-styles', VIP_EDUCATION_CSS_URI . '/styles.css' , array(), '1.0.0', 'all');
+    wp_enqueue_style('vip-education-colors', VIP_EDUCATION_CSS_URI . '/colors.css' , array(), '1.0.0', 'all');
 
-    // Register scripts
-    wp_register_script('vip-education-main', VIP_EDUCATION_JS_URI . '/main.js', array('jquery'), '1.0.0', true);
+    // Enqueue scripts
+    wp_enqueue_script('vip-education-main', VIP_EDUCATION_JS_URI . '/main.js', array('jquery'), '1.0.0', true);
 }
-add_action('wp_enqueue_scripts', 'vip_education_register_assets');
+add_action('wp_enqueue_scripts', 'vip_education_add_assets');
