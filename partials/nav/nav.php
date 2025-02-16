@@ -75,3 +75,4 @@ if (!defined('ABSPATH')) exit;
     </div>
 </div>
 <!-- End Navigation -->
+<div class="clearfix"></div>
