@@ -3,4 +3,10 @@
 // Exit if accessed directly
 if (!defined('ABSPATH')) exit;
 
-get_header(  );
+// Header
+get_header(  );?>
+
+<?php
+// Footer
+get_footer(  );
+?>
