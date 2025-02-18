@@ -5,14 +5,14 @@ if (!defined('ABSPATH')) exit;
 
 ?>
             <!-- ============================ Footer Start ================================== -->
-			<footer class="light-footer">
+			<footer class="<?php echo is_front_page(  ) ? 'light-footer' : 'dark-footer skin-dark-footer' ?> ">
 				<div>
 					<div class="container">
 						<div class="row">
 
 							<div class="col-lg-3 col-md-3">
 								<div class="footer-widget">
-									<img src="<? echo VIP_EDUCATION_IMAGES_URI . '/logo.png' ?>" class="img-footer" alt="" />
+									<img src="<? echo is_front_page() ? VIP_EDUCATION_IMAGES_URI . '/logo.png' : VIP_EDUCATION_IMAGES_URI . '/logo-light.png' ?>" class="img-footer" alt="" />
 									<div class="footer-add">
 										<p>تهران، خیابان سعادت آباد، خیابان کاج</p>
 										<p>+1 246-345-0695</p>

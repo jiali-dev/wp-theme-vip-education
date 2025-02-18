@@ -6,11 +6,7 @@ if (!defined('ABSPATH')) exit;
 ?>
 
 <!-- ============================== Start Newsletter ================================== -->
-<<<<<<< HEAD
-<section class="bg-cover newsletter inverse-theme" style="background:url(assets/img/banner-2.jpg);" data-overlay="9">
-=======
 <section class="bg-cover newsletter inverse-theme" data-overlay="9">
->>>>>>> 4d86070 (Fixing some styles issues)
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-7 col-md-8 col-sm-12">
