@@ -7201,6 +7201,9 @@ a.elio_right {
 }
 
 /*--------- Newsletter ---------------------*/
+.newsletter {
+    background:url(../images/banner-2.jpg);
+}
 .newsletter.inverse-theme h2, .newsletter.inverse-theme p {
     color: #ffffff;
 }
