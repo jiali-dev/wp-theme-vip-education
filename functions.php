@@ -21,8 +21,6 @@ define('VIP_EDUCATION_HELPER_CLASS_PATH', VIP_EDUCATION_THEME_PATH . '/helper-cl
 // Add theme assets --> Register for globaly and enqueue for specific page
 function vip_education_add_assets() {
     // Enqueue styles
-    wp_enqueue_style('vip-education-styles', VIP_EDUCATION_CSS_URI . '/styles.css' , array(), '1.0.0', 'all');
-    wp_enqueue_style('vip-education-colors', VIP_EDUCATION_CSS_URI . '/colors.css' , array(), '1.0.0', 'all');
     wp_enqueue_style('vip-education-animation', VIP_EDUCATION_PLUGINS_URI . '/animation/animation.css' , array(), '1.0.0', 'all');
     wp_enqueue_style('vip-education-bootstrap', VIP_EDUCATION_PLUGINS_URI . '/bootstrap/bootstrap.min.css' , array(), '1.0.0', 'all');
     wp_enqueue_style('vip-education-daterangepicker', VIP_EDUCATION_PLUGINS_URI . '/daterangepicker/daterangepicker.css' , array(), '1.0.0', 'all');
@@ -39,7 +37,9 @@ function vip_education_add_assets() {
     wp_enqueue_style('vip-education-iconfont', VIP_EDUCATION_PLUGINS_URI . '/icon-font/iconfont.css' , array(), '1.0.0', 'all');
     wp_enqueue_style('vip-education-font-awesome', VIP_EDUCATION_PLUGINS_URI . '/font-awesome/font-awesome.css' , array(), '1.0.0', 'all');
     wp_enqueue_style('vip-education-flaticon', VIP_EDUCATION_PLUGINS_URI . '/flaticon/flaticon.css' , array(), '1.0.0', 'all');
-
+    wp_enqueue_style('vip-education-styles', VIP_EDUCATION_CSS_URI . '/styles.css' , array(), '1.0.0', 'all');
+    wp_enqueue_style('vip-education-colors', VIP_EDUCATION_CSS_URI . '/colors.css' , array(), '1.0.0', 'all');
+    
     // Enqueue scripts
     wp_enqueue_script('vip-education-main', VIP_EDUCATION_JS_URI . '/main.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('vip-education-popper', VIP_EDUCATION_PLUGINS_URI . '/popper/popper.min.js', array('jquery'), '1.0.0', true);
