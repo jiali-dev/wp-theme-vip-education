@@ -42,7 +42,7 @@ if (!defined('ABSPATH')) exit;
                                 <a class="pic-main" href="#" style="background-image:url(<?php echo VIP_EDUCATION_IMAGES_URI . '/course-7.jpg' ?>);"></a>
                             </div>
                             <div class="edu_data singles_items_border_bottom">
-                                <h4 class="title"><a href="single.html">پلاگین نویسی وردپرس</a></h4>
+                                <h4 class="title"><a href="http://localhost:10068/hello-world/">پلاگین نویسی وردپرس</a></h4>
                                 <ul class="meta d-flex mt-4">
                                     <li class="d-flex align-items-center"></i>وحید صالحی</li>
                                     <li class="video d-flex align-items-center"><i class="ti-video-clapper"></i>ویدئو</li>
