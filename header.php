@@ -17,8 +17,7 @@ if (!defined('ABSPATH')) exit;
         <?php wp_head(  ) ?>
     </head>
 
-    <body class="red-skin <?php echo is_single( ) ? 'blog-page' : '' ?> rtl">
-	
+    <body class="red-skin <?php echo is_single( ) ? 'blog-page' : '' ?> rtl">	
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
         <!-- ============================================================== -->
