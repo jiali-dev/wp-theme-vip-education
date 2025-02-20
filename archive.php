@@ -7,6 +7,9 @@ if (!defined('ABSPATH')) exit;
 
 <?php /* Template Name: آرشیو */ ?>
 
+<!-- Enqueue scripts -->
+<?php wp_enqueue_script('vip-education-archive') ?>
+
 <!-- Header -->
 <?php get_header(  );?>
 

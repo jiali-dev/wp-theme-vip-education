@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) exit;
         <div id="filter-sidebar" class="filter-sidebar">
             <div class="filt-head">
                 <h4 class="filt-first">جستجوی پیشرفته</h4>
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">بستن <i class="ti-close"></i></a>
+                <a href="javascript:void(0)" class="closebtn">بستن <i class="ti-close"></i></a>
             </div>
             <div class="show-hide-sidebar">
 

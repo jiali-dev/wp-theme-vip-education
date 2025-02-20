@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) exit;
                 <div class="filter_wraps">
                     <div class="dl">
                         <div id="main2">
-                            <a href="javascript:void(0)" class="btn btn-theme arrow-btn filter_open" onclick="openNav()" id="open2"><span><i class="fas fa-arrow-alt-circle-right"></i></span>باکس فیلتر</a>
+                            <a href="javascript:void(0)" class="btn btn-theme arrow-btn filter_open" id="open2"><span><i class="fas fa-arrow-alt-circle-right"></i></span>باکس فیلتر</a>
                         </div>
                     </div>
                     <div class="dropdown show">

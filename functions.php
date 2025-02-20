@@ -48,6 +48,10 @@ function vip_education_add_assets() {
     wp_enqueue_script('vip-education-slick', VIP_EDUCATION_PLUGINS_URI . '/slick/slick.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('vip-education-counterup', VIP_EDUCATION_PLUGINS_URI . '/counterup/jquery.counterup.min.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('vip-education-jquery-counterup', VIP_EDUCATION_PLUGINS_URI . '/counterup/counterup.min.js', array('jquery'), '1.0.0', true);
+    
+    // Register scripts
+    wp_register_script('vip-education-archive', VIP_EDUCATION_JS_URI . '/archive.js', array('jquery'), '1.0.0', true);
+    
 }
 add_action('wp_enqueue_scripts', 'vip_education_add_assets');
 
