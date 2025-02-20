@@ -51,6 +51,14 @@ function vip_education_register_assets() {
     if( is_page('archive')) {
         wp_enqueue_script('vip-education-archive');
     }
+    wp_register_script('vip-education-ajax', VIP_EDUCATION_JS_URI . '/ajax.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('vip-education-ajax');
+    wp_localize_script( 'vip-education-ajax', 'vip-education-ajax', 
+        array(
+            'ajaxurl' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('vip-education-nonce')
+        )
+    );
     wp_register_script('vip-education-popper', VIP_EDUCATION_PLUGINS_URI . '/popper/popper.min.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('vip-education-popper');
     wp_register_script('vip-education-bootstrap', VIP_EDUCATION_PLUGINS_URI . '/bootstrap/bootstrap.min.js', array('jquery'), '1.0.0', true);
