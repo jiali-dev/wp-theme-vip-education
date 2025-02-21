@@ -53,7 +53,7 @@ function vip_education_register_assets() {
     }
     wp_register_script('vip-education-ajax', VIP_EDUCATION_JS_URI . '/ajax.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('vip-education-ajax');
-    wp_localize_script( 'vip-education-ajax', 'vip-education-ajax', 
+    wp_localize_script( 'vip-education-ajax', 'vip_education_ajax', 
         array(
             'ajaxurl' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('vip-education-nonce')
