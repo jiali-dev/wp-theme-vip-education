@@ -15,6 +15,9 @@ require_once(VIP_EDUCATION_INC_PATH . '/theme_setup.php');
 // Post Functions
 require_once(VIP_EDUCATION_INC_PATH . '/post/post.php');
 
+// Meta boxes Functions
+require_once(VIP_EDUCATION_INC_PATH . '/meta-box/meta-box.php');
+
 
 
 

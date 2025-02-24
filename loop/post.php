@@ -18,7 +18,26 @@ $the_query = new WP_Query($args);
         <div class="singles_items ">
             <div class="edu_cat">
                 <div class="pic">
-                    <div class="topic_level bg-info text-white">سطح : متوسط</div>
+                    <?php 
+                        // Retrieve the current value of the meta field
+                        $value = get_post_meta( get_the_ID( ), '_vip_education_post_level', true);
+                        
+                        if( $value ):
+                            switch ($value) {
+                                case '1': 
+                                    $value = 'مقدماتی';
+                                    break;
+                                case '2': 
+                                    $value = 'متوسط';
+                                    break;
+                                case '3': 
+                                    $value = 'پیشرفته';
+                                    break;
+                            }
+                    ?>
+                        <div class="topic_level bg-info text-white">سطح : <?php echo esc_html($value); ?></div>
+                    <?php endif; ?>
+
                     <div class="topic_cat bg-warning text-white">جاوااسکریپت</div>
                     <a class="pic-main" href="<?php echo get_the_permalink( ) ?>" >
                         <?php if( has_post_thumbnail(  )): ?>
