@@ -12,5 +12,11 @@ function vip_education_theme_setup() {
 
     // Register Bootstap Navwalker
     require_once( VIP_EDUCATION_CLASS_PATH . '/WP_Bootstrap_Navwalker.php');
+
+    // Register post thumbnail
+    add_theme_support( 'post-thumbnails' );
+
+    // Add custom upload size
+    add_image_size( 'custom-size', 200, 200, array('center', 'center') );
 }
 add_action( 'after_setup_theme', 'vip_education_theme_setup');
