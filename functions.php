@@ -13,7 +13,7 @@ require_once(VIP_EDUCATION_INC_PATH . '/register_assets.php');
 require_once(VIP_EDUCATION_INC_PATH . '/theme_setup.php');
 
 // Post Functions
-require_once(VIP_EDUCATION_INC_PATH . '/post.php');
+require_once(VIP_EDUCATION_INC_PATH . '/post/post.php');
 
 
 
