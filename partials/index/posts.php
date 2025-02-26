@@ -32,7 +32,7 @@ if (!defined('ABSPATH')) exit;
             <div class="col-lg-12 col-md-12 col-sm-12 p-0">
 
                 <div class="arrow_slide three_slide-dots arrow_middle" dir="rtl">
-                    <?php get_template_part( 'loop/post', 'post' ) ?>
+                    <?php get_template_part( 'loop/post-loop', 'post-loop' ) ?>
                 </div>
             </div>
         </div>	

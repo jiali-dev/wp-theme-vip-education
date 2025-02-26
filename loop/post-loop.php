@@ -77,3 +77,7 @@ $the_query = new WP_Query($args);
 <?php else: ?>
     <div class="alert alert-info">مطلبی جهت نمایش وجود ندارد!</div>
 <?php endif; ?>
+<?php
+    // Reset the global post object
+    wp_reset_postdata();
+?>
