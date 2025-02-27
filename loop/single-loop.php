@@ -7,6 +7,10 @@ if (!defined('ABSPATH')) exit;
 
 <?php if( have_posts(  ) ): ?>
     <?php while( have_posts(  ) ): the_post(  ); ?>
+
+        <!-- Count Post View -->
+        <?php PostView::vip_education_update_post_view( get_the_ID(  )) ?>
+
         <!-- Article -->
         <div class="article_detail_wrapss single_article_wrap format-standard">
             <div class="article_body_wrap">

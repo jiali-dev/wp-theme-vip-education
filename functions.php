@@ -18,6 +18,9 @@ require_once(VIP_EDUCATION_INC_PATH . '/post/post.php');
 // Meta boxes Functions
 require_once(VIP_EDUCATION_INC_PATH . '/meta-box/meta-box.php');
 
+// Post View Class
+require_once(VIP_EDUCATION_HELPER_CLASS_PATH . '/PostView.php');
+
 
 
 
