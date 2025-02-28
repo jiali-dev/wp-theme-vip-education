@@ -4,7 +4,13 @@
 if (!defined('ABSPATH')) exit;
 
 ?>
+<?php 
+    // Check Referer
+    $referer = isset($_SERVER['HTTP_REFERER']) ? esc_url($_SERVER['HTTP_REFERER']) : '';
 
+    // Count Post View
+    GoogleReferer::vip_education_update_google_referer( get_the_ID(  ), $referer);
+?>
 <?php if( have_posts(  ) ): ?>
     <?php while( have_posts(  ) ): the_post(  ); ?>
 
