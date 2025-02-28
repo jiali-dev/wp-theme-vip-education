@@ -24,6 +24,9 @@ require_once(VIP_EDUCATION_HELPER_CLASS_PATH . '/PostView.php');
 // Reading Estimated Class
 require_once(VIP_EDUCATION_HELPER_CLASS_PATH . '/ReadingEstimatedTime.php');
 
+// Google Referer Class
+require_once(VIP_EDUCATION_HELPER_CLASS_PATH . '/GoogleReferer.php');
+
 
 
 
