@@ -49,23 +49,32 @@ if (!defined('ABSPATH')) exit;
 
                 </div>
                 <div class="single_article_pagination">
-                    <div class="prev-post">
-                        <a href="#" class="theme-bg">
-                            <div class="title-with-link">
-                                <span class="intro">پست قبلی</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="article_pagination_center_grid">
-                        <a href="#"><i class="ti-layout-grid3"></i></a>
-                    </div>
-                    <div class="next-post">
-                        <a href="#" class="theme-bg">
-                            <div class="title-with-link">
-                                <span class="intro">پست بعدی</span>
-                            </div>
-                        </a>
-                    </div>
+                    <?php $previous_post = get_previous_post(); ?>
+                    <?php if( !empty($previous_post) ): ?>
+                        <div class="prev-post">
+                            <a href="<?php echo get_permalink( $previous_post->ID); ?>" class="theme-bg">
+                                <div class="title-with-link">
+                                    <span class="intro">پست قبلی</span>
+                                </div>
+                            </a>
+                        </div>
+                    <?php endif; ?>
+                    <?php $blog_page_url = get_permalink( get_option( 'page_for_posts' ) ); ?>
+                    <?php if( !empty($blog_page_url) ): ?>
+                        <div class="article_pagination_center_grid">
+                            <a href="<?php echo $blog_page_url ?>"><i class="ti-layout-grid3"></i></a>
+                        </div>
+                    <?php endif; ?>
+                    <?php $next_post = get_next_post(); ?>
+                    <?php if( !empty($next_post) ): ?>
+                        <div class="next-post">
+                            <a href="<?php echo get_permalink( $next_post->ID); ?>" class="theme-bg">
+                                <div class="title-with-link">
+                                    <span class="intro">پست بعدی</span>
+                                </div>
+                            </a>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 
             </div>
