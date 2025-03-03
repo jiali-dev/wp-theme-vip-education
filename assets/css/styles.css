@@ -10825,3 +10825,7 @@ a._cr_detail_arrow {
 .menu-item .dropdown-toggle::after {
     content: unset;
 }
+
+.widget {
+  background-color: #fff;
+}
