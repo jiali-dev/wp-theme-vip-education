@@ -8,7 +8,9 @@ if (!defined('ABSPATH')) exit;
 <!-- Author Detail -->
 <div class="article_detail_wrapss single_article_wrap format-standard">	
     <div class="article_posts_thumb">
-        <span class="img"><img class="img-fluid" src="<?php echo VIP_EDUCATION_IMAGES_URI . '/user-1.jpg' ?>" alt=""></span>
+        <span class="img">
+            <?php echo get_avatar( get_the_author_meta( 'email' ), 128,'', get_the_author_meta( 'display_name' )) ?>
+        </span>
         <h3 class="pa-name"><?php echo get_the_author_meta( 'display_name' ) ?></h3>
         <ul class="social-links">
             <?php if( get_the_author_meta( 'facebook' )): ?>
