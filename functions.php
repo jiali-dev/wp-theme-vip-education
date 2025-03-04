@@ -30,6 +30,9 @@ require_once(VIP_EDUCATION_HELPER_CLASS_PATH . '/ReadingEstimatedTime.php');
 // Google Referer Class
 require_once(VIP_EDUCATION_HELPER_CLASS_PATH . '/GoogleReferer.php');
 
+// TimeModify
+require_once(VIP_EDUCATION_HELPER_CLASS_PATH . '/TimeModify.php');
+
 // Widgets and Sidebars
 require_once(VIP_EDUCATION_INC_PATH . '/widget/widgets.php');
 

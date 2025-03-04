@@ -57,7 +57,7 @@ class TrendPostsWidget extends WP_Widget {
                             </span>
                             <span class="right">
                                 <a class="feed-title" href="<?php echo get_the_permalink( ) ?>"><?php echo get_the_title() ?></a> 
-                                <span class="post-date"><i class="ti-calendar"></i>10دقیقه پیش</span>
+                                <span class="post-date"><i class="ti-calendar"></i><?php echo TimeModify::vip_education_time_ago($trend_posts->post->post_date_gmt) ?></span>
                             </span>
                         </li> 
                     <?php endwhile; ?>
