@@ -24,14 +24,20 @@ class CategoriesWidget extends WP_Widget {
                     $title = apply_filters('widget_title', $instance['title']);
                     echo $args['before_title'] . '<h4 class="title">' . $title . '</h4>' . $args['after_title'];
                 }
+            
+                $categories = get_terms([
+                    'taxonomy'   => 'category',
+                    'hide_empty' => true, // Show even empty categories
+                ]);
             ?>
-             <ul>
-                <li><a href="#">سبک زندگی <span>09</span></a></li>
-                <li><a href="#">تدریس خصوصی <span>12</span></a></li>
-                <li><a href="#">آموزش آنلاین <span>19</span></a>
-                </li><li><a href="#">برندسازی <span>17</span></a></li>
-                <li><a href="#">موزیک <span>10</span></a></li>
-            </ul>
+
+            <?php if( !empty($categories) ): ?>
+                <ul>
+                    <?php foreach( $categories as $cat ): ?>
+                        <li><a href="<?php echo get_term_link( $cat ) ?>"><?php echo $cat->name ?><span><?php echo $cat->count ?></span></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
         </div>
         <?php
         echo $args['after_widget'];
