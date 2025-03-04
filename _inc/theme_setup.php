@@ -20,3 +20,20 @@ function vip_education_theme_setup() {
     add_image_size( 'custom-size', 200, 200, array('center', 'center') );
 }
 add_action( 'after_setup_theme', 'vip_education_theme_setup');
+
+// Pretty Output Vardump
+function vip_education_pretty_var_dump($data) {
+    echo '<pre style="
+        background: #282c34; 
+        color: #61dafb; 
+        padding: 10px; 
+        border-radius: 5px; 
+        font-size: 14px; 
+        line-height: 1.5; 
+        white-space: pre-wrap; 
+        word-wrap: break-word;
+        direction: ltr;
+    ">';
+    var_dump($data);
+    echo '</pre>';
+}
