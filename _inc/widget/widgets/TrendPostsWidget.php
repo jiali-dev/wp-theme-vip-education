@@ -25,55 +25,45 @@ class TrendPostsWidget extends WP_Widget {
                     echo $args['before_title'] . '<h4 class="title">' . $title . '</h4>' . $args['after_title'];
                 }
             ?>
-            <!-- Trend Posts -->
+            <?php 
+                $trend_posts = new WP_Query(
+                    [
+                        'post_type' => 'post',
+                        'orderby' => 'comment',
+                        'order' => 'DESC',
+                        'post_per_page' => 6
+                    ]
+                )
+            ?>
 
+            <?php if( $trend_posts->have_posts(  )): ?>
+                
+                <!-- Trend Posts -->
                 <ul>
-                    <li>
-                        <span class="left">
-                            <img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/blog-sm-01.jpg' ?>" alt="" class="">
-                        </span>
-                        <span class="right">
-                            <a class="feed-title" href="#">در الکامپ امسال چه خبر است؟</a> 
-                            <span class="post-date"><i class="ti-calendar"></i>10دقیقه پیش</span>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="left">
-                            <img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/blog-sm-02.jpg' ?>" alt="" class="">
-                        </span>
-                        <span class="right">
-                            <a class="feed-title" href="#">چگونه بهانه آوردن را متوقف کنید؟</a> 
-                            <span class="post-date"><i class="ti-calendar"></i>2ساعت پیش</span>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="left">
-                            <img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/blog-sm-03.jpg' ?>" alt="" class="">
-                        </span>
-                        <span class="right">
-                            <a class="feed-title" href="#">مشخصات اولین تبلت فراسو</a> 
-                            <span class="post-date"><i class="ti-calendar"></i>4ساعت پیش</span>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="left">
-                            <img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/blog-sm-01.jpg' ?>" alt="" class="">
-                        </span>
-                        <span class="right">
-                            <a class="feed-title" href="#">مالزی به دنبال دانشجویان آمریکایی</a> 
-                            <span class="post-date"><i class="ti-calendar"></i>7ساعت پیش</span>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="left">
-                            <img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/blog-sm-02.jpg' ?>" alt="" class="">
-                        </span>
-                        <span class="right">
-                            <a class="feed-title" href="#">فیلترینگ 100 هزار واژه از سوی گوگل</a> 
-                            <span class="post-date"><i class="ti-calendar"></i>3روز پیش</span>
-                        </span>
-                    </li>
+                    <?php while( $trend_posts->have_posts(  ) ): $trend_posts->the_post(  ); ?>
+                        <li>
+                            <span class="left">
+                                <?php if( has_post_thumbnail(  )): ?>
+                                    <?php 
+                                        the_post_thumbnail( '', array(
+                                            'class' => 'img-responsive',
+                                            'alt' => get_the_title(  )
+                                        ) )
+                                    ?>
+                                <?php else: ?>
+                                    <?php vip_education_default_post_thumbnail() ?>
+                                <?php endif; ?>
+
+                            </span>
+                            <span class="right">
+                                <a class="feed-title" href="<?php echo get_the_permalink( ) ?>"><?php echo get_the_title() ?></a> 
+                                <span class="post-date"><i class="ti-calendar"></i>10دقیقه پیش</span>
+                            </span>
+                        </li> 
+                    <?php endwhile; ?>
                 </ul>
+            <?php endif; ?>
+            <?php wp_reset_postdata(  ) ?>
             </div>
         <?php
         echo $args['after_widget'];
