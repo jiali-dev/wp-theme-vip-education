@@ -17,6 +17,10 @@ class Breadcrumb {
                     <?php if( is_single( ) ): ?>
                         <li class="breadcrumb-item"><?php echo get_the_title(  ) ?></li>
                     <?php endif; ?>
+                <?php elseif( is_page( ) ): ?>
+                    <li class="breadcrumb-item"><?php echo get_the_title(  ) ?></li>
+                <?php elseif( is_search( ) ): ?>
+                    <li class="breadcrumb-item"><?php echo the_search_query(  ) ?></li>
                 <?php endif; ?>
             </ol>
         <?php
