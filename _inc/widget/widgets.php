@@ -14,3 +14,6 @@ require_once(VIP_EDUCATION_INC_PATH . '/widget/widgets/CategoriesWidget.php');
 
 // Trend posts Widget
 require_once(VIP_EDUCATION_INC_PATH . '/widget/widgets/TrendPostsWidget.php');
+
+// Cloudy tags Widget
+require_once(VIP_EDUCATION_INC_PATH . '/widget/widgets/CloudyTags.php');
