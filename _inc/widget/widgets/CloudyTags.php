@@ -41,6 +41,8 @@ class CloudyTags extends WP_Widget {
                         <li><?php echo $tag ?></li>
                     <?php endforeach; ?>
                 </ul>
+            <?php else: ?>
+                <div class="alert alert-warning">تگی یافت نشد!</div>
             <?php endif; ?>
         </div>
         <?php
