@@ -14,10 +14,7 @@ if (!defined('ABSPATH')) exit;
                 <div class="breadcrumbs-wrap">
                     <h1 class="breadcrumb-title"><?php the_title( ) ?></h1>
                     <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">خانه</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">لزوم یادگیری زبان در دنیای امروزی!</li>
-                        </ol>
+                        <?php Breadcrumb::vip_education_get_breadcrumb(); ?>
                     </nav>
                 </div>
                 
