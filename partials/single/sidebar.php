@@ -11,7 +11,4 @@ if (!defined('ABSPATH')) exit;
     <!-- Add single sidebar -->
     <?php get_sidebar( 'single' ); ?>
 
-    <!-- Tags -->
-    <?php get_template_part( 'partials/single/_sidebar-tags', 'tags' ) ?>
-
 </div>
