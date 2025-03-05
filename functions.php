@@ -33,6 +33,9 @@ require_once(VIP_EDUCATION_HELPER_CLASS_PATH . '/GoogleReferer.php');
 // TimeModify
 require_once(VIP_EDUCATION_HELPER_CLASS_PATH . '/TimeModify.php');
 
+// Breadcumb
+require_once(VIP_EDUCATION_HELPER_CLASS_PATH . '/Breadcumb.php');
+
 // Widgets and Sidebars
 require_once(VIP_EDUCATION_INC_PATH . '/widget/widgets.php');
 
