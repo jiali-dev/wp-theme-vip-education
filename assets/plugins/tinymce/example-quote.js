@@ -1,3 +1,4 @@
+// This is just for example and not connected to project, it's just for another type of adding custom button
 (function() {
     tinymce.create('tinymce.plugins.vip_education_quote', {
         init : function(editor, url) {
