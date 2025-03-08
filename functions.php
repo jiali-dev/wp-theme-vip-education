@@ -42,6 +42,9 @@ require_once(VIP_EDUCATION_INC_PATH . '/widget/widgets.php');
 // Shortcodes
 require_once(VIP_EDUCATION_INC_PATH . '/shortcode.php');
 
+// Tinymcs
+require_once(VIP_EDUCATION_INC_PATH . '/tinymce-plugins/tinymce-plugins.php');
+
 
 
 
