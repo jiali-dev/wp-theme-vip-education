@@ -9,7 +9,11 @@ if (!defined('ABSPATH')) exit;
 <div class="article_detail_wrapss single_article_wrap format-standard">
     <div class="comment-area">
         <div class="all-comments">
-            <h3 class="comments-title">05 دیدگاه</h3>
+            <?php if( get_comments_number( ) > 0 ): ?>
+                <h3 class="comments-title"><?php echo get_comments_number( ) ?> دیدگاه</h3>
+            <?php else: ?>
+                <h3 class="comments-title">اولین نفری باشید که نظر خود را بیان میکند</h3>
+            <?php endif; ?>
             <div class="comment-list">
                 <ul>
                 
