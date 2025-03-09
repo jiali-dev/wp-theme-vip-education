@@ -26,16 +26,18 @@ if (!defined('ABSPATH')) exit;
                 <div class="comment-form">
                     <form action="#">
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="نام کامل">
+                            <?php if( !is_user_logged_in(  ) ): ?>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="نام کامل">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="ایمیل معتبر">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="ایمیل معتبر">
+                                    </div>
                                 </div>
-                            </div>
+                            <?php endif; ?>
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <div class="form-group">
                                     <textarea name="comment" class="form-control" cols="30" rows="6" placeholder="نظر خود را بنویسید..."></textarea>
