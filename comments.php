@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) exit;
                 <ul>
                     <?php wp_list_comments( 
                         [
-                            'callback' => 'vip_theme_list_comments',
+                            'callback' => 'vip_education_list_comments',
                             'style' => 'ul',
                             'avatar_size' => 100
                         ]

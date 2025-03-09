@@ -3,7 +3,7 @@
 // Exit if accessed directly
 if (!defined('ABSPATH')) exit;
 
-function vip_theme_list_comments( $comments, $args ) {
+function vip_education_list_comments( $comments, $args ) {
     $comment = $GLOBALS['comment'];
     ?>
     <li id="comment-<?php echo $comment->comment_ID ?>" <?php comment_class( 'article_comments_wrap' ) ?> >
@@ -14,11 +14,18 @@ function vip_theme_list_comments( $comments, $args ) {
             <div class="comment-details">
                 <div class="comment-meta">
                     <div class="comment-left-meta">
-                        <h4 class="author-name"> <?php echo $comment->comment_author ?> <span class="selected"><i class="fas-bookmark"></i></span></h4>
+                        <h4 class="author-name"> <?php echo wp_strip_all_tags($comment->comment_author) ?> 
+                            <?php if( $comment->user_id == get_post_field('post_author', $comment->comment_post_ID) ): ?>
+                                <span class="selected">
+                                    <i class="fa fa-bookmark"></i>
+                                </span>
+                            <?php endif; ?>
+
+                        </h4>
                         <div class="comment-date"><?php echo comment_date( ) ?></div>
                         <div class="comment-text">
                             <p>
-                                <?php echo $comment->comment_content ?>
+                                <?php echo wp_strip_all_tags($comment->comment_content) ?>
                             </p>
                         </div>
                     </div>
