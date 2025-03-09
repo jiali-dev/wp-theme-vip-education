@@ -9,8 +9,7 @@ function vip_theme_list_comments( $comments, $args ) {
     <li id="comment-<?php echo $comment->comment_ID ?>" <?php comment_class( 'article_comments_wrap' ) ?> >
         <article>
             <div class="article_comments_thumb">
-                <img src="<?php echo get_template_directory_uri() . '/assets/image/user-1.jpg'?>"
-                alt="">
+                <?php echo get_avatar( $comment->comment_author_email, $args['avatar_size'],'', $comment->comment_author) ?>
             </div>
             <!-- <div class="comment-details">
                 <div class="comment-meta">
