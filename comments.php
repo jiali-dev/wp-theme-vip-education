@@ -16,7 +16,13 @@ if (!defined('ABSPATH')) exit;
             <?php endif; ?>
             <div class="comment-list">
                 <ul>
-                
+                    <?php wp_list_comments( 
+                        [
+                            'callback' => 'vip_theme_list_comments',
+                            'style' => 'ul',
+                            'avatar_size' => 100
+                        ]
+                    ) ?>
                 </ul>
             </div>
         </div>
