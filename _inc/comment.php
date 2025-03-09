@@ -4,9 +4,9 @@
 if (!defined('ABSPATH')) exit;
 
 function vip_theme_list_comments( $comments, $args ) {
-    $comments = $GLOBALS['comment'];
+    $comment = $GLOBALS['comment'];
     ?>
-    <li class="article_comments_wrap">
+    <li id="comment-<?php echo $comment->comment_ID ?>" >
         <article>
             <div class="article_comments_thumb">
                 <img src="<?php echo get_template_directory_uri() . '/assets/image/user-1.jpg'?>"
