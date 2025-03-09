@@ -30,30 +30,48 @@ if (!defined('ABSPATH')) exit;
             <div class="comment-box submit-form">
                 <h3 class="reply-title">ثبت دیدگاه</h3>
                 <div class="comment-form">
-                    <form action="#">
+                    <form action="<?php echo site_url( ) .  "/wp-comments-post.php" ?>" method="post">
                         <div class="row">
                             <?php if( !is_user_logged_in(  ) ): ?>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="نام کامل">
+                                        <input type="text" name="author" class="form-control" placeholder="نام کامل *" required="required">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="ایمیل معتبر">
+                                        <input type="text" name="email" class="form-control" placeholder="ایمیل معتبر *" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <input type="text" name="url" class="form-control" placeholder="آدرس وبسایت">
                                     </div>
                                 </div>
                             <?php endif; ?>
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <div class="form-group">
-                                    <textarea name="comment" class="form-control" cols="30" rows="6" placeholder="نظر خود را بنویسید..."></textarea>
+                                    <textarea name="comment" class="form-control" cols="30" rows="6" placeholder="نظر خود را بنویسید... *" required="required"></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12">
+                                <p class="comment-form-cookies-consent">
+                                    <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> 
+                                    <label for="wp-comment-cookies-consent">
+                                        ذخیره نام، ایمیل و وبسایت من در مرورگر برای زمانی که دوباره دیدگاهی می‌نویسم.
+                                    </label>
+                                </p>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
                                 <div class="form-group">
-                                    <a href="#" class="btn search-btn">ثبت</a>
+                                    <input type="submit" name="submit" class="btn search-btn" value="ثبت">
+                                    <input type="hidden" name="comment_post_ID" value="<?php echo get_the_ID(  ) ?>" id="comment_post_ID">
+                                    <input type="hidden" name="comment_parent" id="comment_parent" value="0">
                                 </div>
                             </div>
+                            <?php if( is_user_logged_in(  )): ?>
+                                <input type="hidden" id="_wp_unfiltered_html_comment_disabled" name="_wp_unfiltered_html_comment" value="<?php echo wp_create_nonce(  ) ?>">
+                            <?php endif; ?>
                         </div>
                     </form>
                 </div>
