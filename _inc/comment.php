@@ -23,6 +23,14 @@ function vip_education_list_comments( $comments, $args ) {
 
                         </h4>
                         <div class="comment-date"><?php echo comment_date( ) ?></div>
+                        <div class="comment-reply">
+                            <a href="#commentform" class="reply" data-commentid="<?php echo $comment->comment_ID ?>" data-author="<?php echo $comment->comment_author ?>" data-toggle="modal" data-target="#commentreplyModal" >
+                                <span class="icona">
+                                    <i class="ti-back-right"></i>
+                                </span> 
+                                پاسخ
+                            </a>
+                        </div>
                         <div class="comment-text">
                             <p>
                                 <?php echo wp_strip_all_tags($comment->comment_content) ?>

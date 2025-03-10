@@ -499,5 +499,17 @@ jQuery(function($) {
 		placeholder: "کشور",
 		allowClear: true
 	});
+
+	// Comment Reply
+	$('.reply').on('click', function(event) {
+		event.preventDefault();
+		let id = $(this).data('commentid');
+		let author = $(this).data('author');
+
+		let commentreplyModal = $('#commentreplyModal');
+
+		$(commentreplyModal).find('#comment-author').text(author);
+		$(commentreplyModal).find('#comment_parent').val(id);
+	});
 	
 });
