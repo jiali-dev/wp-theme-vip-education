@@ -10848,3 +10848,9 @@ ul.children {
   background-color: #da0b4e;
   color: #fff;
 }
+
+.main-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}

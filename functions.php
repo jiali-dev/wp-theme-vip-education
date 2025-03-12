@@ -48,6 +48,9 @@ require_once(VIP_EDUCATION_INC_PATH . '/tinymce-plugins/tinymce-plugins.php');
 // Comments
 require_once(VIP_EDUCATION_INC_PATH . '/comment.php');
 
+// Technology Custom Post
+require_once(VIP_EDUCATION_INC_PATH . '/custom-post-types/technology.php');
+
 
 
 

@@ -38,7 +38,9 @@ if (!defined('ABSPATH')) exit;
                 <?php get_template_part( 'partials/meta-data/single/post-meta', 'post-meta' ) ?>
                 
                 <!-- Post Content -->
-                <?php the_content( ); ?>
+                <div class="main-content">
+                    <?php the_content( ); ?>
+                </div>
 
                 <div class="article_bottom_info">
                     <!-- Post Tags -->
