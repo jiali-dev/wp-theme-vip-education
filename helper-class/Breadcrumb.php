@@ -13,7 +13,7 @@ class Breadcrumb {
                     <?php // Retrieve the current value of the meta field
                         $cat = get_post_meta(get_the_ID(  ), '_vip_education_post_cat', true);
                     ?>
-                    <?php if( $cat & $cat > 0 ): ?>
+                    <?php if( !empty($cat) & $cat > 0 ): ?>
                         <li class="breadcrumb-item"><a href="<?php echo get_term_link( intval($cat) ) ?>"><?php echo get_cat_name( $cat ) ?></a></li>
                     <?php endif; ?>
                     <?php if( is_single( ) ): ?>
