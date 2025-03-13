@@ -8,7 +8,7 @@ function jve_video_shortcodes($atts, $content = null) {
     $atts = shortcode_atts([
         'src'    => '',
         'poster' => '',
-    ], $atts, 'vip-education-video');
+    ], $atts, 'jve-video');
 
     if (empty($atts['src'])) {
         return '<p class="alert-warning">⚠️ ویدئویی یافت نشد.</p>';
@@ -32,14 +32,14 @@ function jve_video_shortcodes($atts, $content = null) {
     <?php
     return ob_get_clean(); // Return the buffered content
 }
-add_shortcode( 'vip-education-video', 'jve_video_shortcodes' );
+add_shortcode( 'jve-video', 'jve_video_shortcodes' );
 
 function jve_quote_shortcodes($atts, $content = null) {
     // Set default attributes
     $atts = shortcode_atts([
         'quote'    => '',
         'quote_owner' => '',
-    ], $atts, 'vip-education-quote');
+    ], $atts, 'jve-quote');
 
     ob_start(); // Start output buffering
     ?>
@@ -51,4 +51,4 @@ function jve_quote_shortcodes($atts, $content = null) {
     <?php
     return ob_get_clean(); // Return the buffered content
 }
-add_shortcode( 'vip-education-quote', 'jve_quote_shortcodes' );
+add_shortcode( 'jve-quote', 'jve_quote_shortcodes' );
