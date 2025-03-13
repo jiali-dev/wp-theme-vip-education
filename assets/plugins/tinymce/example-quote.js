@@ -6,7 +6,7 @@
         title: "افزودن شورتکد نقل قول",
         image: url + "/quote-50.png",
         onclick: function () {
-          editor.insertContent('[vip-education-quote quote="" quote-owner=""]');
+          editor.insertContent('[jve-quote quote="" quote-owner=""]');
         },
       });
     },

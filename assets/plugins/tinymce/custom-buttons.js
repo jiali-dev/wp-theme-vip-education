@@ -9,16 +9,14 @@
             text: "شورتکد نقل قول",
             icon: "blockquote",
             onclick: function () {
-              editor.insertContent(
-                '[vip-education-quote quote="" quote-owner=""]'
-              );
+              editor.insertContent('[jve-quote quote="" quote-owner=""]');
             },
           },
           {
             text: "شورتکد ویدئو",
             icon: "link",
             onclick: function () {
-              editor.insertContent('[vip-education-video src="" poster=""]');
+              editor.insertContent('[jve-video src="" poster=""]');
             },
           },
         ],
