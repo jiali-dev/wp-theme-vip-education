@@ -9,7 +9,7 @@ function jve_get_hot_posts_ajax( ) {
     try {
 
         // Check nonce
-        if ( empty($_POST['nonce']) || !isset($_POST['nonce']))
+        if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce( $_POST['nonce'], 'jve-nonce' ) )
             throw new Exception( 'خطای امنیتی!' , 1 );
 
         // Check parent entity
@@ -154,7 +154,7 @@ function jve_get_new_posts_ajax( ) {
     try {
 
         // Check nonce
-        if ( empty($_POST['nonce']) || !isset($_POST['nonce']))
+        if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'jve-nonce') )
             throw new Exception( 'خطای امنیتی!' , 1 );
 
         // Check parent entity
@@ -298,7 +298,7 @@ function jve_get_popular_posts_ajax( ) {
     try {
 
         // Check nonce
-        if ( empty($_POST['nonce']) || !isset($_POST['nonce']))
+        if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'jve-nonce') )
             throw new Exception( 'خطای امنیتی!' , 1 );
 
         // Check parent entity
@@ -444,7 +444,7 @@ function jve_get_video_posts_ajax( ) {
     try {
 
         // Check nonce
-        if ( empty($_POST['nonce']) || !isset($_POST['nonce']))
+        if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'],'jve-nonce') )
             throw new Exception( 'خطای امنیتی!' , 1 );
 
         // Check parent entity
