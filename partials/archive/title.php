@@ -10,17 +10,16 @@ if (!defined('ABSPATH')) exit;
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12">
-                
                 <div class="breadcrumbs-wrap">
-                    <h1 class="breadcrumb-title">آرشیو</h1>
+                    <h1 class="breadcrumb-title">
+                        <?php echo is_search( ) ? get_search_query( ) : get_the_archive_title( ) ?>
+                    </h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">خانه</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">همه مطالب</li>
+                            <?php Breadcrumb::jve_get_breadcrumb(); ?>
                         </ol>
                     </nav>
                 </div>
-
             </div>
         </div>
     </div>
