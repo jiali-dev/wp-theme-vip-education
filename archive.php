@@ -9,7 +9,6 @@ if (!defined('ABSPATH')) exit;
 
 <!-- Header -->
 <?php get_header(  );?>
-
 <!-- Navbar -->
 <?php get_template_part( 'partials/nav/nav', 'nav' ) ?>
 <!-- Page Title -->
@@ -22,6 +21,5 @@ if (!defined('ABSPATH')) exit;
 <?php get_template_part( 'partials/archive/main-content', 'main-content' ) ?>
 <!-- Content Layout End -->
 <?php get_template_part( 'partials/archive/content-layout-end', 'content-layout-end' ) ?>
-
 <!-- Footer -->
 <?php get_footer(  ); ?>
