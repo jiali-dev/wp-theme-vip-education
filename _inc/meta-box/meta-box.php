@@ -9,7 +9,7 @@ function vip_education_add_meta_box() {
         'vip_education_more_settings',          // ID of the meta box
         'تنظیمات اضافه',                        // Title of the meta box
         'vip_education_meta_box_callback',   // Callback function
-        'post',                              // Screen (Post type)
+        array( 'post', 'technology' ),                              // Screen (Post type)
         'normal',                              // Context (normal, side, advanced)
         'default'                            // Priority (default, high, low)
     );
@@ -24,6 +24,9 @@ function vip_education_meta_box_callback($post) {
     
     // Retrieve the current value of the meta field
     $cat = get_post_meta($post->ID, '_vip_education_post_cat', true);
+    
+    // Retrieve the current value of the meta field
+    $entity = get_post_meta($post->ID, '_vip_education_post_entity', true);
     
     // Add a nonce field for security
     wp_nonce_field('vip_education_save_meta_box_data', 'vip_education_meta_box_nonce');
@@ -43,8 +46,18 @@ function vip_education_meta_box_callback($post) {
     <?php wp_dropdown_categories( array(
         'name' => 'vip_education_post_cat',
         'show_option_none' => 'انتخاب دسته بندی',
-        'selected' => $cat
+        'selected' => $cat,
+        'taxonomy' => ( get_post_type(  ) != 'post' ? get_post_type(  ).'_' : '' ) . 'category',
     ) ) ?>
+    <br>
+    <label for="vip_education_post_entity">انتخاب سطح مقاله</label>
+    <br>
+    <select name="vip_education_post_entity" id="vip_education_post_entity" >
+        <option>... انتخاب نوع مقاله</option>
+        <option value="1" <?php selected( $entity, '1' ) ?>>متن</option>
+        <option value="2" <?php selected( $entity, '2' ) ?>>ویدئو</option>
+        <option value="3" <?php selected( $entity, '3' ) ?>>صدا</option>
+    </select>
     <?php 
 }
 
@@ -80,6 +93,11 @@ function vip_education_save_meta_box_data($post_id) {
     if (isset($_POST['vip_education_post_cat'])) {
         $sanitized_value = intval($_POST['vip_education_post_cat']);
         update_post_meta($post_id, '_vip_education_post_cat', $sanitized_value);
+    }
+    // Check if the field is set and sanitize the input
+    if (isset($_POST['vip_education_post_entity'])) {
+        $sanitized_value = intval($_POST['vip_education_post_entity']);
+        update_post_meta($post_id, '_vip_education_post_entity', $sanitized_value);
     }
 }
 add_action('save_post', 'vip_education_save_meta_box_data');
