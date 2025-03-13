@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) exit;
         <nav id="navigation" class="navigation navigation-landscape">
             <div class="nav-header">
                 <a class="nav-brand" href="<?php echo home_url( ) ?>">
-                    <img src="<?php echo jve_IMAGES_URI . '/logo.png' ?>" class="logo" alt="" />
+                    <img src="<?php echo JVE_IMAGES_URI . '/logo.png' ?>" class="logo" alt="" />
                 </a>
                 <div class="nav-toggle"></div>
             </div>
@@ -40,7 +40,7 @@ if (!defined('ABSPATH')) exit;
                 <?php else: ?>
                     <ul class="nav-menu align-to-left">
                 
-                        <li class="active"><a href="#"><img src="<?php echo jve_IMAGES_URI . '/user-1.jpg' ?>" class="circle " width="30" alt=""> پروفایل<span class="submenu-indicator"></span></a>
+                        <li class="active"><a href="#"><img src="<?php echo JVE_IMAGES_URI . '/user-1.jpg' ?>" class="circle " width="30" alt=""> پروفایل<span class="submenu-indicator"></span></a>
                             <ul class="nav-dropdown nav-submenu">
                                 <li><a href="dashboard.html">پنل مدیریت<span class="submenu-indicator"></span></a>
                                     <ul class="nav-dropdown nav-submenu">
