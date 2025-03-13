@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) exit;
 
 class ReadingEstimatedTime {
 
-    public static function vip_education_estimate_time( $content, $word_per_min = 300 ) {
+    public static function jve_estimate_time( $content, $word_per_min = 300 ) {
         
         // Clean Content from tags and shortcodes
         $clean_content = strip_tags(strip_shortcodes( $content ));

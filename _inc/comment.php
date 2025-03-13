@@ -3,7 +3,7 @@
 // Exit if accessed directly
 if (!defined('ABSPATH')) exit;
 
-function vip_education_list_comments( $comments, $args ) {
+function jve_list_comments( $comments, $args ) {
     $comment = $GLOBALS['comment'];
     ?>
     <?php

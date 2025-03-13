@@ -3,7 +3,7 @@
 // Exit if accessed directly
 if (!defined('ABSPATH')) exit;
 
-function vip_education_sidebar_init() {
+function jve_sidebar_init() {
     // Single post sidebar
     register_sidebar([
         'name'          => 'سایدبار صفحه پست',
@@ -26,4 +26,4 @@ function vip_education_sidebar_init() {
         'after_title'   => '</h3>',
     ]);
 }
-add_action('widgets_init', 'vip_education_sidebar_init');
+add_action('widgets_init', 'jve_sidebar_init');

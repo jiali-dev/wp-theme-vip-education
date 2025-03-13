@@ -3,7 +3,7 @@
 // Exit if accessed directly
 if (!defined('ABSPATH')) exit;
 
-function vip_education_register_technology_post_type() {
+function jve_register_technology_post_type() {
     $labels = array(
         'name'               => 'تکنولوژی',
         'singular_name'      => 'تکنولوژی',
@@ -40,10 +40,10 @@ function vip_education_register_technology_post_type() {
     register_post_type( 'technology', $args );
 }
 
-add_action( 'init', 'vip_education_register_technology_post_type' );
+add_action( 'init', 'jve_register_technology_post_type' );
 
 //  Technology Category
-function vip_education_register_technology_category() {
+function jve_register_technology_category() {
     $labels = array(
         'name'              => 'دسته‌بندی‌های اخبار تکنولوژی',
         'singular_name'     => 'دسته‌بندی',
@@ -71,10 +71,10 @@ function vip_education_register_technology_category() {
     register_taxonomy( 'technology_category', array( 'technology' ), $args );
 }
 
-add_action( 'init', 'vip_education_register_technology_category' );
+add_action( 'init', 'jve_register_technology_category' );
 
 //  Technology Tag
-function vip_education_register_technology_tag() {
+function jve_register_technology_tag() {
     $labels = array(
         'name'              => 'برچسب‌های اخبار تکنولوژی',
         'singular_name'     => 'برچسب',
@@ -104,5 +104,5 @@ function vip_education_register_technology_tag() {
     register_taxonomy( 'technology_tag', array( 'technology' ), $args );
 }
 
-add_action( 'init', 'vip_education_register_technology_tag' );
+add_action( 'init', 'jve_register_technology_tag' );
 

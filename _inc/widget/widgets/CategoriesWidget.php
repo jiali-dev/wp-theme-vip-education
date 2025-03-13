@@ -65,7 +65,7 @@ class CategoriesWidget extends WP_Widget {
 }
 
 // Register the widget
-function vip_educationـregister_categories_widget() {
+function jveـregister_categories_widget() {
     register_widget('CategoriesWidget');
 }
-add_action('widgets_init', 'vip_educationـregister_categories_widget');
+add_action('widgets_init', 'jveـregister_categories_widget');

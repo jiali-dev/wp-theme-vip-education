@@ -20,7 +20,7 @@ $the_query = new WP_Query($args);
                 <div class="pic">
                     <?php 
                         // Retrieve the current value of the meta field
-                        $level = get_post_meta( get_the_ID( ), '_vip_education_post_level', true);
+                        $level = get_post_meta( get_the_ID( ), '_jve_post_level', true);
                         $badge_color = 'info';
                         if( $level ):
                             switch ($level) {
@@ -42,7 +42,7 @@ $the_query = new WP_Query($args);
                     <?php endif; ?>
 
                     <?php 
-                        $cat = get_post_meta( get_the_ID( ), '_vip_education_post_cat', true);
+                        $cat = get_post_meta( get_the_ID( ), '_jve_post_cat', true);
                         if( $cat && $cat > 0 ):
                             $cat_name = get_cat_name($cat);
                     ?>
@@ -58,7 +58,7 @@ $the_query = new WP_Query($args);
                                 ) )
                             ?>
                         <?php else: ?>
-                            <?php vip_education_default_post_thumbnail() ?>
+                            <?php jve_default_post_thumbnail() ?>
                         <?php endif; ?>
                     </a>
                 </div>

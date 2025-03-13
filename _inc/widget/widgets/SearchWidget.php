@@ -56,7 +56,7 @@ class SearchWidget extends WP_Widget {
 }
 
 // Register the widget
-function vip_educationـregister_search_widget() {
+function jveـregister_search_widget() {
     register_widget('SearchWidget');
 }
-add_action('widgets_init', 'vip_educationـregister_search_widget');
+add_action('widgets_init', 'jveـregister_search_widget');

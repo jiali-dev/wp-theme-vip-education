@@ -5,13 +5,13 @@ if (!defined('ABSPATH')) exit;
 
 class Breadcrumb {
     
-    public static function vip_education_get_breadcrumb( ) {
+    public static function jve_get_breadcrumb( ) {
         ?>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?php echo home_url( ) ?>">خانه</a></li>
                 <?php if( is_single( ) || is_category( ) || is_archive( ) ): ?>
                     <?php // Retrieve the current value of the meta field
-                        $cat = get_post_meta(get_the_ID(  ), '_vip_education_post_cat', true);
+                        $cat = get_post_meta(get_the_ID(  ), '_jve_post_cat', true);
                     ?>
                     <?php if( !empty($cat) & $cat > 0 ): ?>
                         <li class="breadcrumb-item"><a href="<?php echo get_term_link( intval($cat) ) ?>"><?php echo get_cat_name( $cat ) ?></a></li>

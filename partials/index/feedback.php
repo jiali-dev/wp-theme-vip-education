@@ -74,7 +74,7 @@ if (!defined('ABSPATH')) exit;
                             <div class="bg-light rounded box-shadow">
                                 <div class="client-detail-box">
                                 <div class="pic pt-4 d-flex justify-content-around align-items-center">
-                                    <img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/user-1.jpg' ?>" alt="">
+                                    <img src="<?php echo jve_IMAGES_URI . '/user-1.jpg' ?>" alt="">
                             <div class="reviews-comments-item-text reviews-comments-item-text-custom">
                                     <h4>الهام پاکزاد</h4>
                                     
@@ -102,7 +102,7 @@ if (!defined('ABSPATH')) exit;
                             <div class="bg-light rounded box-shadow">
                                 <div class="client-detail-box">
                                 <div class="pic pt-4 d-flex justify-content-around align-items-center">
-                                    <img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/user-2.jpg' ?>" alt="">
+                                    <img src="<?php echo jve_IMAGES_URI . '/user-2.jpg' ?>" alt="">
                             <div class="reviews-comments-item-text reviews-comments-item-text-custom">
                                     <h4>الهام پاکزاد</h4>
                                     
@@ -130,7 +130,7 @@ if (!defined('ABSPATH')) exit;
                             <div class="bg-light rounded box-shadow">
                                 <div class="client-detail-box">
                                 <div class="pic pt-4 d-flex justify-content-around align-items-center">
-                                    <img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/user-4.jpg' ?>" alt="">
+                                    <img src="<?php echo jve_IMAGES_URI . '/user-4.jpg' ?>" alt="">
                             <div class="reviews-comments-item-text reviews-comments-item-text-custom">
                                     <h4>الهام پاکزاد</h4>
                                     
@@ -158,7 +158,7 @@ if (!defined('ABSPATH')) exit;
                             <div class="bg-light rounded box-shadow">
                                 <div class="client-detail-box">
                                 <div class="pic pt-4 d-flex justify-content-around align-items-center">
-                                    <img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/user-5.jpg' ?>" alt="">
+                                    <img src="<?php echo jve_IMAGES_URI . '/user-5.jpg' ?>" alt="">
                             <div class="reviews-comments-item-text reviews-comments-item-text-custom">
                                     <h4>الهام پاکزاد</h4>
                                     

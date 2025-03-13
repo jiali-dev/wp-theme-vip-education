@@ -51,13 +51,13 @@ class TrendPostsWidget extends WP_Widget {
                                         ) )
                                     ?>
                                 <?php else: ?>
-                                    <?php vip_education_default_post_thumbnail() ?>
+                                    <?php jve_default_post_thumbnail() ?>
                                 <?php endif; ?>
 
                             </span>
                             <span class="right">
                                 <a class="feed-title" href="<?php echo get_the_permalink( ) ?>"><?php echo get_the_title() ?></a> 
-                                <span class="post-date"><i class="ti-calendar"></i><?php echo TimeModify::vip_education_time_ago($trend_posts->post->post_date_gmt) ?></span>
+                                <span class="post-date"><i class="ti-calendar"></i><?php echo TimeModify::jve_time_ago($trend_posts->post->post_date_gmt) ?></span>
                             </span>
                         </li> 
                     <?php endwhile; ?>
@@ -91,7 +91,7 @@ class TrendPostsWidget extends WP_Widget {
 }
 
 // Register the widget
-function vip_educationـregister_trend_posts_widget() {
+function jveـregister_trend_posts_widget() {
     register_widget('TrendPostsWidget');
 }
-add_action('widgets_init', 'vip_educationـregister_trend_posts_widget');
+add_action('widgets_init', 'jveـregister_trend_posts_widget');

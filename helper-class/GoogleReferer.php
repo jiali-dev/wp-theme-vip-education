@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) exit;
 
 class GoogleReferer {
     
-    public static function vip_education_update_google_referer( $post_id, $url ) {
+    public static function jve_update_google_referer( $post_id, $url ) {
 
         if( stripos($url, 'google.com' )) {
 
@@ -18,7 +18,7 @@ class GoogleReferer {
 
     }
 
-    public static function vip_education_get_google_referer_count( $post_id ) {
+    public static function jve_get_google_referer_count( $post_id ) {
        
         return intval(get_post_meta( $post_id, '_google_referer_count', true ));
 
