@@ -11,7 +11,7 @@ function jve_theme_setup() {
     register_nav_menu( 'Primary', 'منو برای بالای سایت' );
 
     // Register Bootstap Navwalker
-    require_once( jve_CLASS_PATH . '/WP_Bootstrap_Navwalker.php');
+    require_once( JVE_CLASS_PATH . '/WP_Bootstrap_Navwalker.php');
 
     // Register post thumbnail
     add_theme_support( 'post-thumbnails' );

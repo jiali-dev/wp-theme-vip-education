@@ -44,7 +44,7 @@ if (!defined('ABSPATH')) exit;
                 <div class="education_block_grid">
 
                     <div class="education_block_thumb">
-                        <a href="course-detail.html"><img src="<?php echo jve_IMAGES_URI . '/course-1.jpg' ?>" class="img-fluid" alt=""></a>
+                        <a href="course-detail.html"><img src="<?php echo JVE_IMAGES_URI . '/course-1.jpg' ?>" class="img-fluid" alt=""></a>
 
                     <div class="topic_level bg-warning text-white">طراحی وب</div>
 
@@ -56,7 +56,7 @@ if (!defined('ABSPATH')) exit;
 
                     <div class="education_block_footer">
                         <div class="education_block_author">
-                            <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo jve_IMAGES_URI . '/user-1.jpg' ?>" class="img-fluid" alt=""></a></div>
+                            <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo JVE_IMAGES_URI . '/user-1.jpg' ?>" class="img-fluid" alt=""></a></div>
                             <h5><a href="instructor-detail.html">حمید فرخ نژاد</a></h5>
                         </div>
                         <span class="education_block_time ">سطح : متوسط</span>
@@ -70,7 +70,7 @@ if (!defined('ABSPATH')) exit;
                 <div class="education_block_grid">
 
                     <div class="education_block_thumb">
-                        <a href="course-detail.html"><img src="<?php echo jve_IMAGES_URI . '/course-2.jpg' ?>" class="img-fluid" alt=""></a>
+                        <a href="course-detail.html"><img src="<?php echo JVE_IMAGES_URI . '/course-2.jpg' ?>" class="img-fluid" alt=""></a>
                     <div class="topic_level bg-warning text-white">جاوااسکریپت</div>
                     </div>
 
@@ -81,7 +81,7 @@ if (!defined('ABSPATH')) exit;
 
                     <div class="education_block_footer">
                         <div class="education_block_author">
-                            <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo jve_IMAGES_URI . '/user-2.jpg' ?>" class="img-fluid" alt=""></a></div>
+                            <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo JVE_IMAGES_URI . '/user-2.jpg' ?>" class="img-fluid" alt=""></a></div>
                             <h5><a href="instructor-detail.html">الهام کریمی</a></h5>
                         </div>
                         <span class="education_block_time">سطح : پیشرفته</span>
@@ -95,7 +95,7 @@ if (!defined('ABSPATH')) exit;
                 <div class="education_block_grid">
 
                     <div class="education_block_thumb">
-                        <a href="course-detail.html"><img src="<?php echo jve_IMAGES_URI . '/course-3.jpg' ?>" class="img-fluid" alt=""></a>
+                        <a href="course-detail.html"><img src="<?php echo JVE_IMAGES_URI . '/course-3.jpg' ?>" class="img-fluid" alt=""></a>
                     <div class="topic_level bg-warning text-white">جاوااسکریپت</div>
                     </div>
 
@@ -106,7 +106,7 @@ if (!defined('ABSPATH')) exit;
 
                     <div class="education_block_footer">
                         <div class="education_block_author">
-                            <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo jve_IMAGES_URI . '/user-3.jpg' ?>" class="img-fluid" alt=""></a></div>
+                            <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo JVE_IMAGES_URI . '/user-3.jpg' ?>" class="img-fluid" alt=""></a></div>
                             <h5><a href="instructor-detail.html">داننجای پریت</a></h5>
                         </div>
                         <span class="education_block_time">سطح : مقدماتی</span>
@@ -120,7 +120,7 @@ if (!defined('ABSPATH')) exit;
                 <div class="education_block_grid">
 
                     <div class="education_block_thumb">
-                        <a href="course-detail.html"><img src="<?php echo jve_IMAGES_URI . '/course-4.jpg' ?>" class="img-fluid" alt=""></a>
+                        <a href="course-detail.html"><img src="<?php echo JVE_IMAGES_URI . '/course-4.jpg' ?>" class="img-fluid" alt=""></a>
                         <div class="topic_level bg-warning text-white">لاراول</div>
                     </div>
 
@@ -131,7 +131,7 @@ if (!defined('ABSPATH')) exit;
 
                     <div class="education_block_footer">
                         <div class="education_block_author">
-                            <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo jve_IMAGES_URI . '/user-4.jpg' ?>" class="img-fluid" alt=""></a></div>
+                            <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo JVE_IMAGES_URI . '/user-4.jpg' ?>" class="img-fluid" alt=""></a></div>
                             <h5><a href="instructor-detail.html">سعید شیخ زاده</a></h5>
                         </div>
                             <span class="education_block_time">سطح : متوسط</span>
@@ -145,7 +145,7 @@ if (!defined('ABSPATH')) exit;
                 <div class="education_block_grid">
 
                     <div class="education_block_thumb">
-                        <a href="course-detail.html"><img src="<?php echo jve_IMAGES_URI . '/course-5.jpg' ?>" class="img-fluid" alt=""></a>
+                        <a href="course-detail.html"><img src="<?php echo JVE_IMAGES_URI . '/course-5.jpg' ?>" class="img-fluid" alt=""></a>
                         <div class="topic_level bg-warning text-white">PHP</div>
                     </div>
 
@@ -156,7 +156,7 @@ if (!defined('ABSPATH')) exit;
 
                     <div class="education_block_footer">
                         <div class="education_block_author">
-                            <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo jve_IMAGES_URI . '/user-5.jpg' ?>" class="img-fluid" alt=""></a></div>
+                            <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo JVE_IMAGES_URI . '/user-5.jpg' ?>" class="img-fluid" alt=""></a></div>
                             <h5><a href="instructor-detail.html">شاوریا پریت</a></h5>
                         </div>
                     <span class="education_block_time">سطح : پیشرفته</span>
@@ -170,7 +170,7 @@ if (!defined('ABSPATH')) exit;
                 <div class="education_block_grid">
 
                     <div class="education_block_thumb">
-                        <a href="course-detail.html"><img src="<?php echo jve_IMAGES_URI . '/course-6.jpg' ?>" class="img-fluid" alt=""></a>
+                        <a href="course-detail.html"><img src="<?php echo JVE_IMAGES_URI . '/course-6.jpg' ?>" class="img-fluid" alt=""></a>
                 <div class="topic_level bg-warning text-white">وردپرس</div>
 
                     </div>
@@ -182,7 +182,7 @@ if (!defined('ABSPATH')) exit;
 
                     <div class="education_block_footer">
                         <div class="education_block_author">
-                            <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo jve_IMAGES_URI . '/user-6.jpg' ?>" class="img-fluid" alt=""></a></div>
+                            <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo JVE_IMAGES_URI . '/user-6.jpg' ?>" class="img-fluid" alt=""></a></div>
                             <h5><a href="instructor-detail.html">الهام زندی</a></h5>
                         </div>
                         <span class="education_block_time">سطح : متوسط</span>

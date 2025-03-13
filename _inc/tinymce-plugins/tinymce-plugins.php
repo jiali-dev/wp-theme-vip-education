@@ -4,7 +4,7 @@
 if (!defined('ABSPATH')) exit;
 
 function jve_add_external_plugins( $array ) {
-    $array['jve_custom_buttons'] = jve_PLUGINS_URI . '/tinymce/custom-buttons.js';
+    $array['jve_custom_buttons'] = JVE_PLUGINS_URI . '/tinymce/custom-buttons.js';
     return $array;
 }
 add_filter( 'mce_external_plugins', 'jve_add_external_plugins' );
