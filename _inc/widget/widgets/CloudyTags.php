@@ -71,7 +71,7 @@ class CloudyTags extends WP_Widget {
 }
 
 // Register the widget
-function vip_educationـregister_cloudy_tags_widget() {
+function jveـregister_cloudy_tags_widget() {
     register_widget('CloudyTags');
 }
-add_action('widgets_init', 'vip_educationـregister_cloudy_tags_widget');
+add_action('widgets_init', 'jveـregister_cloudy_tags_widget');

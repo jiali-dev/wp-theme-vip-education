@@ -7,49 +7,49 @@ if (!defined('ABSPATH')) exit;
 require_once( get_template_directory() . '/_inc/define_constants.php');
 
 // Register theme assets
-require_once(VIP_EDUCATION_INC_PATH . '/register_assets.php');
+require_once(jve_INC_PATH . '/register_assets.php');
 
 // Theme Setup
-require_once(VIP_EDUCATION_INC_PATH . '/theme_setup.php');
+require_once(jve_INC_PATH . '/theme_setup.php');
 
 // Post Functions
-require_once(VIP_EDUCATION_INC_PATH . '/post/post.php');
+require_once(jve_INC_PATH . '/post/post.php');
 
 // User Functions
-require_once(VIP_EDUCATION_INC_PATH . '/user.php');
+require_once(jve_INC_PATH . '/user.php');
 
 // Meta boxes Functions
-require_once(VIP_EDUCATION_INC_PATH . '/meta-box/meta-box.php');
+require_once(jve_INC_PATH . '/meta-box/meta-box.php');
 
 // Post View Class
-require_once(VIP_EDUCATION_HELPER_CLASS_PATH . '/PostView.php');
+require_once(jve_HELPER_CLASS_PATH . '/PostView.php');
 
 // Reading Estimated Class
-require_once(VIP_EDUCATION_HELPER_CLASS_PATH . '/ReadingEstimatedTime.php');
+require_once(jve_HELPER_CLASS_PATH . '/ReadingEstimatedTime.php');
 
 // Google Referer Class
-require_once(VIP_EDUCATION_HELPER_CLASS_PATH . '/GoogleReferer.php');
+require_once(jve_HELPER_CLASS_PATH . '/GoogleReferer.php');
 
 // TimeModify
-require_once(VIP_EDUCATION_HELPER_CLASS_PATH . '/TimeModify.php');
+require_once(jve_HELPER_CLASS_PATH . '/TimeModify.php');
 
 // Breadcrumb
-require_once(VIP_EDUCATION_HELPER_CLASS_PATH . '/Breadcrumb.php');
+require_once(jve_HELPER_CLASS_PATH . '/Breadcrumb.php');
 
 // Widgets and Sidebars
-require_once(VIP_EDUCATION_INC_PATH . '/widget/widgets.php');
+require_once(jve_INC_PATH . '/widget/widgets.php');
 
 // Shortcodes
-require_once(VIP_EDUCATION_INC_PATH . '/shortcode.php');
+require_once(jve_INC_PATH . '/shortcode.php');
 
 // Tinymce
-require_once(VIP_EDUCATION_INC_PATH . '/tinymce-plugins/tinymce-plugins.php');
+require_once(jve_INC_PATH . '/tinymce-plugins/tinymce-plugins.php');
 
 // Comments
-require_once(VIP_EDUCATION_INC_PATH . '/comment.php');
+require_once(jve_INC_PATH . '/comment.php');
 
 // Technology Custom Post
-require_once(VIP_EDUCATION_INC_PATH . '/custom-post-types/technology.php');
+require_once(jve_INC_PATH . '/custom-post-types/technology.php');
 
 
 

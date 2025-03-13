@@ -27,7 +27,7 @@ if (!defined('ABSPATH')) exit;
                     <div class="singles_items">
                         <div class="education_block_grid style_2">
                             <div class="education_block_thumb n-shadow">
-                                <a href="course-detail.html"><img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/co-1.jpg' ?>" class="img-fluid" alt=""></a>
+                                <a href="course-detail.html"><img src="<?php echo jve_IMAGES_URI . '/co-1.jpg' ?>" class="img-fluid" alt=""></a>
                                 <div class="cources_price bg-warning text-white">VIP</div>
                             </div>
                             
@@ -45,7 +45,7 @@ if (!defined('ABSPATH')) exit;
                             
                             <div class="education_block_footer">
                                 <div class="education_block_author">
-                                    <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/user-1.jpg' ?>" class="img-fluid" alt=""></a></div>
+                                    <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo jve_IMAGES_URI . '/user-1.jpg' ?>" class="img-fluid" alt=""></a></div>
                                     <h5><a href="instructor-detail.html">رابرت ویلسون</a></h5>
                                 </div>
                                 <div class="foot_lecture"><i class="ti-control-skip-forward ml-2"></i>54 دوره آموزشی</div>
@@ -57,7 +57,7 @@ if (!defined('ABSPATH')) exit;
                     <div class="singles_items">
                         <div class="education_block_grid style_2">
                             <div class="education_block_thumb n-shadow">
-                                <a href="course-detail.html"><img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/co-2.jpg' ?>" class="img-fluid" alt=""></a>
+                                <a href="course-detail.html"><img src="<?php echo jve_IMAGES_URI . '/co-2.jpg' ?>" class="img-fluid" alt=""></a>
                                 <div class="cources_price">289 ت</div>
                             </div>
                             
@@ -75,7 +75,7 @@ if (!defined('ABSPATH')) exit;
                             
                             <div class="education_block_footer">
                                 <div class="education_block_author">
-                                    <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/user-2.jpg' ?>" class="img-fluid" alt=""></a></div>
+                                    <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo jve_IMAGES_URI . '/user-2.jpg' ?>" class="img-fluid" alt=""></a></div>
                                     <h5><a href="instructor-detail.html">شروتی حسن</a></h5>
                                 </div>
                                 <div class="foot_lecture"><i class="ti-control-skip-forward ml-2"></i>26 دوره آموزشی</div>
@@ -87,7 +87,7 @@ if (!defined('ABSPATH')) exit;
                     <div class="singles_items">
                         <div class="education_block_grid style_2">
                             <div class="education_block_thumb n-shadow">
-                                <a href="course-detail.html"><img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/co-3.jpg' ?>" class="img-fluid" alt=""></a>
+                                <a href="course-detail.html"><img src="<?php echo jve_IMAGES_URI . '/co-3.jpg' ?>" class="img-fluid" alt=""></a>
                                 <div class="cources_price bg-warning text-white">VIP</div>
                             </div>
                             
@@ -105,7 +105,7 @@ if (!defined('ABSPATH')) exit;
                             
                             <div class="education_block_footer">
                                 <div class="education_block_author">
-                                    <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/user-3.jpg' ?>" class="img-fluid" alt=""></a></div>
+                                    <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo jve_IMAGES_URI . '/user-3.jpg' ?>" class="img-fluid" alt=""></a></div>
                                     <h5><a href="instructor-detail.html">آدام ویکنوی</a></h5>
                                 </div>
                                 <div class="foot_lecture"><i class="ti-control-skip-forward ml-2"></i>52 دوره آموزشی</div>
@@ -117,7 +117,7 @@ if (!defined('ABSPATH')) exit;
                     <div class="singles_items">
                         <div class="education_block_grid style_2">
                             <div class="education_block_thumb n-shadow">
-                                <a href="course-detail.html"><img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/co-4.jpg' ?>" class="img-fluid" alt=""></a>
+                                <a href="course-detail.html"><img src="<?php echo jve_IMAGES_URI . '/co-4.jpg' ?>" class="img-fluid" alt=""></a>
                                 <div class="cources_price">365 ت</div>
                             </div>
                             
@@ -135,7 +135,7 @@ if (!defined('ABSPATH')) exit;
                             
                             <div class="education_block_footer">
                                 <div class="education_block_author">
-                                    <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/user-4.jpg' ?>" class="img-fluid" alt=""></a></div>
+                                    <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo jve_IMAGES_URI . '/user-4.jpg' ?>" class="img-fluid" alt=""></a></div>
                                     <h5><a href="instructor-detail.html">نازنین عبدی</a></h5>
                                 </div>
                                 <div class="foot_lecture"><i class="ti-control-skip-forward ml-2"></i>43 دوره آموزشی</div>
@@ -147,7 +147,7 @@ if (!defined('ABSPATH')) exit;
                     <div class="singles_items">
                         <div class="education_block_grid style_2">
                             <div class="education_block_thumb n-shadow">
-                                <a href="course-detail.html"><img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/co-5.jpg' ?>" class="img-fluid" alt=""></a>
+                                <a href="course-detail.html"><img src="<?php echo jve_IMAGES_URI . '/co-5.jpg' ?>" class="img-fluid" alt=""></a>
                                 <div class="cources_price">450 ت</div>
                             </div>
                             
@@ -165,7 +165,7 @@ if (!defined('ABSPATH')) exit;
                             
                             <div class="education_block_footer">
                                 <div class="education_block_author">
-                                    <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/user-5.jpg' ?>" class="img-fluid" alt=""></a></div>
+                                    <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo jve_IMAGES_URI . '/user-5.jpg' ?>" class="img-fluid" alt=""></a></div>
                                     <h5><a href="instructor-detail.html">شاوریا پریت</a></h5>
                                 </div>
                                 <div class="foot_lecture"><i class="ti-control-skip-forward ml-2"></i>32 دوره آموزشی</div>
@@ -177,7 +177,7 @@ if (!defined('ABSPATH')) exit;
                     <div class="singles_items">
                         <div class="education_block_grid style_2">
                             <div class="education_block_thumb n-shadow">
-                                <a href="course-detail.html"><img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/co-6.jpg' ?>" class="img-fluid" alt=""></a>
+                                <a href="course-detail.html"><img src="<?php echo jve_IMAGES_URI . '/co-6.jpg' ?>" class="img-fluid" alt=""></a>
                                 <div class="cources_price bg-warning text-white">VIP</div>
                             </div>
                             
@@ -195,7 +195,7 @@ if (!defined('ABSPATH')) exit;
                             
                             <div class="education_block_footer">
                                 <div class="education_block_author">
-                                    <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/user-6.jpg' ?>" class="img-fluid" alt=""></a></div>
+                                    <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo jve_IMAGES_URI . '/user-6.jpg' ?>" class="img-fluid" alt=""></a></div>
                                     <h5><a href="instructor-detail.html">الهام کریمی</a></h5>
                                 </div>
                                 <div class="foot_lecture"><i class="ti-control-skip-forward ml-2"></i>48 دوره آموزشی</div>
@@ -206,7 +206,7 @@ if (!defined('ABSPATH')) exit;
                     <div class="singles_items">
                         <div class="education_block_grid style_2">
                             <div class="education_block_thumb n-shadow">
-                                <a href="course-detail.html"><img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/co-7.jpg' ?>" class="img-fluid" alt=""></a>
+                                <a href="course-detail.html"><img src="<?php echo jve_IMAGES_URI . '/co-7.jpg' ?>" class="img-fluid" alt=""></a>
                                 <div class="cources_price">560 ت</div>
                             </div>
                             
@@ -224,7 +224,7 @@ if (!defined('ABSPATH')) exit;
                             
                             <div class="education_block_footer">
                                 <div class="education_block_author">
-                                    <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/user-7.jpg' ?>" class="img-fluid" alt=""></a></div>
+                                    <div class="path-img"><a href="instructor-detail.html"><img src="<?php echo jve_IMAGES_URI . '/user-7.jpg' ?>" class="img-fluid" alt=""></a></div>
                                     <h5><a href="instructor-detail.html">جاسویندر بهارتیا</a></h5>
                                 </div>
                                 <div class="foot_lecture"><i class="ti-control-skip-forward ml-2"></i>42 دوره آموزشی</div>

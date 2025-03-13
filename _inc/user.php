@@ -4,7 +4,7 @@
 if (!defined('ABSPATH')) exit;
 
 // User social fields form
-function vip_education_user_social_fields($user) { ?>
+function jve_user_social_fields($user) { ?>
     <h3>شبکه های اجتماعی</h3>
     <table class="form-table">
         <tr>
@@ -39,11 +39,11 @@ function vip_education_user_social_fields($user) { ?>
         </tr>
     </table>
 <?php }
-add_action('show_user_profile', 'vip_education_user_social_fields');
-add_action('edit_user_profile', 'vip_education_user_social_fields');
+add_action('show_user_profile', 'jve_user_social_fields');
+add_action('edit_user_profile', 'jve_user_social_fields');
 
 // Save user social fields
-function vip_education_save_user_social_fields($user_id) {
+function jve_save_user_social_fields($user_id) {
     if (!current_user_can('edit_user', $user_id)) {
         return false;
     }
@@ -54,6 +54,6 @@ function vip_education_save_user_social_fields($user_id) {
     update_user_meta($user_id, 'youtube', sanitize_text_field($_POST['youtube']));
     update_user_meta($user_id, 'linkedin', sanitize_text_field($_POST['linkedin']));
 }
-add_action('personal_options_update', 'vip_education_save_user_social_fields');
-add_action('edit_user_profile_update', 'vip_education_save_user_social_fields');
+add_action('personal_options_update', 'jve_save_user_social_fields');
+add_action('edit_user_profile_update', 'jve_save_user_social_fields');
 

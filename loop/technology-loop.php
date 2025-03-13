@@ -27,7 +27,7 @@ $the_query = new WP_Query($args);
                                 ) )
                             ?>
                         <?php else: ?>
-                            <?php vip_education_default_post_thumbnail() ?>
+                            <?php jve_default_post_thumbnail() ?>
                         <?php endif; ?>
                     </a>
                 </div>

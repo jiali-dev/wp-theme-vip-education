@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) exit;
                 <div class="breadcrumbs-wrap">
                     <h1 class="breadcrumb-title"><?php the_title( ) ?></h1>
                     <nav aria-label="breadcrumb">
-                        <?php Breadcrumb::vip_education_get_breadcrumb(); ?>
+                        <?php Breadcrumb::jve_get_breadcrumb(); ?>
                     </nav>
                 </div>
                 

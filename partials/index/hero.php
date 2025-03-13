@@ -23,7 +23,7 @@ if (!defined('ABSPATH')) exit;
                                 <div class="form-group">
                                     <div class="input-with-icon">
                                         <input type="text" class="form-control" placeholder="جستجو ..." />
-                                        <img src="<?php echo VIP_EDUCATION_IMAGES_URI . '/search.svg' ?>" class="search-icon" alt="" />
+                                        <img src="<?php echo jve_IMAGES_URI . '/search.svg' ?>" class="search-icon" alt="" />
                                     </div>
                                 </div>
                             </div>

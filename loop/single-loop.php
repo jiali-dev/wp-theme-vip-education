@@ -9,13 +9,13 @@ if (!defined('ABSPATH')) exit;
     $referer = isset($_SERVER['HTTP_REFERER']) ? esc_url($_SERVER['HTTP_REFERER']) : '';
 
     // Count Post View
-    GoogleReferer::vip_education_update_google_referer( get_the_ID(  ), $referer);
+    GoogleReferer::jve_update_google_referer( get_the_ID(  ), $referer);
 ?>
 <?php if( have_posts(  ) ): ?>
     <?php while( have_posts(  ) ): the_post(  ); ?>
 
         <!-- Count Post View -->
-        <?php PostView::vip_education_update_post_view( get_the_ID(  )) ?>
+        <?php PostView::jve_update_post_view( get_the_ID(  )) ?>
 
         <!-- Article -->
         <div class="article_detail_wrapss single_article_wrap format-standard">
@@ -30,7 +30,7 @@ if (!defined('ABSPATH')) exit;
                             ) )
                         ?>
                     <?php else: ?>
-                        <?php vip_education_default_post_thumbnail() ?>
+                        <?php jve_default_post_thumbnail() ?>
                     <?php endif; ?>
                 </div>
                 

@@ -3,7 +3,7 @@
 // Exit if accessed directly
 if (!defined('ABSPATH')) exit;
 
-function vip_education_video_shortcodes($atts, $content = null) {
+function jve_video_shortcodes($atts, $content = null) {
     // Set default attributes
     $atts = shortcode_atts([
         'src'    => '',
@@ -32,9 +32,9 @@ function vip_education_video_shortcodes($atts, $content = null) {
     <?php
     return ob_get_clean(); // Return the buffered content
 }
-add_shortcode( 'vip-education-video', 'vip_education_video_shortcodes' );
+add_shortcode( 'vip-education-video', 'jve_video_shortcodes' );
 
-function vip_education_quote_shortcodes($atts, $content = null) {
+function jve_quote_shortcodes($atts, $content = null) {
     // Set default attributes
     $atts = shortcode_atts([
         'quote'    => '',
@@ -51,4 +51,4 @@ function vip_education_quote_shortcodes($atts, $content = null) {
     <?php
     return ob_get_clean(); // Return the buffered content
 }
-add_shortcode( 'vip-education-quote', 'vip_education_quote_shortcodes' );
+add_shortcode( 'vip-education-quote', 'jve_quote_shortcodes' );

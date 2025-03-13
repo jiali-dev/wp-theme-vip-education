@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) exit;
 
 class TimeModify {
 
-    public static function vip_education_time_ago( $time ) {
+    public static function jve_time_ago( $time ) {
 
         // Convert time to timestamp
         $timestamp = strtotime( $time ); 
