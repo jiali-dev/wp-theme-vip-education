@@ -23,10 +23,8 @@ if (!defined('ABSPATH')) exit;
             </div>
         </div>
         
-        <div class="row">
-                    
+        <div class="row posts-container">
            <?php get_template_part( 'loop/technology-loop', 'technology-loop' ) ?>
-        
         </div>
     </div>
 </section>

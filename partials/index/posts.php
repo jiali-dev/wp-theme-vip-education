@@ -15,9 +15,6 @@ if (!defined('ABSPATH')) exit;
                     <div class="sec-left">
                         <h3>مطالب آموزشی</h3>
                     </div>
-                    <div class="sec-right">
-                        <?php FilterPosts::jve_show_filter(); ?>
-                    </div>
                 </div>
             </div>
         </div>
@@ -25,7 +22,7 @@ if (!defined('ABSPATH')) exit;
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 p-0">
 
-                <div class="arrow_slide three_slide-dots arrow_middle" dir="rtl">
+                <div class="arrow_slide three_slide-dots arrow_middle posts-container">
                     <?php get_template_part( 'loop/post-loop', 'post-loop' ) ?>
                 </div>
             </div>
