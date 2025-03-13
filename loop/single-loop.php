@@ -61,7 +61,7 @@ if (!defined('ABSPATH')) exit;
                             </a>
                         </div>
                     <?php endif; ?>
-                    <?php $blog_page_url = get_permalink( get_option( 'page_for_posts' ) ); ?>
+                    <?php $blog_page_url = ( get_option( 'page_for_posts' ) ? get_permalink( get_option( 'page_for_posts' ) ) : home_url( ) . '/archive' ); ?>
                     <?php if( !empty($blog_page_url) ): ?>
                         <div class="article_pagination_center_grid">
                             <a href="<?php echo $blog_page_url ?>"><i class="ti-layout-grid3"></i></a>

@@ -5,8 +5,6 @@ if (!defined('ABSPATH')) exit;
 
 ?>
 
-<?php /* Template Name: آرشیو */ ?>
-
 <!-- Header -->
 <?php get_header(  );?>
 <!-- Navbar -->

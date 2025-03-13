@@ -25,8 +25,8 @@ class SearchWidget extends WP_Widget {
                     echo $args['before_title'] . '<h4 class="title">' . $title . '</h4>' . $args['after_title'];
                 }
             ?>
-            <form action="#" class="sidebar-search-form">
-                <input type="search" name="search" placeholder="عنوان وبلاگ...">
+            <form action="<?php echo home_url( ) ?>" method="get" class="sidebar-search-form">
+                <input type="search" name="s" placeholder="جستجو ...">
                 <button type="submit"><i class="ti-search"></i></button>
             </form>
         </div>
