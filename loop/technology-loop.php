@@ -33,7 +33,7 @@ $the_query = new WP_Query($args);
                 </div>
                 
                 <div class="articles_grid_caption">
-                    <h4><?php echo get_the_title() ?></h4>
+                    <h4><a href="<?php echo get_the_permalink( ) ?>"><?php echo get_the_title() ?></a></h4>
                     <div class="articles_grid_author">
                         <div class="articles_grid_author_img">
                             <?php echo get_avatar( get_the_author_meta( 'email' ), 35,'', get_the_author_meta( 'display_name' )) ?>
