@@ -571,7 +571,7 @@ function jve_get_video_posts_ajax( ) {
                 <?php $output .= ob_get_clean(); ?>
             <?php endwhile; ?>
         <?php else: ?>
-            <?php  throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 1 ); ?>
+            <?php throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 1 ); ?>
         <?php endif; ?>
         <?php
             // Reset the global post object
