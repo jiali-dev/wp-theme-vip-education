@@ -10819,11 +10819,12 @@ a._cr_detail_arrow {
 .mr-auto {
   margin-right: auto;
 }
-.menu-item a:hover, .menu-item a:active {
-    background-color: transparent;
+.menu-item a:hover,
+.menu-item a:active {
+  background-color: transparent;
 }
 .menu-item .dropdown-toggle::after {
-    content: unset;
+  content: unset;
 }
 
 .widget {
@@ -10831,10 +10832,10 @@ a._cr_detail_arrow {
 }
 
 ul.children {
-  padding-inline-start: 32px!important;
+  padding-inline-start: 32px !important;
 }
 
-.comment-pagination .page-numbers {
+.custom-pagination .page-numbers {
   display: inline-block;
   width: 32px;
   height: 32px;
@@ -10844,7 +10845,7 @@ ul.children {
   background-color: #e9e9e9;
 }
 
-.comment-pagination .current {
+.custom-pagination .current {
   background-color: #da0b4e;
   color: #fff;
 }

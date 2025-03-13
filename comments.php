@@ -33,7 +33,7 @@ if (!defined('ABSPATH')) exit;
                         );
                     ?>
                 </ul>
-                <div class="my-4 comment-pagination text-center">
+                <div class="my-4 custom-pagination text-center">
                     <?php 
                         paginate_comments_links( array(
                             'prev_text'  => '&laquo;',
