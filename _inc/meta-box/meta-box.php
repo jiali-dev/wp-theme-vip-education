@@ -50,13 +50,13 @@ function jve_meta_box_callback($post) {
         'taxonomy' => ( get_post_type(  ) != 'post' ? get_post_type(  ).'_' : '' ) . 'category',
     ) ) ?>
     <br>
-    <label for="jve_post_entity">انتخاب سطح مقاله</label>
+    <label for="jve_post_entity">انتخاب نوع مقاله</label>
     <br>
     <select name="jve_post_entity" id="jve_post_entity" >
         <option>... انتخاب نوع مقاله</option>
-        <option value="1" <?php selected( $entity, '1' ) ?>>متن</option>
-        <option value="2" <?php selected( $entity, '2' ) ?>>ویدئو</option>
-        <option value="3" <?php selected( $entity, '3' ) ?>>صدا</option>
+        <option value="text" <?php selected( $entity, 'text' ) ?>>متن</option>
+        <option value="video" <?php selected( $entity, 'video' ) ?>>ویدئو</option>
+        <option value="audio" <?php selected( $entity, 'audio' ) ?>>صدا</option>
     </select>
     <?php 
 }
@@ -96,7 +96,7 @@ function jve_save_meta_box_data($post_id) {
     }
     // Check if the field is set and sanitize the input
     if (isset($_POST['jve_post_entity'])) {
-        $sanitized_value = intval($_POST['jve_post_entity']);
+        $sanitized_value = sanitize_text_field($_POST['jve_post_entity']);
         update_post_meta($post_id, '_jve_post_entity', $sanitized_value);
     }
 }

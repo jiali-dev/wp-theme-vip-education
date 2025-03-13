@@ -15,15 +15,6 @@ if (!defined('ABSPATH')) exit;
                     <div class="sec-left">
                         <h3>مطالب آموزشی</h3>
                     </div>
-                    <div class="sec-right">
-                        <select class="form-control form-control-sm bg-success text-white" name="" id="">
-                            <option value="">نمایش بر اساس : جدیدترین ها</option>
-                            <option value="">محبوب ترین ها</option>
-                            <option value="">داغ ترین ها</option>
-                            <option value="">مطالب ویدئویی</option>
-                        </select>
-                        <!-- <a href="javascript:void(0);" class="btn-br-more">همه مطالب</a> -->
-                    </div>
                 </div>
             </div>
         </div>
@@ -31,7 +22,7 @@ if (!defined('ABSPATH')) exit;
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 p-0">
 
-                <div class="arrow_slide three_slide-dots arrow_middle" dir="rtl">
+                <div class="arrow_slide three_slide-dots arrow_middle posts-container">
                     <?php get_template_part( 'loop/post-loop', 'post-loop' ) ?>
                 </div>
             </div>
