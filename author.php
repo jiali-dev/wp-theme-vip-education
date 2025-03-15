@@ -3,6 +3,13 @@
 // Exit if accessed directly
 if (!defined('ABSPATH')) exit;
 
+// Get the queried author object
+global $wp_query;
+$auth = $wp_query->get_queried_object();
+
+// Pass $auth to other template parts
+set_query_var('auth', $auth);
+
 ?>
 
 

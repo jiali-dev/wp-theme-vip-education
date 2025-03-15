@@ -3,8 +3,7 @@
     // Exit if accessed directly
     if (!defined('ABSPATH')) exit;
 
-    global $wp_query;
-    $auth = $wp_query->get_queried_object();
+    $auth = get_query_var('auth');
 ?>
 
 <!-- ============================ Instructor header Start================================== -->
