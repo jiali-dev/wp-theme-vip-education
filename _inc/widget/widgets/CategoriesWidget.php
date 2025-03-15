@@ -61,7 +61,6 @@ class CategoriesWidget extends WP_Widget {
                    value="<?php echo esc_attr($title); ?>">
         </p>
         <p>
-        <p>
             <label for="<?php echo esc_attr($this->get_field_id('post_type')); ?>">نوع نوشته</label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('post_type')); ?>"
                     name="<?php echo esc_attr($this->get_field_name('post_type')); ?>">

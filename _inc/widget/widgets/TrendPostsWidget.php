@@ -23,15 +23,18 @@ class TrendPostsWidget extends WP_Widget {
                 if (!empty($instance['title'])) {
                     $title = apply_filters('widget_title', $instance['title']);
                     echo $args['before_title'] . '<h4 class="title">' . $title . '</h4>' . $args['after_title'];
-                }
+                };
+                
+                $post_type = !empty($instance['post_type']) ? $instance['post_type'] : 'post';
+
             ?>
             <?php 
                 $trend_posts = new WP_Query(
                     [
-                        'post_type' => 'post',
+                        'post_type' => $post_type,
                         'orderby' => 'comment',
                         'order' => 'DESC',
-                        'post_per_page' => 6
+                        'posts_per_page' => 5
                     ]
                 )
             ?>
@@ -72,12 +75,25 @@ class TrendPostsWidget extends WP_Widget {
     // Widget form in admin panel
     public function form($instance) {
         $title = !empty($instance['title']) ? $instance['title'] : 'پرمخاطب';
+        $post_type = !empty($instance['post_type']) ? $instance['post_type'] : 'post';
+        $post_types = get_post_types(['public' => true], 'objects');
         ?>
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('title')); ?>">عنوان</label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>"
                    name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text"
                    value="<?php echo esc_attr($title); ?>">
+        </p>
+        <p>
+            <label for="<?php echo esc_attr($this->get_field_id('post_type')); ?>">نوع نوشته</label>
+            <select class="widefat" id="<?php echo esc_attr($this->get_field_id('post_type')); ?>"
+                    name="<?php echo esc_attr($this->get_field_name('post_type')); ?>">
+                <?php foreach ($post_types as $type): ?>
+                    <option value="<?php echo esc_attr($type->name); ?>" <?php selected($post_type, $type->name); ?>>
+                        <?php echo esc_html($type->label); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
         </p>
         <?php
     }
@@ -86,6 +102,7 @@ class TrendPostsWidget extends WP_Widget {
     public function update($new_instance, $old_instance) {
         $instance = [];
         $instance['title'] = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
+        $instance['post_type'] = (!empty($new_instance['post_type'])) ? strip_tags($new_instance['post_type']) : 'post';
         return $instance;
     }
 }
