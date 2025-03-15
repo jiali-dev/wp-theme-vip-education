@@ -57,3 +57,31 @@ function jve_save_user_social_fields($user_id) {
 add_action('personal_options_update', 'jve_save_user_social_fields');
 add_action('edit_user_profile_update', 'jve_save_user_social_fields');
 
+// User career fields form
+function jve_user_career_fields($user) { ?>
+    <h3>موقعیت شغلی</h3>
+    <table class="form-table">
+        <tr>
+            <th><label for="career">شغل</label></th>
+            <td>
+                <input type="text" name="career" id="career" 
+                       value="<?php echo esc_attr(get_user_meta($user->ID, 'career', true)); ?>" 
+                       class="regular-text" />
+                <p class="description">لطفاً شغل خود را وارد کنید.</p>
+            </td>
+        </tr>
+    </table>
+<?php }
+add_action('show_user_profile', 'jve_user_career_fields');
+add_action('edit_user_profile', 'jve_user_career_fields');
+
+// Save user career
+function jve_save_user_creer_fields($user_id) {
+    if (!current_user_can('edit_user', $user_id)) {
+        return false;
+    }
+    update_user_meta($user_id, 'career', sanitize_text_field($_POST['career']));
+}
+add_action('personal_options_update', 'jve_save_user_creer_fields');
+add_action('edit_user_profile_update', 'jve_save_user_creer_fields');
+
