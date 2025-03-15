@@ -5,8 +5,6 @@
 
     global $wp_query;
     $auth = $wp_query->get_queried_object();
-    jve_pretty_var_dump($auth);
-
 ?>
 
 <!-- ============================ Instructor header Start================================== -->
