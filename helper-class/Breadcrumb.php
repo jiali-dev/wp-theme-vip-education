@@ -9,7 +9,7 @@ class Breadcrumb {
         ?>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?php echo home_url( ) ?>">خانه</a></li>
-                <?php if( is_single( ) || is_category( ) || is_archive( ) ): ?>
+                <?php if( is_single( ) || is_category( ) ): ?>
                     <?php // Retrieve the current value of the meta field
                         $cat = get_post_meta(get_the_ID(  ), '_jve_post_cat', true);
                     ?>
@@ -22,7 +22,9 @@ class Breadcrumb {
                 <?php elseif( is_page( ) ): ?>
                     <li class="breadcrumb-item"><?php echo get_the_title(  ) ?></li>
                 <?php elseif( is_search( ) ): ?>
-                    <li class="breadcrumb-item"><?php echo the_search_query(  ) ?></li>
+                    <li class="breadcrumb-item">جستجوی:‌ <?php echo the_search_query(  ) ?></li>
+                <?php elseif( is_archive( ) ): ?>
+                    <li class="breadcrumb-item"><?php echo get_the_archive_title(  ) ?></li>
                 <?php endif; ?>
             </ol>
         <?php

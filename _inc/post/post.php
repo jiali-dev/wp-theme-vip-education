@@ -20,6 +20,5 @@ function jve_author_posts_custom_wp_query()
     if( is_main_query(  ) && is_search( ) ) {
         set_query_var( 'post_type', ['post', 'technology'] );
     }
-
 }
 add_action( 'pre_get_posts', 'jve_author_posts_custom_wp_query' );

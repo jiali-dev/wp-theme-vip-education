@@ -14,7 +14,7 @@ $global_query = $GLOBALS['wp_query'];
         <!-- Row -->
         <div class="row align-items-center mb-3">
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <strong><?php echo $global_query->found_posts; ?></strong> دوره آموزشی یافت شد.
+                <strong><span class="found-posts"><?php echo $global_query->found_posts; ?></span></strong> دوره آموزشی یافت شد.
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 ordering">
                 <div class="filter_wraps">
@@ -23,22 +23,12 @@ $global_query = $GLOBALS['wp_query'];
                             <a href="javascript:void(0)" class="btn btn-theme arrow-btn filter_open" id="open2"><span><i class="fas fa-arrow-alt-circle-right"></i></span>باکس فیلتر</a>
                         </div>
                     </div>
-                    <div class="dropdown show">
-                        <a class="btn btn-custom dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        دوره های آموزشی
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">پرمخاطب</a>
-                        <a class="dropdown-item" href="#">جدید</a>
-                        <a class="dropdown-item" href="#">ویژه</a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
         <!-- /Row -->
 
-        <div class="row">
+        <div class="row archive-posts">
             <?php get_template_part( 'loop/archive-loop', 'archive-loop' ) ?>
         </div>
 
