@@ -32,25 +32,42 @@ $global_query = $GLOBALS['wp_query'];
             <?php get_template_part( 'loop/archive-loop', 'archive-loop' ) ?>
         </div>
 
-        <!-- Row -->
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
+        <?php if( is_search(  ) ): ?>
+            <!-- Row -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
 
-                <!-- Pagination -->
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 text-center custom-pagination">
-                        <?php the_posts_pagination(array(
-                                'mid_size'  => 2,
-                                'prev_text' => '&laquo;',
-                                'next_text' => '&raquo;',
-                            ));
-                        ?>
+                    <!-- Pagination -->
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-center custom-pagination">
+                            <?php the_posts_pagination(array(
+                                    'mid_size'  => 2,
+                                    'prev_text' => '&laquo;',
+                                    'next_text' => '&raquo;',
+                                ));
+                            ?>
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
-        </div>
-        <!-- /Row -->
+            <!-- /Row -->
+        <?php else: ?>
+            <!-- Row -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    
+                    <!-- Pagination -->
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                            <button type="button" class="btn btn-loader"><i class="ti-reload ml-3"></i> فهرست کامل آموزش ها</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- /Row -->
+        <?php endif; ?>
 
     </div>
 
