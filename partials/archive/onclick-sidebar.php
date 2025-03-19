@@ -19,85 +19,65 @@ if (!defined('ABSPATH')) exit;
                 <div class="sidebar-widgets">
 
                     <!-- Search Form -->
-                    <form class="form-inline addons mb-3">
-                        <input class="form-control" type="search" placeholder="جستجو دوره" aria-label="Search">
+                    <form class="form-inline addons mb-3" action="<?php echo home_url() ?>" >
+                        <input name="s" class="form-control" type="search" placeholder="جستجو دوره" aria-label="Search">
                         <button class="btn my-2 my-sm-0" type="submit"><i class="ti-search"></i></button>
                     </form>
+                    <form id="archive-filter">
+                        <h4 class="side_title">دسته بندی ها</h4>
+                        <ul class="no-ul-list mb-3">
+                            <?php 
+                                $categories = get_terms([
+                                    'hide_empty' => true,
+                                    'taxonomy'   => ['category', 'technology_category'],
+                                ]);
+                            ?>
+                            <?php if( !empty($categories) && !is_wp_error( $categories ) ): ?>
+                                <?php foreach( $categories as $cat ): ?>
+                                    <li>
+                                        <input id="tax_<?php echo $cat->term_id ?>" class="checkbox-custom tax" value="<?php echo $cat->term_id ?>" data-tax="<?php echo $cat->taxonomy ?>" type="checkbox">
+                                        <label for="tax_<?php echo $cat->term_id ?>" class="checkbox-custom-label"> <?php echo $cat->name ?> (<?php echo $cat->count ?>) </label>
+                                    </li>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <div class="alert alert-info">دسته بندی وجود ندارد!</div>
+                            <?php endif; ?>
+                        </ul>
 
-                    <h4 class="side_title">دسته بندی دوره</h4>
-                    <ul class="no-ul-list mb-3">
-                        <li>
-                            <input id="a-4" class="checkbox-custom" name="a-4" type="checkbox">
-                            <label for="a-4" class="checkbox-custom-label">برنامه نویسی (3)</label>
-                        </li>
-                        <li>
-                            <input id="a-5" class="checkbox-custom" name="a-5" type="checkbox">
-                            <label for="a-5" class="checkbox-custom-label">طراحی سایت (2)</label>
-                        </li>
-                        <li>
-                            <input id="a-6" class="checkbox-custom" name="a-6" type="checkbox">
-                            <label for="a-6" class="checkbox-custom-label">عمومی (2)</label>
-                        </li>
-                        <li>
-                            <input id="a-7" class="checkbox-custom" name="a-7" type="checkbox">
-                            <label for="a-7" class="checkbox-custom-label">فناوری اطلاعات (2)</label>
-                        </li>
-                        <li>
-                            <input id="a-8" class="checkbox-custom" name="a-8" type="checkbox">
-                            <label for="a-8" class="checkbox-custom-label">گرافیک (2)</label>
-                        </li>
-                        <li>
-                            <input id="a-9" class="checkbox-custom" name="a-9" type="checkbox">
-                            <label for="a-9" class="checkbox-custom-label">شبکه و امنیت (2)</label>
-                        </li>
-                    </ul>
+                        <h4 class="side_title">نویسندگان</h4>
+                        <ul class="no-ul-list mb-3">
+                            <?php 
+                                $authors = new WP_User_Query(
+                                    [
+                                        'role__in' => ['administrator', 'editor', 'author']
+                                    ]
+                                );
+                            ?>
+                            <?php if( !empty($authors) && !is_wp_error( $authors ) ): $authors = $authors->get_results(); ?>
+                                <?php foreach( $authors as $author ): ?>
+                                    <li>
+                                        <input id="author_<?php echo $author->ID ?>" class="checkbox-custom author" value="<?php echo $author->ID ?>" type="checkbox" >
+                                        <label for="author_<?php echo $author->ID ?>" class="checkbox-custom-label"><?php echo $author->display_name ?></label>
+                                    </li>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <div class="alert alert-info">نویسنده ای وجود ندارد!</div>
+                            <?php endif; ?>
+                        </ul>
 
-                    <h4 class="side_title">مدرسین</h4>
-                    <ul class="no-ul-list mb-3">
-                        <li>
-                            <input id="a-1" class="checkbox-custom" name="a-1" type="checkbox">
-                            <label for="a-1" class="checkbox-custom-label">وحید صالحی</label>
-                        </li>
-                        <li>
-                            <input id="a-2" class="checkbox-custom" name="a-2" type="checkbox">
-                            <label for="a-2" class="checkbox-custom-label">علی مرادی  (11)</label>
-                        </li>
-                        <li>
-                            <input id="a-6" class="checkbox-custom" name="a-6" type="checkbox">
-                            <label for="a-6" class="checkbox-custom-label">الهام کریمی (4)</label>
-                        </li>
-                        <li>
-                            <input id="a-7" class="checkbox-custom" name="a-7" type="checkbox">
-                            <label for="a-7" class="checkbox-custom-label">مسعود محمدی (7)</label>
-                        </li>
-                        <li>
-                            <input id="a-8" class="checkbox-custom" name="a-8" type="checkbox">
-                            <label for="a-8" class="checkbox-custom-label">مهدی علوی</label>
-                        </li>
-                        <li>
-                            <input id="a-9" class="checkbox-custom" name="a-9" type="checkbox">
-                            <label for="a-9" class="checkbox-custom-label">شادی ترابی</label>
-                        </li>
-                    </ul>
+                        <h4 class="side_title">نوع دوره</h4>
+                        <ul class="no-ul-list mb-3">
+                            <?php $post_entities = [ 'text' => 'متن', 'video' => 'ویدئو', 'audio' => 'صدا']; ?>
+                            <?php foreach( $post_entities as $key => $val ): ?>
+                                <li>
+                                    <input id="<?php echo $key ?>" class="checkbox-custom entity" name="post_entity"  value="<?php echo $key ?>" type="radio">
+                                    <label for="<?php echo $key ?>" class="checkbox-custom-label" ><?php echo $val ?></label>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
 
-                    <h4 class="side_title">نوع دوره</h4>
-                    <ul class="no-ul-list mb-3">
-                        <li>
-                            <input id="a-10" class="checkbox-custom" name="a-10" type="checkbox">
-                            <label for="a-10" class="checkbox-custom-label">همه (75)</label>
-                        </li>
-                        <li>
-                            <input id="a-11" class="checkbox-custom" name="a-11" type="checkbox">
-                            <label for="a-11" class="checkbox-custom-label">رایگان (15)</label>
-                        </li>
-                        <li>
-                            <input id="a-12" class="checkbox-custom" name="a-12" type="checkbox">
-                            <label for="a-12" class="checkbox-custom-label">نقدی (60)</label>
-                        </li>
-                    </ul>
-
-                    <button class="btn btn-theme full-width mb-2">فیلتر کن</button>
-
+                        <button class="btn btn-theme full-width mb-2" type="submit" >فیلتر</button>
+                    </form>
                 </div>
 
             </div>
