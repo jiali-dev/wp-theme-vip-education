@@ -10855,3 +10855,7 @@ ul.children {
   height: auto;
   border-radius: 6px;
 }
+
+.ajax-load-more {
+  display: none;
+}
