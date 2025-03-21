@@ -32,42 +32,35 @@ $global_query = $GLOBALS['wp_query'];
             <?php get_template_part( 'loop/archive-loop', 'archive-loop' ) ?>
         </div>
 
-        <?php if( is_search(  ) ): ?>
-            <!-- Row -->
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-
-                    <!-- Pagination -->
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 text-center custom-pagination">
-                            <?php the_posts_pagination(array(
-                                    'mid_size'  => 2,
-                                    'prev_text' => '&laquo;',
-                                    'next_text' => '&raquo;',
-                                ));
-                            ?>
-                        </div>
+        <!-- Row -->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <!-- Pagination -->
+                <div class="row pagination">
+                    <div class="col-lg-12 col-md-12 col-sm-12 text-center custom-pagination">
+                        <?php the_posts_pagination(array(
+                                'mid_size'  => 2,
+                                'prev_text' => '&laquo;',
+                                'next_text' => '&raquo;',
+                            ));
+                        ?>
                     </div>
-
                 </div>
             </div>
-            <!-- /Row -->
-        <?php else: ?>
-            <!-- Row -->
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    
-                    <!-- Pagination -->
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-                            <button type="button" class="btn btn-loader"><i class="ti-reload ml-3"></i> فهرست کامل آموزش ها</button>
-                        </div>
+        </div>
+        <!-- /Row -->
+        <!-- Row -->
+        <div class="row ajax-load-more">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <!-- Pagination -->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                        <button type="button" class="btn btn-loader"><i class="ti-reload ml-3"></i> فهرست کامل آموزش ها</button>
                     </div>
-                    
                 </div>
             </div>
-            <!-- /Row -->
-        <?php endif; ?>
+        </div>
+        <!-- /Row -->
 
     </div>
 

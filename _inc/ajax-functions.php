@@ -616,12 +616,21 @@ function jve_get_archive_filtered_posts_ajax( ) {
         $entity = '';
         if ( !empty($_POST['entity']) )
             $entity = sanitize_text_field($_POST['entity']);
+
+        // Check entity
+        $paged = '';
+        if ( !empty($_POST['paged']) )
+            $paged = sanitize_text_field($_POST['paged']);
         
         $args = array(
             'post_type' => ['post', 'technology'],
-            'posts_per_page' => 9,
+            'posts_per_page' => 3,
         );
 
+        if( !empty( $paged ) ) {
+            $args['paged'] = $paged;
+        }
+        
         if( !empty( $authors_array ) ) {
             $args['author'] = implode(',', $authors_array);
         }
@@ -744,6 +753,7 @@ function jve_get_archive_filtered_posts_ajax( ) {
             $data['success'] = true;
             $data['data'] = $output; 
             $data['found_posts'] = $the_query->found_posts; 
+            $data['max_num_pages'] = $the_query->max_num_pages; 
     } catch( Exception $ex ) {
         $data['data'] = '<div class="alert alert-warning">'.$ex->getMessage().'</div>';
     }   
