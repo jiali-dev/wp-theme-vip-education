@@ -34,7 +34,6 @@ jQuery(function ($) {
       success: function (data) {
         posts_container.html(data.data);
       },
-      error: function (error) {},
       complete: function () {
         posts_container.css("opacity", 1);
       },
@@ -95,7 +94,6 @@ jQuery(function ($) {
           $('.ajax-load-more').show();
         }
       },
-      error: function (error) {},
       complete: function () {
         archive_container.css("opacity", 1);
         $('.pagination').hide();
@@ -158,9 +156,45 @@ jQuery(function ($) {
           $('.ajax-load-more').hide();
         }
       },
-      error: function (error) {},
-      complete: function (data) {
+      complete: function () {
         archive_container.css("opacity", 1);
+      },
+    });
+  });
+
+  $(".contact-form").on("submit", function(e) {
+
+    e.preventDefault(); // Prevent default form submission
+       
+    var form_data = $(this).serialize(); // Serialize form data // Serialize form data // Create FormData object
+
+    $.ajaxSetup({ cache: false });
+
+    $.ajax({
+      type: "POST",
+      url: jve_ajax.ajaxurl,
+      data: {
+        form_data: form_data,
+        nonce: jve_ajax.nonce,
+        action: `jve_contact_ajax`,
+      },
+      beforeSend: function () { 
+        $('.send-message-spinner').show();
+        $('.send-message-btn').prop("disabled", true);;
+      },
+      success: function (response) {
+        if (response.success) {
+          Notiflix.Notify.success(response.message);
+        } else {
+          Notiflix.Notify.failure(response.message);
+        }
+      },
+      error: function (xhr) {
+        Notiflix.Notify.failure(xhr.responseJSON.message);
+      },
+      complete: function () {
+        $('.send-message-spinner').hide();
+        $('.send-message-btn').prop("disabled", false);;
       },
     });
   });

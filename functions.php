@@ -39,6 +39,12 @@ require_once(JVE_HELPER_CLASS_PATH . '/Breadcrumb.php');
 // FilterPosts
 require_once(JVE_HELPER_CLASS_PATH . '/FilterPosts.php');
 
+// SendMail
+require_once(JVE_HELPER_CLASS_PATH . '/SendMail.php');
+
+// MailLayout
+require_once(JVE_HELPER_CLASS_PATH . '/MailLayout.php');
+
 // Widgets and Sidebars
 require_once(JVE_INC_PATH . '/widget/widgets.php');
 
@@ -57,8 +63,5 @@ require_once(JVE_INC_PATH . '/custom-post-types/technology.php');
 // Ajax Functions
 require_once(JVE_INC_PATH . '/ajax-functions.php');
 
-
-
-
-
-
+// Ajax Functions
+require_once(JVE_INC_PATH . '/smtp-config.php');

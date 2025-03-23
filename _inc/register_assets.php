@@ -42,7 +42,9 @@ function jve_register_assets() {
     wp_enqueue_style('jve-styles');
     wp_register_style('jve-colors', JVE_CSS_URI . '/colors.css' , array(), '1.0.0', 'all');
     wp_enqueue_style('jve-colors');
-    
+    wp_register_style('jve-notiflix', JVE_PLUGINS_URI . '/notiflix/notiflix.min.css' , array(), '1.0.0', 'all');
+    wp_enqueue_style('jve-notiflix');
+
     // Enqueue scripts
     wp_register_script('jve-main', JVE_JS_URI . '/main.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('jve-main');
@@ -71,7 +73,10 @@ function jve_register_assets() {
     wp_enqueue_script('jve-counterup');
     wp_register_script('jve-jquery-counterup', JVE_PLUGINS_URI . '/counterup/counterup.min.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('jve-jquery-counterup');
-    
+    wp_register_script('jve-notiflix', JVE_PLUGINS_URI . '/notiflix/notiflix.min.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('jve-notiflix');
+    wp_register_script('jve-notiflix-custom', JVE_PLUGINS_URI . '/notiflix/notiflix-custom.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('jve-notiflix-custom');
 }
 add_action('wp_enqueue_scripts', 'jve_register_assets');
 
