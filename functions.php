@@ -62,3 +62,6 @@ require_once(JVE_INC_PATH . '/custom-post-types/technology.php');
 
 // Ajax Functions
 require_once(JVE_INC_PATH . '/ajax-functions.php');
+
+// Ajax Functions
+require_once(JVE_INC_PATH . '/smtp-config.php');

@@ -786,7 +786,9 @@ function jve_contact_ajax( ) {
         $email = sanitize_text_field( $form_data['email'] );
         $title = sanitize_text_field( $form_data['title'] );
         $message = sanitize_textarea_field( $form_data['message'] );
-        $sent_message = SendMail::jve_send_mail( 'mahyarerad@gmail.com', $title, MailLayout::jve_contact_layout($fullname,$title,$email,$message) );
+        $options = get_option('smtp_settings');
+        $assigned_email = $options['smtp_email'] ?? get_option('admin_email');
+        $sent_message = SendMail::jve_send_mail( $assigned_email, $title, MailLayout::jve_contact_layout($fullname,$title,$email,$message) );
         
         if( $sent_message ) {
 
