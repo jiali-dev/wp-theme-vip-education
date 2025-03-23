@@ -10859,3 +10859,7 @@ ul.children {
 .ajax-load-more {
   display: none;
 }
+
+.send-message-spinner {
+  display: none;
+}

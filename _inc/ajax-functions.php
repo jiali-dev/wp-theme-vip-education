@@ -777,7 +777,7 @@ function jve_contact_ajax( ) {
 
         foreach( $form_data as $item ) {
             if( empty( $item ) ) {
-                throw new Exception('پر کردن تمام فیلدها الزامی است!', 400);
+                throw new Exception('پر کردن تمام فیلدها الزامی است!', 403);
             }
         }
 
@@ -794,19 +794,20 @@ function jve_contact_ajax( ) {
 
             // If everything is fine, return success response
             wp_send_json([
+                'success' => true,
                 'message' => 'پیام با موفقیت ارسال شد!',
             ], 200);
 
         } else {
 
             // If everything is fine, return success response
-            throw new Exception('پیام ارسال نشد، مجددا تلاش نمایید!', 400);
+            throw new Exception('پیام ارسال نشد، مجددا تلاش نمایید!', 403);
 
         }
     } catch( Exception $ex ) {
         wp_send_json([
             'message' => $ex->getMessage()
-        ], $ex->getCode() ? $ex->getCode() : 400);
+        ], $ex->getCode() ? $ex->getCode() : 403);
     }   
 
 }

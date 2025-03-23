@@ -48,13 +48,15 @@ if (!defined('ABSPATH')) exit;
                             </div>
                             
                             <div class="form-group">
-                                <button class="btn btn-theme" type="submit">ارسال درخواست</button>
+                                <button class="btn btn-theme send-message-btn" type="submit">
+                                     ارسال پیام 
+                                    <span class="m-1 send-message-spinner"><i class="fa fa-spin fa-spinner"></i></span>
+                                </button>
                             </div>
                         </div>
                         
                     </div>
-                </form> 
-                <div class="response"></div>            
+                </form>          
             </div>
             
             <div class="col-lg-4 col-md-5">

@@ -178,25 +178,24 @@ jQuery(function ($) {
         nonce: jve_ajax.nonce,
         action: `jve_contact_ajax`,
       },
-      beforeSend: function () {},
+      beforeSend: function () { 
+        $('.send-message-spinner').show();
+        $('.send-message-btn').prop("disabled", true);;
+      },
       success: function (response) {
         if (response.success) {
-          $(".response").html('<div class="alert alert-success">' + response.data.message + '</div>');
+          Notiflix.Notify.success(response.message);
         } else {
-            $(".response").html('<div class="alert alert-danger">' + response.data.message + '</div>');
+          Notiflix.Notify.failure(response.message);
         }
       },
       error: function (xhr) {
-        $(".response").html('<div class="alert alert-danger">' + xhr.responseJSON.message + '</div>');
-
-        // let errorMessage = "خطای نامشخصی رخ داده است.";
-        console.log(xhr.responseJSON);
-        // if (xhr.responseJSON && xhr.responseJSON.data && xhr.responseJSON.data.message) {
-        //     errorMessage = xhr.responseJSON.data.message;
-        // }
-        // $(".response").html('<div class="alert alert-danger">' + errorMessage + '</div>');
+        Notiflix.Notify.failure(xhr.responseJSON.message);
       },
-      complete: function () {},
+      complete: function () {
+        $('.send-message-spinner').hide();
+        $('.send-message-btn').prop("disabled", false);;
+      },
     });
   });
 });
