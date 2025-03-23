@@ -763,3 +763,50 @@ function jve_get_archive_filtered_posts_ajax( ) {
 }
 add_action('wp_ajax_jve_get_archive_filtered_posts_ajax', 'jve_get_archive_filtered_posts_ajax');
 add_action('wp_ajax_nopriv_jve_get_archive_filtered_posts_ajax', 'jve_get_archive_filtered_posts_ajax');
+
+// Get video post
+function jve_contact_ajax( ) {
+    
+    try {
+        // Validate form fields (assuming they are in $_POST['form_data'])
+        parse_str($_POST['form_data'], $form_data); // Convert serialized string into an array
+
+        // Check nonce
+        if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'],'jve-nonce') )
+            throw new Exception('خطای امنیتی!', 403);
+
+        foreach( $form_data as $item ) {
+            if( empty( $item ) ) {
+                throw new Exception('پر کردن تمام فیلدها الزامی است!', 400);
+            }
+        }
+
+        // Get Items
+        $fullname = sanitize_text_field( $form_data['fullname'] );
+        $email = sanitize_text_field( $form_data['email'] );
+        $title = sanitize_text_field( $form_data['title'] );
+        $message = sanitize_textarea_field( $form_data['message'] );
+        $sent_message = SendMail::jve_send_mail( 'mahyarerad@gmail.com', $title, MailLayout::jve_contact_layout($fullname,$title,$email,$message) );
+        
+        if( $sent_message ) {
+
+            // If everything is fine, return success response
+            wp_send_json([
+                'message' => 'پیام با موفقیت ارسال شد!',
+            ], 200);
+
+        } else {
+
+            // If everything is fine, return success response
+            throw new Exception('پیام ارسال نشد، مجددا تلاش نمایید!', 400);
+
+        }
+    } catch( Exception $ex ) {
+        wp_send_json([
+            'message' => $ex->getMessage()
+        ], $ex->getCode() ? $ex->getCode() : 400);
+    }   
+
+}
+add_action('wp_ajax_jve_contact_ajax', 'jve_contact_ajax');
+add_action('wp_ajax_nopriv_jve_contact_ajax', 'jve_contact_ajax');
