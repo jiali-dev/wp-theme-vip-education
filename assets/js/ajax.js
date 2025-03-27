@@ -31,8 +31,11 @@ jQuery(function ($) {
       beforeSend: function () {
         posts_container.css("opacity", 0.3);
       },
-      success: function (data) {
-        posts_container.html(data.data);
+      error: function (xhr) {
+        Notiflix.Notify.failure(xhr.responseJSON.message);
+      },
+      success: function (response) {
+        posts_container.html(response.data);
       },
       complete: function () {
         posts_container.css("opacity", 1);
@@ -86,11 +89,14 @@ jQuery(function ($) {
       beforeSend: function () {
         archive_container.css("opacity", 0.3);
       },
-      success: function (data) {
-        $('.found-posts').text(data.found_posts);
-        archive_container.html(data.data);
+      error: function (xhr) {
+        Notiflix.Notify.failure(xhr.responseJSON.message);
+      },
+      success: function (response) {
+        $('.found-posts').text(response.found_posts);
+        archive_container.html(response.data);
         paged = 1;
-        if( data.max_num_pages > paged  ) {
+        if( response.max_num_pages > paged  ) {
           $('.ajax-load-more').show();
         }
       },
@@ -149,10 +155,13 @@ jQuery(function ($) {
       beforeSend: function () {
         archive_container.css("opacity", 0.3);
       },
-      success: function (data) {
-        $('.found-posts').text(data.found_posts);
-        archive_container.append(data.data);
-        if( paged >= data.max_num_pages ) {
+      error: function (xhr) {
+        Notiflix.Notify.failure(xhr.responseJSON.message);
+      },
+      success: function (response) {
+        $('.found-posts').text(response.found_posts);
+        archive_container.append(response.data);
+        if( paged >= response.max_num_pages ) {
           $('.ajax-load-more').hide();
         }
       },
@@ -166,6 +175,7 @@ jQuery(function ($) {
 
     e.preventDefault(); // Prevent default form submission
        
+    var form = $(this);
     var form_data = $(this).serialize(); // Serialize form data // Serialize form data // Create FormData object
 
     $.ajaxSetup({ cache: false });
@@ -183,18 +193,16 @@ jQuery(function ($) {
         $('.send-message-btn').prop("disabled", true);;
       },
       success: function (response) {
-        if (response.success) {
-          Notiflix.Notify.success(response.message);
-        } else {
-          Notiflix.Notify.failure(response.message);
-        }
+        Notiflix.Notify.success(response.message);
       },
       error: function (xhr) {
         Notiflix.Notify.failure(xhr.responseJSON.message);
       },
       complete: function () {
         $('.send-message-spinner').hide();
-        $('.send-message-btn').prop("disabled", false);;
+        $('.send-message-btn').prop("disabled", false);
+        $(form).trigger("reset");
+        ;
       },
     });
   });

@@ -10,11 +10,11 @@ function jve_get_hot_posts_ajax( ) {
 
         // Check nonce
         if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce( $_POST['nonce'], 'jve-nonce' ) )
-            throw new Exception( 'خطای امنیتی!' , 1 );
+            throw new Exception( 'خطای امنیتی!' , 403 );
 
         // Check parent entity
         if ( empty($_POST['post_type']) )
-            throw new Exception( 'نوع پست مشخص نیست!' , 1 );
+            throw new Exception( 'نوع پست مشخص نیست!' , 403 );
 
         $post_type = sanitize_text_field( $_POST['post_type'] );
         
@@ -131,19 +131,18 @@ function jve_get_hot_posts_ajax( ) {
                 <?php $output .= ob_get_clean(); ?>
             <?php endwhile; ?>
         <?php else: ?>
-            <?php  throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 1 ); ?>
+            <?php  throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 403 ); ?>
         <?php endif; ?>
         <?php
-            // Reset the global post object
-            wp_reset_postdata();
-            $data['success'] = true;
-            $data['data'] = $output; 
+        // Reset the global post object
+        wp_reset_postdata();
+        $data['data'] = $output; 
+        wp_send_json($data);
     } catch( Exception $ex ) {
-        $data['data'] = '<div class="alert alert-warning">'.$ex->getMessage().'</div>';
+        wp_send_json([
+            'message' => $ex->getMessage()
+        ], $ex->getCode() ? $ex->getCode() : 403);
     }   
-        
-    wp_send_json($data);
-
 }
 add_action('wp_ajax_jve_get_hot_posts_ajax', 'jve_get_hot_posts_ajax');
 add_action('wp_ajax_nopriv_jve_get_hot_posts_ajax', 'jve_get_hot_posts_ajax');
@@ -155,11 +154,11 @@ function jve_get_new_posts_ajax( ) {
 
         // Check nonce
         if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'jve-nonce') )
-            throw new Exception( 'خطای امنیتی!' , 1 );
+            throw new Exception( 'خطای امنیتی!' , 403 );
 
         // Check parent entity
         if ( empty($_POST['post_type']) )
-            throw new Exception( 'نوع پست مشخص نیست!' , 1 );
+            throw new Exception( 'نوع پست مشخص نیست!' , 403 );
 
         $post_type = sanitize_text_field( $_POST['post_type'] );
         
@@ -275,18 +274,19 @@ function jve_get_new_posts_ajax( ) {
                 <?php $output .= ob_get_clean(); ?>
             <?php endwhile; ?>
         <?php else: ?>
-            <?php  throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 1 ); ?>
+            <?php  throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 403 ); ?>
         <?php endif; ?>
         <?php
-            // Reset the global post object
-            wp_reset_postdata();
-            $data['success'] = true;
-            $data['data'] = $output; 
+        // Reset the global post object
+        wp_reset_postdata();
+        $data['data'] = $output; 
+        wp_send_json($data);
+
     } catch( Exception $ex ) {
-        $data['data'] = '<div class="alert alert-warning">'.$ex->getMessage().'</div>';
+        wp_send_json([
+            'message' => $ex->getMessage()
+        ], $ex->getCode() ? $ex->getCode() : 403);
     }   
-        
-    wp_send_json($data);
 
 }
 add_action('wp_ajax_jve_get_new_posts_ajax', 'jve_get_new_posts_ajax');
@@ -299,11 +299,11 @@ function jve_get_popular_posts_ajax( ) {
 
         // Check nonce
         if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'jve-nonce') )
-            throw new Exception( 'خطای امنیتی!' , 1 );
+            throw new Exception( 'خطای امنیتی!' , 403 );
 
         // Check parent entity
         if ( empty($_POST['post_type']) )
-            throw new Exception( 'نوع پست مشخص نیست!' , 1 );
+            throw new Exception( 'نوع پست مشخص نیست!' , 403 );
 
         $post_type = sanitize_text_field( $_POST['post_type'] );
         
@@ -421,18 +421,19 @@ function jve_get_popular_posts_ajax( ) {
                 <?php $output .= ob_get_clean(); ?>
             <?php endwhile; ?>
         <?php else: ?>
-            <?php  throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 1 ); ?>
+            <?php  throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 403 ); ?>
         <?php endif; ?>
         <?php
-            // Reset the global post object
-            wp_reset_postdata();
-            $data['success'] = true;
-            $data['data'] = $output; 
+        // Reset the global post object
+        wp_reset_postdata();
+        $data['data'] = $output; 
+        wp_send_json($data);
+
     } catch( Exception $ex ) {
-        $data['data'] = '<div class="alert alert-warning">'.$ex->getMessage().'</div>';
+        wp_send_json([
+            'message' => $ex->getMessage()
+        ], $ex->getCode() ? $ex->getCode() : 403);
     }   
-        
-    wp_send_json($data);
 
 }
 add_action('wp_ajax_jve_get_popular_posts_ajax', 'jve_get_popular_posts_ajax');
@@ -445,11 +446,11 @@ function jve_get_video_posts_ajax( ) {
 
         // Check nonce
         if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'],'jve-nonce') )
-            throw new Exception( 'خطای امنیتی!' , 1 );
+            throw new Exception( 'خطای امنیتی!' , 403 );
 
         // Check parent entity
         if ( empty($_POST['post_type']) )
-            throw new Exception( 'نوع پست مشخص نیست!' , 1 );
+            throw new Exception( 'نوع پست مشخص نیست!' , 403 );
 
         $post_type = sanitize_text_field( $_POST['post_type'] );
         
@@ -571,19 +572,18 @@ function jve_get_video_posts_ajax( ) {
                 <?php $output .= ob_get_clean(); ?>
             <?php endwhile; ?>
         <?php else: ?>
-            <?php throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 1 ); ?>
+            <?php throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 403 ); ?>
         <?php endif; ?>
         <?php
-            // Reset the global post object
-            wp_reset_postdata();
-            $data['success'] = true;
-            $data['data'] = $output; 
+        // Reset the global post object
+        wp_reset_postdata();
+        $data['data'] = $output; 
+        wp_send_json($data);
     } catch( Exception $ex ) {
-        $data['data'] = '<div class="alert alert-warning">'.$ex->getMessage().'</div>';
+        wp_send_json([
+            'message' => $ex->getMessage()
+        ], $ex->getCode() ? $ex->getCode() : 403);
     }   
-        
-    wp_send_json($data);
-
 }
 add_action('wp_ajax_jve_get_video_posts_ajax', 'jve_get_video_posts_ajax');
 add_action('wp_ajax_nopriv_jve_get_video_posts_ajax', 'jve_get_video_posts_ajax');
@@ -595,7 +595,7 @@ function jve_get_archive_filtered_posts_ajax( ) {
 
         // Check nonce
         if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'],'jve-nonce') )
-            throw new Exception( 'خطای امنیتی!' , 1 );
+            throw new Exception('خطای امنیتی!', 403);
 
         // Check cats_array
         $cats_array = [];
@@ -745,21 +745,22 @@ function jve_get_archive_filtered_posts_ajax( ) {
                 <?php $output .= ob_get_clean(); ?>
             <?php endwhile; ?>
         <?php else: ?>
-            <?php throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 1 ); ?>
+            <?php throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 403 ); ?>
         <?php endif; ?>
         <?php
-            // Reset the global post object
-            wp_reset_postdata();
-            $data['success'] = true;
-            $data['data'] = $output; 
-            $data['found_posts'] = $the_query->found_posts; 
-            $data['max_num_pages'] = $the_query->max_num_pages; 
-    } catch( Exception $ex ) {
-        $data['data'] = '<div class="alert alert-warning">'.$ex->getMessage().'</div>';
-    }   
-        
-    wp_send_json($data);
+        // Reset the global post object
+        wp_reset_postdata();
+        $data['success'] = true;
+        $data['data'] = $output; 
+        $data['found_posts'] = $the_query->found_posts; 
+        $data['max_num_pages'] = $the_query->max_num_pages; 
+        wp_send_json($data);
 
+    } catch( Exception $ex ) {
+        wp_send_json([
+            'message' => $ex->getMessage()
+        ], $ex->getCode() ? $ex->getCode() : 403);
+    }     
 }
 add_action('wp_ajax_jve_get_archive_filtered_posts_ajax', 'jve_get_archive_filtered_posts_ajax');
 add_action('wp_ajax_nopriv_jve_get_archive_filtered_posts_ajax', 'jve_get_archive_filtered_posts_ajax');
@@ -794,7 +795,6 @@ function jve_contact_ajax( ) {
 
             // If everything is fine, return success response
             wp_send_json([
-                'success' => true,
                 'message' => 'پیام با موفقیت ارسال شد!',
             ], 200);
 
