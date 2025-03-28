@@ -202,7 +202,6 @@ jQuery(function ($) {
         $('.send-message-spinner').hide();
         $('.send-message-btn').prop("disabled", false);
         $(form).trigger("reset");
-        ;
       },
     });
   });

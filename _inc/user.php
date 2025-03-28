@@ -5,34 +5,34 @@ if (!defined('ABSPATH')) exit;
 
 // User social fields form
 function jve_user_social_fields($user) { ?>
-    <h3>شبکه های اجتماعی</h3>
+    <h3><?php _e( 'Menu for the top of the site', 'jve' ) ?></h3>
     <table class="form-table">
         <tr>
-            <th><label for="twitter">توئیتر</label></th>
+            <th><label for="twitter"><?php _e( 'Twitter', 'jve' ) ?></label></th>
             <td>
                 <input type="text" name="twitter" id="twitter" value="<?php echo esc_attr(get_the_author_meta('twitter', $user->ID)); ?>" class="regular-text" />
             </td>
         </tr>
         <tr>
-            <th><label for="facebook">فیسبوک</label></th>
+            <th><label for="facebook"><?php _e( 'Facebook', 'jve' ) ?></label></th>
             <td>
                 <input type="text" name="facebook" id="facebook" value="<?php echo esc_attr(get_the_author_meta('facebook', $user->ID)); ?>" class="regular-text" />
             </td>
         </tr>
         <tr>
-            <th><label for="behance">بیهانس</label></th>
+            <th><label for="behance"><?php _e( 'Behance', 'jve' ) ?></label></th>
             <td>
                 <input type="text" name="behance" id="behance" value="<?php echo esc_attr(get_the_author_meta('behance', $user->ID)); ?>" class="regular-text" />
             </td>
         </tr>
         <tr>
-            <th><label for="youtube">یوتیوب</label></th>
+            <th><label for="youtube"><?php _e( 'Youtube', 'jve' ) ?></label></th>
             <td>
                 <input type="text" name="youtube" id="youtube" value="<?php echo esc_attr(get_the_author_meta('youtube', $user->ID)); ?>" class="regular-text" />
             </td>
         </tr>
         <tr>
-            <th><label for="linkedin">لینکدین</label></th>
+            <th><label for="linkedin"><?php _e( 'Linkedin', 'jve' ) ?></label></th>
             <td>
                 <input type="text" name="linkedin" id="linkedin" value="<?php echo esc_attr(get_the_author_meta('linkedin', $user->ID)); ?>" class="regular-text" />
             </td>
@@ -59,15 +59,15 @@ add_action('edit_user_profile_update', 'jve_save_user_social_fields');
 
 // User career fields form
 function jve_user_career_fields($user) { ?>
-    <h3>موقعیت شغلی</h3>
+    <h3><?php _e( 'Job Position', 'jve' ) ?></h3>
     <table class="form-table">
         <tr>
-            <th><label for="career">شغل</label></th>
+            <th><label for="career"><?php _e( 'Job', 'jve' ) ?></label></th>
             <td>
                 <input type="text" name="career" id="career" 
                        value="<?php echo esc_attr(get_user_meta($user->ID, 'career', true)); ?>" 
                        class="regular-text" />
-                <p class="description">لطفاً شغل خود را وارد کنید.</p>
+                <p class="description"><?php _e( 'Write your job', 'jve' ) ?></p>
             </td>
         </tr>
     </table>

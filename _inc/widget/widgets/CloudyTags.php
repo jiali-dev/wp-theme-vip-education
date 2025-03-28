@@ -9,8 +9,8 @@ class CloudyTags extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'cloudy_tags_widget', // Widget ID
-            'تگ های ابری', // Widget Name
-            ['description' => 'ویجتی برای نمایش ابری تگ ها']
+            __('Cloudy Tags Widget', 'jve'), // Widget Name (translatable)
+            ['description' => __('A widget to display cloudy tags', 'jve')] // Widget Description (translatable)
         );
     }
 
@@ -46,7 +46,7 @@ class CloudyTags extends WP_Widget {
                     <?php endforeach; ?>
                 </ul>
             <?php else: ?>
-                <div class="alert alert-warning">تگی یافت نشد!</div>
+                <div class="alert alert-warning"><?php _e( 'There is no tag!', 'jve' ) ?></div>
             <?php endif; ?>
         </div>
         <?php
@@ -55,18 +55,18 @@ class CloudyTags extends WP_Widget {
 
     // Widget form in admin panel
     public function form($instance) {
-        $title = !empty($instance['title']) ? $instance['title'] : 'تگ ها';
+        $title = !empty($instance['title']) ? $instance['title'] : __( 'Tags', 'jve' );
         $post_type = !empty($instance['post_type']) ? $instance['post_type'] : 'post';
         $post_types = get_post_types(['public' => true], 'objects');
         ?>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>">عنوان</label>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e( 'Title', 'jve' ) ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>"
                    name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text"
                    value="<?php echo esc_attr($title); ?>">
         </p>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('post_type')); ?>">نوع نوشته</label>
+            <label for="<?php echo esc_attr($this->get_field_id('post_type')); ?>"><?php _e( 'Post type', 'jve' ) ?>/label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('post_type')); ?>"
                     name="<?php echo esc_attr($this->get_field_name('post_type')); ?>">
                 <?php foreach ($post_types as $type): ?>

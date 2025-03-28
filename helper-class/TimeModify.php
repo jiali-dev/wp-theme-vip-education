@@ -14,16 +14,17 @@ class TimeModify {
 
         if( $diff < 60 )
         {
-            return 'لحظاتی پیش';
+            return __('Moment(s) ago', 'jve');
         }
 
         $time_rules = [
-            60 * 60 * 24 * 30 * 12 => 'سال پیش',
-            60 * 60 * 24 * 30 => 'ماه پیش',
-            60 * 60 * 24 => 'روز پیش',
-            60 * 60 => 'ساعت پیش',
-            60 => 'دقیقه پیش',
+            60 * 60 * 24 * 30 * 12 => __('Year(s) ago', 'jve'),
+            60 * 60 * 24 * 30 => __('Month(s) ago', 'jve'),
+            60 * 60 * 24 => __('Day(s) ago', 'jve'),
+            60 * 60 => __('Hour(s) ago', 'jve'),
+            60 => __('Minute(s) ago', 'jve'),
         ];
+        
 
         foreach( $time_rules as $key => $value ) {
 

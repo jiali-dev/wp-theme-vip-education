@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) exit;
 function jve_add_meta_box() {
     add_meta_box(
         'jve_more_settings',          // ID of the meta box
-        'تنظیمات اضافه',                        // Title of the meta box
+        __( 'Extra Settings', 'jve'),                        // Title of the meta box
         'jve_meta_box_callback',   // Callback function
         array( 'post', 'technology' ),                              // Screen (Post type)
         'normal',                              // Context (normal, side, advanced)
@@ -32,31 +32,31 @@ function jve_meta_box_callback($post) {
     wp_nonce_field('jve_save_meta_box_data', 'jve_meta_box_nonce');
     ?>
     <!-- Meta box form field -->
-    <label for="jve_post_level">انتخاب سطح مقاله</label>
+    <label for="jve_post_level"><?php _e( 'Article level', 'jve' ) ?></label>
     <br>
     <select name="jve_post_level" id="jve_post_level" >
-        <option>... انتخاب سطح مقاله</option>
-        <option value="1" <?php selected( $level, '1' ) ?>>مقدماتی</option>
-        <option value="2" <?php selected( $level, '2' ) ?>>متوسط</option>
-        <option value="3" <?php selected( $level, '3' ) ?>>پیشرفته</option>
+        <option><?php _e( 'Article level', 'jve' ) ?></option>
+        <option value="1" <?php selected( $level, '1' ) ?>> <?php _e( 'Basic', 'jve' ) ?> </option>
+        <option value="2" <?php selected( $level, '2' ) ?>> <?php _e( 'Intermediate', 'jve' ) ?> </option>
+        <option value="3" <?php selected( $level, '3' ) ?>> <?php _e( 'Advanced', 'jve' ) ?> </option>
     </select>
     <br>
-    <label for="jve_post_cat">انتخاب دسته بندی</label>
+    <label for="jve_post_cat"><?php _e( 'Category', 'jve' ) ?></label>
     <br>
     <?php wp_dropdown_categories( array(
         'name' => 'jve_post_cat',
-        'show_option_none' => 'انتخاب دسته بندی',
+        'show_option_none' => __( 'Category', 'jve' ),
         'selected' => $cat,
         'taxonomy' => ( get_post_type(  ) != 'post' ? get_post_type(  ).'_' : '' ) . 'category',
     ) ) ?>
     <br>
-    <label for="jve_post_entity">انتخاب نوع مقاله</label>
+    <label for="jve_post_entity"><?php _e( 'Article entity', 'jve' ) ?></label>
     <br>
     <select name="jve_post_entity" id="jve_post_entity" >
-        <option>... انتخاب نوع مقاله</option>
-        <option value="text" <?php selected( $entity, 'text' ) ?>>متن</option>
-        <option value="video" <?php selected( $entity, 'video' ) ?>>ویدئو</option>
-        <option value="audio" <?php selected( $entity, 'audio' ) ?>>صدا</option>
+        <option><?php _e( 'Article entity', 'jve' ) ?></option>
+        <option value="text" <?php selected( $entity, 'text' ) ?>><?php _e( 'Text', 'jve' ) ?></option>
+        <option value="video" <?php selected( $entity, 'video' ) ?>><?php _e( 'Video', 'jve' ) ?></option>
+        <option value="audio" <?php selected( $entity, 'audio' ) ?>><?php _e( 'Audio', 'jve' ) ?></option>
     </select>
     <?php 
 }

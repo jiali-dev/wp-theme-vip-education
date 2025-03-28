@@ -10,7 +10,7 @@ function jve_get_hot_posts_ajax( ) {
 
         // Check nonce
         if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce( $_POST['nonce'], 'jve-nonce' ) )
-            throw new Exception( 'خطای امنیتی!' , 403 );
+            throw new Exception( __( 'Security error!', 'jve' ) , 403 );
 
         // Check parent entity
         if ( empty($_POST['post_type']) )
@@ -79,15 +79,15 @@ function jve_get_hot_posts_ajax( ) {
                                         if( $level ):
                                             switch ($level) {
                                                 case '1': 
-                                                    $level = 'مقدماتی';
+                                                    $level = __( 'Basic', 'jve' );
                                                     $badge_color = 'info';
                                                     break;
                                                 case '2': 
-                                                    $level = 'متوسط';
+                                                    $level = __( 'Intermediate', 'jve' );
                                                     $badge_color = 'success';
                                                     break;
                                                 case '3': 
-                                                    $level = 'پیشرفته';
+                                                    $level = __( 'Advanced', 'jve' );
                                                     $badge_color = 'danger';
                                                     break;
                                             }
@@ -131,7 +131,7 @@ function jve_get_hot_posts_ajax( ) {
                 <?php $output .= ob_get_clean(); ?>
             <?php endwhile; ?>
         <?php else: ?>
-            <?php  throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 403 ); ?>
+            <?php  throw new Exception( __( 'There is nothing to display!', 'jve' ) , 403 ); ?>
         <?php endif; ?>
         <?php
         // Reset the global post object
@@ -154,7 +154,7 @@ function jve_get_new_posts_ajax( ) {
 
         // Check nonce
         if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'jve-nonce') )
-            throw new Exception( 'خطای امنیتی!' , 403 );
+            throw new Exception( __( 'Security error!', 'jve' ) , 403 );
 
         // Check parent entity
         if ( empty($_POST['post_type']) )
@@ -222,15 +222,15 @@ function jve_get_new_posts_ajax( ) {
                                         if( $level ):
                                             switch ($level) {
                                                 case '1': 
-                                                    $level = 'مقدماتی';
+                                                    $level = __( 'Basic', 'jve' );
                                                     $badge_color = 'info';
                                                     break;
                                                 case '2': 
-                                                    $level = 'متوسط';
+                                                    $level = __( 'Intermediate', 'jve' );
                                                     $badge_color = 'success';
                                                     break;
                                                 case '3': 
-                                                    $level = 'پیشرفته';
+                                                    $level = __( 'Advanced', 'jve' );
                                                     $badge_color = 'danger';
                                                     break;
                                             }
@@ -274,7 +274,7 @@ function jve_get_new_posts_ajax( ) {
                 <?php $output .= ob_get_clean(); ?>
             <?php endwhile; ?>
         <?php else: ?>
-            <?php  throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 403 ); ?>
+            <?php  throw new Exception( __( 'There is nothing to display!', 'jve' ) , 403 ); ?>
         <?php endif; ?>
         <?php
         // Reset the global post object
@@ -299,7 +299,7 @@ function jve_get_popular_posts_ajax( ) {
 
         // Check nonce
         if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'jve-nonce') )
-            throw new Exception( 'خطای امنیتی!' , 403 );
+            throw new Exception( __( 'Security error!', 'jve' ) , 403 );
 
         // Check parent entity
         if ( empty($_POST['post_type']) )
@@ -369,15 +369,15 @@ function jve_get_popular_posts_ajax( ) {
                                         if( $level ):
                                             switch ($level) {
                                                 case '1': 
-                                                    $level = 'مقدماتی';
+                                                    $level = __( 'Basic', 'jve' );
                                                     $badge_color = 'info';
                                                     break;
                                                 case '2': 
-                                                    $level = 'متوسط';
+                                                    $level = __( 'Intermediate', 'jve' );
                                                     $badge_color = 'success';
                                                     break;
                                                 case '3': 
-                                                    $level = 'پیشرفته';
+                                                    $level = __( 'Advanced', 'jve' );
                                                     $badge_color = 'danger';
                                                     break;
                                             }
@@ -421,7 +421,7 @@ function jve_get_popular_posts_ajax( ) {
                 <?php $output .= ob_get_clean(); ?>
             <?php endwhile; ?>
         <?php else: ?>
-            <?php  throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 403 ); ?>
+            <?php  throw new Exception( __( 'There is nothing to display!', 'jve' ) , 403 ); ?>
         <?php endif; ?>
         <?php
         // Reset the global post object
@@ -446,7 +446,7 @@ function jve_get_video_posts_ajax( ) {
 
         // Check nonce
         if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'],'jve-nonce') )
-            throw new Exception( 'خطای امنیتی!' , 403 );
+            throw new Exception( __( 'Security error!', 'jve' ) , 403 );
 
         // Check parent entity
         if ( empty($_POST['post_type']) )
@@ -520,15 +520,15 @@ function jve_get_video_posts_ajax( ) {
                                         if( $level ):
                                             switch ($level) {
                                                 case '1': 
-                                                    $level = 'مقدماتی';
+                                                    $level = __( 'Basic', 'jve' );
                                                     $badge_color = 'info';
                                                     break;
                                                 case '2': 
-                                                    $level = 'متوسط';
+                                                    $level = __( 'Intermediate', 'jve' );
                                                     $badge_color = 'success';
                                                     break;
                                                 case '3': 
-                                                    $level = 'پیشرفته';
+                                                    $level = __( 'Advanced', 'jve' );
                                                     $badge_color = 'danger';
                                                     break;
                                             }
@@ -572,7 +572,7 @@ function jve_get_video_posts_ajax( ) {
                 <?php $output .= ob_get_clean(); ?>
             <?php endwhile; ?>
         <?php else: ?>
-            <?php throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 403 ); ?>
+            <?php throw new Exception( __( 'There is nothing to display!', 'jve' ) , 403 ); ?>
         <?php endif; ?>
         <?php
         // Reset the global post object
@@ -595,7 +595,7 @@ function jve_get_archive_filtered_posts_ajax( ) {
 
         // Check nonce
         if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'],'jve-nonce') )
-            throw new Exception('خطای امنیتی!', 403);
+            throw new Exception( __( 'Security error!', 'jve' ), 403);
 
         // Check cats_array
         $cats_array = [];
@@ -722,15 +722,15 @@ function jve_get_archive_filtered_posts_ajax( ) {
                                     if( $level ):
                                         switch ($level) {
                                             case '1': 
-                                                $level = 'مقدماتی';
+                                                $level = __( 'Basic', 'jve' );
                                                 $badge_color = 'info';
                                                 break;
                                             case '2': 
-                                                $level = 'متوسط';
+                                                $level = __( 'Intermediate', 'jve' );
                                                 $badge_color = 'success';
                                                 break;
                                             case '3': 
-                                                $level = 'پیشرفته';
+                                                $level = __( 'Advanced', 'jve' );
                                                 $badge_color = 'danger';
                                                 break;
                                         }
@@ -745,7 +745,7 @@ function jve_get_archive_filtered_posts_ajax( ) {
                 <?php $output .= ob_get_clean(); ?>
             <?php endwhile; ?>
         <?php else: ?>
-            <?php throw new Exception( 'مطلبی جهت نمایش وجود ندارد!' , 403 ); ?>
+            <?php throw new Exception( __( 'There is nothing to display!', 'jve' ) , 403 ); ?>
         <?php endif; ?>
         <?php
         // Reset the global post object
@@ -774,11 +774,11 @@ function jve_contact_ajax( ) {
 
         // Check nonce
         if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'],'jve-nonce') )
-            throw new Exception('خطای امنیتی!', 403);
+            throw new Exception( __( 'Security error!', 'jve' ), 403);
 
         foreach( $form_data as $item ) {
             if( empty( $item ) ) {
-                throw new Exception('پر کردن تمام فیلدها الزامی است!', 403);
+                throw new Exception(__( 'All fields are required!', 'jve' ), 403);
             }
         }
 
@@ -795,13 +795,13 @@ function jve_contact_ajax( ) {
 
             // If everything is fine, return success response
             wp_send_json([
-                'message' => 'پیام با موفقیت ارسال شد!',
+                'message' => __( 'Message sent successfully!', 'jve' ),
             ], 200);
 
         } else {
 
             // If everything is fine, return success response
-            throw new Exception('پیام ارسال نشد، مجددا تلاش نمایید!', 403);
+            throw new Exception(__( 'Message not sent, please try again!', 'jve' ), 403);
 
         }
     } catch( Exception $ex ) {

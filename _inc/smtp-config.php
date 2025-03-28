@@ -5,8 +5,8 @@ if (!defined('ABSPATH')) exit;
 
 function jve_smtp_menu() {
     add_menu_page(
-        'تنظیمات SMTP',                // Page Title
-        'تنظیمات SMTP',                // Menu Title
+        __( 'SMTP Settings', 'jve' ),                // Page Title
+        __( 'SMTP Settings', 'jve' ),                // Menu Title
         'manage_options',               // Capability
         'smtp-settings',                // Menu Slug
         'jve_smtp_settings_page',           // Callback Function to display the page
@@ -19,13 +19,13 @@ add_action('admin_menu', 'jve_smtp_menu');
 function jve_smtp_settings_page() {
     ?>
     <div class="wrap">
-        <h1><?php esc_html_e( 'تنظیمات SMTP' ); ?></h1>
+        <h1><?php _e( 'SMTP Settings', 'jve' ); ?></h1>
         <form method="post" action="options.php">
             <?php
                 // Output nonce, action, and settings fields
                 settings_fields( 'smtp_settings_group' );
                 do_settings_sections( 'smtp-settings' );
-                submit_button( 'ذخیره تنظیمات' );
+                submit_button(  __( 'Save Settings', 'jve' ) );
             ?>
         </form>
     </div>
