@@ -9,10 +9,10 @@ class TrendPostsWidget extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'trend_posts_widget', // Widget ID
-            'پرمخاطب', // Widget Name
-            ['description' => 'ویجتی برای نمایش مطالب پرمخاطب']
+            __('Trending Posts Widget', 'jve'), // Widget Name (translatable)
+            ['description' => __('A widget to display trending posts', 'jve')] // Widget Description (translatable)
         );
-    }
+    }    
 
     // Display widget content
     public function widget($args, $instance) {
@@ -74,18 +74,18 @@ class TrendPostsWidget extends WP_Widget {
 
     // Widget form in admin panel
     public function form($instance) {
-        $title = !empty($instance['title']) ? $instance['title'] : 'پرمخاطب';
+        $title = !empty($instance['title']) ? $instance['title'] : __( 'Trend', 'jve' ) ?>';
         $post_type = !empty($instance['post_type']) ? $instance['post_type'] : 'post';
         $post_types = get_post_types(['public' => true], 'objects');
         ?>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>">عنوان</label>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e( 'Title', 'jve' ) ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>"
                    name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text"
                    value="<?php echo esc_attr($title); ?>">
         </p>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('post_type')); ?>">نوع نوشته</label>
+            <label for="<?php echo esc_attr($this->get_field_id('post_type')); ?>"><?php _e( 'Post type', 'jve' ) ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('post_type')); ?>"
                     name="<?php echo esc_attr($this->get_field_name('post_type')); ?>">
                 <?php foreach ($post_types as $type): ?>

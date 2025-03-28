@@ -8,7 +8,7 @@ function jve_theme_setup() {
     add_filter( 'show_admin_bar', '__return_false' );
     
     // Register menu
-    register_nav_menu( 'Primary', 'منو برای بالای سایت' );
+    register_nav_menu( 'Primary',  __( 'Menu for the top of the site', 'jve' ) );
 
     // Register Bootstap Navwalker
     require_once( JVE_CLASS_PATH . '/WP_Bootstrap_Navwalker.php');

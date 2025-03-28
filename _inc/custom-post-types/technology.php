@@ -5,20 +5,21 @@ if (!defined('ABSPATH')) exit;
 
 function jve_register_technology_post_type() {
     $labels = array(
-        'name'               => 'تکنولوژی',
-        'singular_name'      => 'تکنولوژی',
-        'menu_name'          => 'تکنولوژی',
-        'name_admin_bar'     => 'تکنولوژی',
-        'add_new'            => 'افزودن جدید',
-        'add_new_item'       => 'افزودن اخبار تکنولوژی جدید',
-        'new_item'           => 'تکنولوژی جدید',
-        'edit_item'          => 'ویرایش تکنولوژی',
-        'view_item'          => 'مشاهده تکنولوژی',
-        'all_items'          => 'همه تکنولوژی‌ها',
-        'search_items'       => 'جستجوی تکنولوژی',
-        'not_found'          => 'موردی یافت نشد',
-        'not_found_in_trash' => 'در زباله‌دان پیدا نشد'
+        'name'               => __('Technology', 'jve'),
+        'singular_name'      => __('Technology', 'jve'),
+        'menu_name'          => __('Technology', 'jve'),
+        'name_admin_bar'     => __('Technology', 'jve'),
+        'add_new'            => __('Add New', 'jve'),
+        'add_new_item'       => __('Add New Technology News', 'jve'),
+        'new_item'           => __('New Technology', 'jve'),
+        'edit_item'          => __('Edit Technology', 'jve'),
+        'view_item'          => __('View Technology', 'jve'),
+        'all_items'          => __('All Technologies', 'jve'),
+        'search_items'       => __('Search Technology', 'jve'),
+        'not_found'          => __('No items found', 'jve'),
+        'not_found_in_trash' => __('No items found in Trash', 'jve')
     );
+    
 
     $args = array(
         'labels'             => $labels,
@@ -45,18 +46,19 @@ add_action( 'init', 'jve_register_technology_post_type' );
 //  Technology Category
 function jve_register_technology_category() {
     $labels = array(
-        'name'              => 'دسته‌بندی‌های اخبار تکنولوژی',
-        'singular_name'     => 'دسته‌بندی',
-        'search_items'      => 'جستجوی دسته‌بندی',
-        'all_items'         => 'همه دسته‌بندی‌ها',
-        'parent_item'       => 'دسته‌بندی مادر',
-        'parent_item_colon' => 'دسته‌بندی مادر:',
-        'edit_item'         => 'ویرایش دسته‌بندی',
-        'update_item'       => 'به‌روزرسانی دسته‌بندی',
-        'add_new_item'      => 'افزودن دسته‌بندی جدید',
-        'new_item_name'     => 'نام دسته‌بندی جدید',
-        'menu_name'         => 'دسته‌بندی‌',
+        'name'              => __('Technology News Categories', 'jve'),
+        'singular_name'     => __('Category', 'jve'),
+        'search_items'      => __('Search Categories', 'jve'),
+        'all_items'         => __('All Categories', 'jve'),
+        'parent_item'       => __('Parent Category', 'jve'),
+        'parent_item_colon' => __('Parent Category:', 'jve'),
+        'edit_item'         => __('Edit Category', 'jve'),
+        'update_item'       => __('Update Category', 'jve'),
+        'add_new_item'      => __('Add New Category', 'jve'),
+        'new_item_name'     => __('New Category Name', 'jve'),
+        'menu_name'         => __('Categories', 'jve'),
     );
+    
 
     $args = array(
         'hierarchical'      => true, // Works like post categories
@@ -76,19 +78,20 @@ add_action( 'init', 'jve_register_technology_category' );
 //  Technology Tag
 function jve_register_technology_tag() {
     $labels = array(
-        'name'              => 'برچسب‌های اخبار تکنولوژی',
-        'singular_name'     => 'برچسب',
-        'search_items'      => 'جستجوی برچسب',
-        'popular_items'     => 'برچسب‌های پرکاربرد',
-        'all_items'         => 'همه برچسب‌ها',
-        'edit_item'         => 'ویرایش برچسب',
-        'update_item'       => 'به‌روزرسانی برچسب',
-        'add_new_item'      => 'افزودن برچسب جدید',
-        'new_item_name'     => 'نام برچسب جدید',
-        'separate_items_with_commas' => 'برچسب‌ها را با کاما جدا کنید',
-        'add_or_remove_items' => 'افزودن یا حذف برچسب‌ها',
-        'menu_name'         => 'برچسب‌',
+        'name'                       => __('Technology News Tags', 'jve'),
+        'singular_name'              => __('Tag', 'jve'),
+        'search_items'               => __('Search Tags', 'jve'),
+        'popular_items'              => __('Popular Tags', 'jve'),
+        'all_items'                  => __('All Tags', 'jve'),
+        'edit_item'                  => __('Edit Tag', 'jve'),
+        'update_item'                => __('Update Tag', 'jve'),
+        'add_new_item'               => __('Add New Tag', 'jve'),
+        'new_item_name'              => __('New Tag Name', 'jve'),
+        'separate_items_with_commas' => __('Separate tags with commas', 'jve'),
+        'add_or_remove_items'        => __('Add or remove tags', 'jve'),
+        'menu_name'                  => __('Tags', 'jve'),
     );
+    
 
     $args = array(
         'hierarchical'      => false, // Works like post tags

@@ -15,13 +15,13 @@
                 <div class="custom-tab customize-tab tabs_creative">
                     <ul class="nav nav-tabs pb-2 b-0" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">مطالب نویسنده</a>
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><?php _e( 'Authors\' articles', 'jve') ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">درباره نویسنده</a>
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><?php _e( 'About author', 'jve') ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">نظرات</a>
+                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><?php _e( 'Comments', 'jve') ?></a>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -55,7 +55,7 @@
                         <!-- Education -->
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="details_single p-2">
-                                <h2>درباره نویسنده</h2>
+                                <h2><?php _e( 'About author', 'jve') ?></h2>
                                 <ul class="skills_info">
                                     <li>
                                         <div class="skills_captions">

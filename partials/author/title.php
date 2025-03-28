@@ -18,29 +18,29 @@
                             $role = '';
                             switch ( $auth->roles[0] ) {
                                 case 'administrator':
-                                    $role = 'ادمین';
+                                    $role = __( 'Admin', 'jve');
                                     break;
                                 case 'editor':
-                                    $role = 'ادیتور';
+                                    $role = __( 'Editor', 'jve');
                                     break;
                                 case 'author':
-                                    $role = 'نویسنده';
+                                    $role = __( 'Author', 'jve');
                                     break;
                             }
                         ?>
                         <div class="viewer_status"><?php echo $role ?></div>
                     </div>
                     <div class="caption">
-                        <div class="viewer_package_status">عضویت از <?php echo TimeModify::jve_time_ago( $auth->user_registered ) ?></div>
+                        <div class="viewer_package_status"><?php _e( 'Registered from', 'jve') ?> <?php echo TimeModify::jve_time_ago( $auth->user_registered ) ?></div>
                         <div class="viewer_header">
                             <h4><?php echo $auth->display_name ?></h4>
                             <span class="viewer_location">
                                 <?php echo get_user_meta( $auth->ID, 'career', true )?>
                             </span>
                             <ul class="mt-2">
-                                <li><strong><?php echo count_user_posts( $auth->ID ) ?></strong> مطالب </li>
-                                <li><strong>87</strong> ویدئو آموزشی</li>
-                                <li><strong>120</strong> دوره</li>
+                                <li><strong><?php echo count_user_posts( $auth->ID ) ?></strong> <?php _e( 'Articles', 'jve') ?> </li>
+                                <li><strong>87</strong> <?php _e( 'Learning videos', 'jve') ?></li>
+                                <li><strong>120</strong> <?php _e( 'Courses', 'jve') ?></li>
                             </ul>
                         </div>
                         <div class="viewer_header">

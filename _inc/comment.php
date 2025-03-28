@@ -30,15 +30,15 @@ function jve_list_comments( $comments, $args ) {
                             <div class="comment-date"><?php echo comment_date() ?></div>
                             <div class="comment-reply">
                                 <a href="#commentform" class="reply" data-commentid="<?php echo $comment->comment_ID ?>" data-author="<?php echo $comment->comment_author ?>" data-toggle="modal" data-target="#commentreplyModal">
-                                    <span class="icona"><i class="ti-back-right"></i></span> پاسخ
+                                    <span class="icona"><i class="ti-back-right"></i></span> <?php _e( 'Reply', 'jve') ?>
                                 </a>
                                 <?php if ($is_admin): ?>
-                                    <?php edit_comment_link('<i class="ti-pencil-alt"></i> ویرایش '); ?>
+                                    <?php edit_comment_link('<i class="ti-pencil-alt"></i> ' . __( 'Edit', 'jve') ); ?>
                                 <?php endif; ?>
                             </div>
                             <div class="comment-text">
                                 <?php if (!$is_approved): ?>
-                                    <div class="alert alert-danger">نیازمند تایید مدیر</div>
+                                    <div class="alert alert-danger"><?php _e( 'Requires administrator approval.', 'jve') ?></div>
                                 <?php endif; ?>
                                 <p><?php echo wp_strip_all_tags($comment->comment_content); ?></p>
                             </div>

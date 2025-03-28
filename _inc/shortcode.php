@@ -11,7 +11,7 @@ function jve_video_shortcodes($atts, $content = null) {
     ], $atts, 'jve-video');
 
     if (empty($atts['src'])) {
-        return '<p class="alert-warning">⚠️ ویدئویی یافت نشد.</p>';
+        return '<p class="alert alert-warning">' . __( 'Video not found', 'jve') . '</p>';
     }
 
     ob_start(); // Start output buffering
@@ -19,14 +19,12 @@ function jve_video_shortcodes($atts, $content = null) {
     <video class="video-js video-js-free-course" controls preload="auto" width="100%" height="auto" poster="<?php echo esc_url($atts['poster']); ?>">
         <source src="<?php echo esc_url($atts['src']); ?>" type="video/mp4">
         <p class="vjs-no-js alert-warning">
-            را مرورگرخود یا و نمایید فعال را خود مرورگر جاوااسکریپت ویدئو این ه
-            مشاهد برای : گرامی کاربر
-            کنید بروزرسانی
+            <?php _e( 'Please enable JavaScript in your browser or update your browser to view this video: Dear User', 'jve' ) ?>
         </p>
     </video>
     <div class="download-link center">
         <a href="<?php echo esc_url($atts['src']); ?>" class="btn btn-success" target="_blank">
-            <i class="fa fa-download"></i><span class="mx-2"> دانلود</span>
+            <i class="fa fa-download"></i><span class="mx-2"> <?php _e( 'Download', 'jve' ) ?></span>
         </a>
     </div>
     <?php

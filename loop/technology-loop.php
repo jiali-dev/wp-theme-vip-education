@@ -49,7 +49,7 @@ $the_query = new WP_Query($args);
         </div>
     <?php endwhile; ?>
 <?php else: ?>
-    <div class="alert alert-info">مطلبی جهت نمایش وجود ندارد!</div>
+    <div class="alert alert-info"><?php _e( 'There is nothing to display!', 'jve' ) ?></div>
 <?php endif; ?>
 <?php
     // Reset the global post object

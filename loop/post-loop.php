@@ -25,15 +25,15 @@ $the_query = new WP_Query($args);
                         if( $level ):
                             switch ($level) {
                                 case '1': 
-                                    $level = 'مقدماتی';
+                                    $level = __( 'Basic', 'jve' );
                                     $badge_color = 'info';
                                     break;
                                 case '2': 
-                                    $level = 'متوسط';
+                                    $level = __( 'Intermediate', 'jve' );
                                     $badge_color = 'success';
                                     break;
                                 case '3': 
-                                    $level = 'پیشرفته';
+                                    $level = __( 'Advanced', 'jve' );
                                     $badge_color = 'danger';
                                     break;
                             }
@@ -75,7 +75,7 @@ $the_query = new WP_Query($args);
         </div>
     <?php endwhile; ?>
 <?php else: ?>
-    <div class="alert alert-info">مطلبی جهت نمایش وجود ندارد!</div>
+    <div class="alert alert-info"><?php _e( 'There is nothing to display!', 'jve' ) ?></div>
 <?php endif; ?>
 <?php
     // Reset the global post object

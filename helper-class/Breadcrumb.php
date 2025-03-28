@@ -8,7 +8,7 @@ class Breadcrumb {
     public static function jve_get_breadcrumb( ) {
         ?>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo home_url( ) ?>">خانه</a></li>
+                <li class="breadcrumb-item"><a href="<?php echo home_url( ) ?>"><?php _e( 'Home', 'jve') ?></a></li>
                 <?php if( is_single( ) || is_category( ) ): ?>
                     <?php // Retrieve the current value of the meta field
                         $cat = get_post_meta(get_the_ID(  ), '_jve_post_cat', true);

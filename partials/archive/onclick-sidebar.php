@@ -24,7 +24,7 @@ if (!defined('ABSPATH')) exit;
                         <button class="btn my-2 my-sm-0" type="submit"><i class="ti-search"></i></button>
                     </form>
                     <form id="archive-filter">
-                        <h4 class="side_title">دسته بندی ها</h4>
+                        <h4 class="side_title"><?php _e( 'Categories', 'jve') ?></h4>
                         <ul class="no-ul-list mb-3">
                             <?php 
                                 $categories = get_terms([
@@ -40,11 +40,11 @@ if (!defined('ABSPATH')) exit;
                                     </li>
                                 <?php endforeach; ?>
                             <?php else: ?>
-                                <div class="alert alert-info">دسته بندی وجود ندارد!</div>
+                                <div class="alert alert-info"><?php _e( 'There is no categories!', 'jve') ?></div>
                             <?php endif; ?>
                         </ul>
 
-                        <h4 class="side_title">نویسندگان</h4>
+                        <h4 class="side_title"><?php _e( 'Authors', 'jve') ?></h4>
                         <ul class="no-ul-list mb-3">
                             <?php 
                                 $authors = new WP_User_Query(
@@ -61,13 +61,13 @@ if (!defined('ABSPATH')) exit;
                                     </li>
                                 <?php endforeach; ?>
                             <?php else: ?>
-                                <div class="alert alert-info">نویسنده ای وجود ندارد!</div>
+                                <div class="alert alert-info"><?php _e( 'There is no authors!', 'jve') ?></div>
                             <?php endif; ?>
                         </ul>
 
                         <h4 class="side_title">نوع دوره</h4>
                         <ul class="no-ul-list mb-3">
-                            <?php $post_entities = [ 'text' => 'متن', 'video' => 'ویدئو', 'audio' => 'صدا']; ?>
+                            <?php $post_entities = [ 'text' => __( 'Text', 'jve'), 'video' => __( 'Video', 'jve'), 'audio' => __( 'Audio', 'jve')]; ?>
                             <?php foreach( $post_entities as $key => $val ): ?>
                                 <li>
                                     <input id="<?php echo $key ?>" class="checkbox-custom entity" name="post_entity"  value="<?php echo $key ?>" type="radio">

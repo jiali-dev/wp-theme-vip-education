@@ -5,7 +5,9 @@ if (!defined('ABSPATH')) exit;
 
 ?>
 
-<?php /* Template Name: تماس با ما */ ?>
+<?php /* Template Name: Contact Us */ ?>
+<!-- For Translate -->
+<?php __( 'Contact Us', 'jve' ) ?>
 
 <!-- Header -->
 <?php get_header(  );?>

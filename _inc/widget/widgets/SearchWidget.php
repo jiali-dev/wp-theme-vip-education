@@ -9,10 +9,10 @@ class SearchWidget extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'search_widget', // Widget ID
-            'جستجوی مطالب', // Widget Name
-            ['description' => 'ویجتی برای فرم جستجوی مطالب']
+            __('Search Widget', 'jve'), // Widget Name (translatable)
+            ['description' => __('A widget for the search form', 'jve')] // Widget Description (translatable)
         );
-    }
+    }    
 
     // Display widget content
     public function widget($args, $instance) {
@@ -26,7 +26,7 @@ class SearchWidget extends WP_Widget {
                 }
             ?>
             <form action="<?php echo home_url( ) ?>" method="get" class="sidebar-search-form">
-                <input type="search" name="s" placeholder="جستجو ...">
+                <input type="search" name="s" placeholder="<?php _e( 'Search ...', 'jve' ) ?>">
                 <button type="submit"><i class="ti-search"></i></button>
             </form>
         </div>
@@ -36,10 +36,10 @@ class SearchWidget extends WP_Widget {
 
     // Widget form in admin panel
     public function form($instance) {
-        $title = !empty($instance['title']) ? $instance['title'] : 'جستجو';
+        $title = !empty($instance['title']) ? $instance['title'] : __( 'Search ...', 'jve' );
         ?>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>">عنوان</label>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e( 'Title', 'jve' ) ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>"
                    name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text"
                    value="<?php echo esc_attr($title); ?>">

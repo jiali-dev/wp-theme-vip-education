@@ -18,38 +18,38 @@ if (!defined('ABSPATH')) exit;
                     <div class="prc_wrap">
                         
                         <div class="prc_wrap_header">
-                            <h4 class="property_block_title">فرم تماس</h4>
+                            <h4 class="property_block_title"><?php _e( 'Contact form', 'jve') ?></h4>
                         </div>
                         
                         <div class="prc_wrap-body">
                             <div class="row">
                                 <div class="col-lg-6 col-md-12">
                                     <div class="form-group">
-                                        <label>نام کامل</label>
+                                        <label><?php _e( 'Full name', 'jve') ?></label>
                                         <input type="text" name="fullname" class="form-control simple">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12">
                                     <div class="form-group">
-                                        <label>ایمیل</label>
+                                        <label><?php _e( 'Email', 'jve') ?></label>
                                         <input type="email" name="email" class="form-control simple">
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="form-group">
-                                <label>عنوان</label>
+                                <label><?php _e( 'Title', 'jve') ?></label>
                                 <input type="text" name="title" class="form-control simple">
                             </div>
                             
                             <div class="form-group">
-                                <label>پیام</label>
+                                <label><?php _e( 'Message', 'jve') ?></label>
                                 <textarea name="message" class="form-control simple"></textarea>
                             </div>
                             
                             <div class="form-group">
                                 <button class="btn btn-theme send-message-btn" type="submit">
-                                     ارسال پیام 
+                                    <?php _e( 'Send message', 'jve') ?> 
                                     <span class="m-1 send-message-spinner"><i class="fa fa-spin fa-spinner"></i></span>
                                 </button>
                             </div>
