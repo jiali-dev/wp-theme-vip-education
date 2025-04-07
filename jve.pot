@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vip Education\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-28 12:46+0000\n"
+"POT-Creation-Date: 2025-03-28 16:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,14 +16,241 @@ msgstr ""
 "X-Loco-Version: 2.7.1; wp-6.7.2\n"
 "X-Domain: jve"
 
+#: _inc/widget/sidebar.php:11
+msgid "A dedicated sidebar for single post pages"
+msgstr ""
+
+#: _inc/widget/sidebar.php:22
+msgid "A dedicated sidebar for technology pages"
+msgstr ""
+
 #. Description of the theme
 msgid ""
 "A modern and feature-rich WordPress theme for educational websites, with VIP "
 "content support."
 msgstr ""
 
-#: comments.php:13
-msgid "comment"
+#: _inc/widget/widgets/SearchWidget.php:13
+msgid "A widget for the search form"
+msgstr ""
+
+#: _inc/widget/widgets/CategoriesWidget.php:13
+msgid "A widget to display categories"
+msgstr ""
+
+#: _inc/widget/widgets/CloudyTags.php:13
+msgid "A widget to display cloudy tags"
+msgstr ""
+
+#: _inc/widget/widgets/TrendPostsWidget.php:13
+msgid "A widget to display trending posts"
+msgstr ""
+
+#: partials/author/posts.php:21 partials/author/posts.php:58
+msgid "About author"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:12
+msgid "Add New"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:57
+msgid "Add New Category"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:88
+msgid "Add New Tag"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:13
+msgid "Add New Technology News"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:91
+msgid "Add or remove tags"
+msgstr ""
+
+#: partials/author/title.php:21
+msgid "Admin"
+msgstr ""
+
+#: _inc/ajax-functions.php:90 _inc/ajax-functions.php:233
+#: _inc/ajax-functions.php:380 _inc/ajax-functions.php:531
+#: _inc/ajax-functions.php:733 loop/post-loop.php:36
+#: loop/author-posts-loop.php:72 loop/archive-loop.php:72
+#: _inc/meta-box/meta-box.php:41
+msgid "Advanced"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:52
+msgid "All Categories"
+msgstr ""
+
+#: _inc/ajax-functions.php:781
+msgid "All fields are required!"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:85
+msgid "All Tags"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:17
+msgid "All Technologies"
+msgstr ""
+
+#: _inc/meta-box/meta-box.php:53 _inc/meta-box/meta-box.php:56
+msgid "Article entity"
+msgstr ""
+
+#: _inc/meta-box/meta-box.php:35 _inc/meta-box/meta-box.php:38
+msgid "Article level"
+msgstr ""
+
+#: partials/author/title.php:41
+msgid "Articles"
+msgstr ""
+
+#: _inc/meta-box/meta-box.php:59 partials/archive/onclick-sidebar.php:70
+msgid "Audio"
+msgstr ""
+
+#: partials/author/title.php:27
+msgid "Author"
+msgstr ""
+
+#: partials/archive/onclick-sidebar.php:47
+msgid "Authors"
+msgstr ""
+
+#: partials/author/posts.php:18
+msgid "Authors' articles"
+msgstr ""
+
+#: _inc/ajax-functions.php:82 _inc/ajax-functions.php:225
+#: _inc/ajax-functions.php:372 _inc/ajax-functions.php:523
+#: _inc/ajax-functions.php:725 loop/post-loop.php:28
+#: loop/author-posts-loop.php:64 loop/archive-loop.php:64
+#: _inc/meta-box/meta-box.php:39
+msgid "Basic"
+msgstr ""
+
+#: comments.php:29
+msgid "Be the first to comment."
+msgstr ""
+
+#: _inc/user.php:23
+msgid "Behance"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:59
+#: partials/archive/onclick-sidebar.php:27
+#: _inc/widget/widgets/CategoriesWidget.php:53
+msgid "Categories"
+msgstr ""
+
+#. Widget ID
+#: _inc/widget/widgets/CategoriesWidget.php:12
+msgid "Categories Widget"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:50 _inc/meta-box/meta-box.php:44
+#: _inc/meta-box/meta-box.php:48
+msgid "Category"
+msgstr ""
+
+#. Widget ID
+#: _inc/widget/widgets/CloudyTags.php:12
+msgid "Cloudy Tags Widget"
+msgstr ""
+
+#: partials/author/posts.php:24
+msgid "Comments"
+msgstr ""
+
+#: comments.php:182
+msgid "Comments are closed for this post!"
+msgstr ""
+
+#: partials/archive/main-content.php:58
+msgid "Complete list of courses"
+msgstr ""
+
+#: partials/contact/main-content.php:21
+msgid "Contact form"
+msgstr ""
+
+#. Name of the template
+#: contact.php:8 contact.php:10
+msgid "Contact Us"
+msgstr ""
+
+#: partials/author/title.php:43
+msgid "Courses"
+msgstr ""
+
+#: helper-class/TimeModify.php:23
+msgid "Day(s) ago"
+msgstr ""
+
+#: _inc/shortcode.php:27
+msgid "Download"
+msgstr ""
+
+#: _inc/comment.php:36
+msgid "Edit"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:55
+msgid "Edit Category"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:86
+msgid "Edit Tag"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:15
+msgid "Edit Technology"
+msgstr ""
+
+#: partials/author/title.php:24
+msgid "Editor"
+msgstr ""
+
+#: partials/contact/main-content.php:34
+msgid "Email"
+msgstr ""
+
+#. ID of the meta box
+#: _inc/meta-box/meta-box.php:10
+msgid "Extra Settings"
+msgstr ""
+
+#: _inc/user.php:17
+msgid "Facebook"
+msgstr ""
+
+#: partials/archive/main-content.php:23
+msgid "Filter box"
+msgstr ""
+
+#: partials/contact/main-content.php:28
+msgid "Full name"
+msgstr ""
+
+#: comments.php:81 comments.php:137
+msgid "Full name *"
+msgstr ""
+
+#: helper-class/Breadcrumb.php:11
+msgid "Home"
+msgstr ""
+
+#: helper-class/FilterPosts.php:13
+msgid "Hottest"
+msgstr ""
+
+#: helper-class/TimeModify.php:24
+msgid "Hour(s) ago"
 msgstr ""
 
 #. URI of the theme
@@ -31,20 +258,325 @@ msgstr ""
 msgid "https://mahyarerad.com/"
 msgstr ""
 
+#: _inc/ajax-functions.php:86 _inc/ajax-functions.php:229
+#: _inc/ajax-functions.php:376 _inc/ajax-functions.php:527
+#: _inc/ajax-functions.php:729 loop/post-loop.php:32
+#: loop/author-posts-loop.php:68 loop/archive-loop.php:68
+#: _inc/meta-box/meta-box.php:40
+msgid "Intermediate"
+msgstr ""
+
+#: _inc/user.php:65
+msgid "Job"
+msgstr ""
+
+#: _inc/user.php:62
+msgid "Job Position"
+msgstr ""
+
+#: partials/archive/main-content.php:17
+msgid "learning course found."
+msgstr ""
+
+#: partials/author/title.php:42
+msgid "Learning videos"
+msgstr ""
+
+#: _inc/user.php:35
+msgid "Linkedin"
+msgstr ""
+
 #. Author of the theme
 msgid "Mahyar Rad"
+msgstr ""
+
+#: _inc/theme_setup.php:11 _inc/user.php:8
+msgid "Menu for the top of the site"
+msgstr ""
+
+#: partials/contact/main-content.php:46
+msgid "Message"
+msgstr ""
+
+#: _inc/ajax-functions.php:804
+msgid "Message not sent, please try again!"
+msgstr ""
+
+#: _inc/ajax-functions.php:798
+msgid "Message sent successfully!"
+msgstr ""
+
+#: helper-class/TimeModify.php:25
+msgid "Minute(s) ago"
+msgstr ""
+
+#: helper-class/TimeModify.php:17
+msgid "Moment(s) ago"
+msgstr ""
+
+#: helper-class/TimeModify.php:22
+msgid "Month(s) ago"
+msgstr ""
+
+#: helper-class/FilterPosts.php:12
+msgid "Most Popular"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:58
+msgid "New Category Name"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:89
+msgid "New Tag Name"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:14
+msgid "New Technology"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:19
+msgid "No items found"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:20
+msgid "No items found in Trash"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:53
+msgid "Parent Category"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:54
+msgid "Parent Category:"
+msgstr ""
+
+#: _inc/shortcode.php:22
+msgid ""
+"Please enable JavaScript in your browser or update your browser to view this "
+"video: Dear User"
+msgstr ""
+
+#: comments.php:62
+msgid "Please log in to post a comment!"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:84
+msgid "Popular Tags"
+msgstr ""
+
+#: _inc/widget/widgets/TrendPostsWidget.php:88
+#: _inc/widget/widgets/CloudyTags.php:69
+msgid "Post type"
+msgstr ""
+
+#: partials/author/title.php:34
+msgid "Registered from"
+msgstr ""
+
+#: _inc/comment.php:33
+msgid "Reply"
+msgstr ""
+
+#: comments.php:69
+msgid "Reply to:"
+msgstr ""
+
+#: _inc/comment.php:41
+msgid "Requires administrator approval."
+msgstr ""
+
+#: comments.php:105 comments.php:161
+msgid ""
+"Save my name, email, and website in this browser for the next time I comment."
+msgstr ""
+
+#: _inc/smtp-config.php:28
+msgid "Save Settings"
+msgstr ""
+
+#: _inc/widget/widgets/SearchWidget.php:29
+#: _inc/widget/widgets/SearchWidget.php:39
+msgid "Search ..."
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:51
+msgid "Search Categories"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:83
+msgid "Search Tags"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:18
+msgid "Search Technology"
+msgstr ""
+
+#. Widget ID
+#: _inc/widget/widgets/SearchWidget.php:12
+msgid "Search Widget"
+msgstr ""
+
+#: _inc/ajax-functions.php:13 _inc/ajax-functions.php:157
+#: _inc/ajax-functions.php:302 _inc/ajax-functions.php:449
+#: _inc/ajax-functions.php:598 _inc/ajax-functions.php:777
+msgid "Security error!"
+msgstr ""
+
+#: partials/contact/main-content.php:52
+msgid "Send message"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:90
+msgid "Separate tags with commas"
+msgstr ""
+
+#: helper-class/FilterPosts.php:11
+msgid "Show by: Newest"
+msgstr ""
+
+#: _inc/widget/sidebar.php:9
+msgid "Single Post Sidebar"
+msgstr ""
+
+#: _inc/widget/sidebar.php:20
+msgid "Single Technology Sidebar"
+msgstr ""
+
+#. Page Title
+#: _inc/smtp-config.php:8 _inc/smtp-config.php:9 _inc/smtp-config.php:22
+msgid "SMTP Settings"
+msgstr ""
+
+#: comments.php:130
+msgid "Submit a comment"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:82
+msgid "Tag"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:92
+#: _inc/widget/widgets/CloudyTags.php:58
+msgid "Tags"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:8
+#: _inc/custom-post-types/technology.php:9
+#: _inc/custom-post-types/technology.php:10
+#: _inc/custom-post-types/technology.php:11
+msgid "Technology"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:49
+msgid "Technology News Categories"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:81
+msgid "Technology News Tags"
+msgstr ""
+
+#: _inc/meta-box/meta-box.php:57 partials/archive/onclick-sidebar.php:70
+msgid "Text"
+msgstr ""
+
+#: partials/archive/onclick-sidebar.php:64
+msgid "There is no authors!"
+msgstr ""
+
+#: partials/archive/onclick-sidebar.php:43
+msgid "There is no categories!"
+msgstr ""
+
+#: _inc/widget/widgets/CategoriesWidget.php:44
+msgid "There is no category!"
+msgstr ""
+
+#: _inc/widget/widgets/CloudyTags.php:49
+msgid "There is no tag!"
+msgstr ""
+
+#: _inc/ajax-functions.php:134 _inc/ajax-functions.php:277
+#: _inc/ajax-functions.php:424 _inc/ajax-functions.php:575
+#: _inc/ajax-functions.php:748 loop/post-loop.php:78
+#: loop/technology-loop.php:52 loop/author-posts-loop.php:86
+#: loop/archive-loop.php:86
+msgid "There is nothing to display!"
+msgstr ""
+
+#: partials/contact/main-content.php:41
+#: _inc/widget/widgets/TrendPostsWidget.php:82
+#: _inc/widget/widgets/CloudyTags.php:63
+#: _inc/widget/widgets/CategoriesWidget.php:58
+#: _inc/widget/widgets/SearchWidget.php:42
+msgid "Title"
+msgstr ""
+
+#: _inc/widget/widgets/TrendPostsWidget.php:77
+msgid "Trend"
+msgstr ""
+
+#. Widget ID
+#: _inc/widget/widgets/TrendPostsWidget.php:12
+msgid "Trending Posts Widget"
+msgstr ""
+
+#: _inc/user.php:11
+msgid "Twitter"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:56
+msgid "Update Category"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:87
+msgid "Update Tag"
+msgstr ""
+
+#: comments.php:86 comments.php:142
+msgid "Valid Email *"
+msgstr ""
+
+#: _inc/meta-box/meta-box.php:58 partials/archive/onclick-sidebar.php:70
+msgid "Video"
+msgstr ""
+
+#: _inc/shortcode.php:14
+msgid "Video not found"
+msgstr ""
+
+#: helper-class/FilterPosts.php:14
+msgid "Video Posts"
+msgstr ""
+
+#: _inc/custom-post-types/technology.php:16
+msgid "View Technology"
 msgstr ""
 
 #. Name of the theme
 msgid "Vip Education"
 msgstr ""
 
-#. Name of the template
-#: archive.php:8
-msgid "آرشیو"
+#: comments.php:91 comments.php:147
+msgid "Website address *"
+msgstr ""
+
+#: comments.php:97 comments.php:153
+msgid "Write your comment... *"
+msgstr ""
+
+#: _inc/user.php:70
+msgid "Write your job"
+msgstr ""
+
+#: helper-class/TimeModify.php:21
+msgid "Year(s) ago"
+msgstr ""
+
+#: _inc/user.php:29
+msgid "Youtube"
 msgstr ""
 
 #. Name of the template
-#: contact.php:8
-msgid "تماس با ما"
+#: archive.php:8
+msgid "آرشیو"
 msgstr ""
