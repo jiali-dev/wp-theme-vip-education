@@ -114,8 +114,8 @@ if (!defined('ABSPATH')) exit;
 				</div>
 			</footer>
 			<!-- ============================ Footer End ================================== -->
-			<?php get_template_part( 'partials/login/sign-in', 'sign-in' ) ?>
-			<?php get_template_part( 'partials/login/register', 'register' ) ?>
+			<?php get_template_part( 'partials/login/signin', 'signin' ) ?>
+			<?php get_template_part( 'partials/login/signup', 'signup' ) ?>
 
 		</div>
 		<!-- ============================================================== -->
