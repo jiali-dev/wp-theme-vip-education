@@ -74,7 +74,7 @@ class TrendPostsWidget extends WP_Widget {
 
     // Widget form in admin panel
     public function form($instance) {
-        $title = !empty($instance['title']) ? $instance['title'] : __( 'Trend', 'jve' ) ?>';
+        $title = !empty($instance['title']) ? $instance['title'] : __( 'Trend', 'jve' );
         $post_type = !empty($instance['post_type']) ? $instance['post_type'] : 'post';
         $post_types = get_post_types(['public' => true], 'objects');
         ?>

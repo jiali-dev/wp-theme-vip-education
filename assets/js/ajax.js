@@ -43,35 +43,34 @@ jQuery(function ($) {
     });
   });
 
-  $("#archive-filter").on("submit", function(e) {
-
+  $("#archive-filter").on("submit", function (e) {
     e.preventDefault();
 
     // Get current element
     let el = $(this);
 
     // Posts contaniner
-    let archive_container = $('.archive-posts');
+    let archive_container = $(".archive-posts");
 
     // Get Tax
     let cats_array = [];
-    el.find('.tax[data-tax=category]:checked').each(function() {
-        cats_array.push($(this).val());
+    el.find(".tax[data-tax=category]:checked").each(function () {
+      cats_array.push($(this).val());
     });
 
     let tech_cats_array = [];
-    el.find('.tax[data-tax=technology_category]:checked').each(function() {
+    el.find(".tax[data-tax=technology_category]:checked").each(function () {
       tech_cats_array.push($(this).val());
     });
 
     // Get Author
     let authors_array = [];
-    el.find('.author:checked').each(function() {
+    el.find(".author:checked").each(function () {
       authors_array.push($(this).val());
     });
 
     // Get Entity
-    let entity = el.find('.entity:checked').val();
+    let entity = el.find(".entity:checked").val();
 
     $.ajaxSetup({ cache: false });
 
@@ -80,10 +79,10 @@ jQuery(function ($) {
       url: jve_ajax.ajaxurl,
       data: {
         nonce: jve_ajax.nonce,
-        cats_array : cats_array,
-        tech_cats_array : tech_cats_array,
-        authors_array : authors_array,
-        entity : entity,
+        cats_array: cats_array,
+        tech_cats_array: tech_cats_array,
+        authors_array: authors_array,
+        entity: entity,
         action: `jve_get_archive_filtered_posts_ajax`,
       },
       beforeSend: function () {
@@ -93,50 +92,49 @@ jQuery(function ($) {
         Notiflix.Notify.failure(xhr.responseJSON.message);
       },
       success: function (response) {
-        $('.found-posts').text(response.found_posts);
+        $(".found-posts").text(response.found_posts);
         archive_container.html(response.data);
         paged = 1;
-        if( response.max_num_pages > paged  ) {
-          $('.ajax-load-more').show();
+        if (response.max_num_pages > paged) {
+          $(".ajax-load-more").show();
         }
       },
       complete: function () {
         archive_container.css("opacity", 1);
-        $('.pagination').hide();
-        $('.closebtn').click();
+        $(".pagination").hide();
+        $(".closebtn").click();
       },
     });
   });
 
-  $(".ajax-load-more .btn-loader").on("click", function() {
-    
+  $(".ajax-load-more .btn-loader").on("click", function () {
     paged++;
 
     // Get current element
-    let el = $('#archive-filter');
+    let el = $("#archive-filter");
 
     // Posts contaniner
-    let archive_container = $('.archive-posts');
+    let archive_container = $(".archive-posts");
 
     // Get Tax
     let cats_array = [];
-    el.find('.tax[data-tax=category]:checked').each(function() {
-        cats_array.push($(this).val());
+    el.find(".tax[data-tax=category]:checked").each(function () {
+      cats_array.push($(this).val());
     });
 
     let tech_cats_array = [];
-    el.find('.tax[data-tax=technology_category]:checked').each(function() {
+    el.find(".tax[data-tax=technology_category]:checked").each(function () {
       tech_cats_array.push($(this).val());
     });
 
     // Get Author
     let authors_array = [];
-    el.find('.author:checked').each(function() {
+    el.find(".author:checked").each(function () {
       authors_array.push($(this).val());
     });
 
     // Get Entity
-    let entity = el.find('.entity:checked').val();
+    let entity = el.find(".entity:checked").val();
 
     $.ajaxSetup({ cache: false });
 
@@ -145,10 +143,10 @@ jQuery(function ($) {
       url: jve_ajax.ajaxurl,
       data: {
         nonce: jve_ajax.nonce,
-        cats_array : cats_array,
-        tech_cats_array : tech_cats_array,
-        authors_array : authors_array,
-        entity : entity,
+        cats_array: cats_array,
+        tech_cats_array: tech_cats_array,
+        authors_array: authors_array,
+        entity: entity,
         paged: paged,
         action: `jve_get_archive_filtered_posts_ajax`,
       },
@@ -159,10 +157,10 @@ jQuery(function ($) {
         Notiflix.Notify.failure(xhr.responseJSON.message);
       },
       success: function (response) {
-        $('.found-posts').text(response.found_posts);
+        $(".found-posts").text(response.found_posts);
         archive_container.append(response.data);
-        if( paged >= response.max_num_pages ) {
-          $('.ajax-load-more').hide();
+        if (paged >= response.max_num_pages) {
+          $(".ajax-load-more").hide();
         }
       },
       complete: function () {
@@ -171,10 +169,9 @@ jQuery(function ($) {
     });
   });
 
-  $(".contact-form").on("submit", function(e) {
-
+  $(".contact-form").on("submit", function (e) {
     e.preventDefault(); // Prevent default form submission
-       
+
     var form = $(this);
     var form_data = $(this).serialize(); // Serialize form data // Serialize form data // Create FormData object
 
@@ -188,9 +185,9 @@ jQuery(function ($) {
         nonce: jve_ajax.nonce,
         action: `jve_contact_ajax`,
       },
-      beforeSend: function () { 
-        $('.send-message-spinner').show();
-        $('.send-message-btn').prop("disabled", true);;
+      beforeSend: function () {
+        $(".send-message-spinner").show();
+        $(".send-message-btn").prop("disabled", true);
       },
       success: function (response) {
         Notiflix.Notify.success(response.message);
@@ -199,10 +196,85 @@ jQuery(function ($) {
         Notiflix.Notify.failure(xhr.responseJSON.message);
       },
       complete: function () {
-        $('.send-message-spinner').hide();
-        $('.send-message-btn').prop("disabled", false);
+        $(".send-message-spinner").hide();
+        $(".send-message-btn").prop("disabled", false);
         $(form).trigger("reset");
       },
+    });
+  });
+
+  // Sign in
+  $(".jve-signin-form").on("submit", function (e) {
+    // Prevent default form submission
+    e.preventDefault();
+
+    var formData = new FormData(this); // Serialize form data // Serialize form data // Create FormData object
+
+    $.ajaxSetup({ cache: false });
+
+    $.ajax({
+      type: "POST",
+      url: jve_ajax.ajaxurl,
+      data: {
+        username: formData.get("identifire"),
+        password: formData.get("password"),
+        remember: formData.get("remember") ? "1" : "0",
+        nonce: jve_ajax.nonce,
+        action: `jve_sign_in_ajax`,
+      },
+      beforeSend: function () {},
+      success: function (response) {
+        $("#login").modal("hide");
+        Notiflix.Notify.success(
+          `${response.message} <br /> ${response.reloading_message}`
+        );
+        // Reload after 3 seconds
+        setTimeout(function () {
+          window.location.reload();
+        }, 3000);
+      },
+      error: function (xhr) {
+        Notiflix.Notify.failure(xhr.responseJSON.message);
+      },
+      complete: function () {},
+    });
+  });
+
+  // Sign up
+  $(".jve-signup-form").on("submit", function (e) {
+    // Prevent default form submission
+    e.preventDefault();
+
+    var formData = new FormData(this); // Serialize form data // Serialize form data // Create FormData object
+
+    $.ajaxSetup({ cache: false });
+
+    $.ajax({
+      type: "POST",
+      url: jve_ajax.ajaxurl,
+      data: {
+        fullname: formData.get("fullname"),
+        username: formData.get("username"),
+        email: formData.get("email"),
+        password: formData.get("password"),
+        nonce: jve_ajax.nonce,
+        action: `jve_sign_up_ajax`,
+      },
+      beforeSend: function () {},
+      success: function (response) {
+        $("#signup").modal("hide");
+        Notiflix.Notify.success(
+          `${response.message} <br /> ${response.reloading_message}`
+        );
+        // Reload after 3 seconds
+        setTimeout(function () {
+          window.location.reload();
+        }, 3000);
+      },
+      error: function (xhr) {
+        Notiflix.Notify.failure(xhr.responseJSON.message);
+      },
+      complete: function () {},
     });
   });
 });

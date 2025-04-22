@@ -38,7 +38,6 @@ class CloudyTags extends WP_Widget {
                         'taxonomy' => $post_type  . '_tag',
                         'post_type' => $post_type, 
                     ] );
-                    // jve_pretty_var_dump($cloudy_tags);
                 ?>
                 <ul>
                     <?php foreach( $cloudy_tags as $tag ): ?>
@@ -66,7 +65,7 @@ class CloudyTags extends WP_Widget {
                    value="<?php echo esc_attr($title); ?>">
         </p>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_id('post_type')); ?>"><?php _e( 'Post type', 'jve' ) ?>/label>
+            <label for="<?php echo esc_attr($this->get_field_id('post_type')); ?>"><?php _e( 'Post type', 'jve' ) ?></label>
             <select class="widefat" id="<?php echo esc_attr($this->get_field_id('post_type')); ?>"
                     name="<?php echo esc_attr($this->get_field_name('post_type')); ?>">
                 <?php foreach ($post_types as $type): ?>
