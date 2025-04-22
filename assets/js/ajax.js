@@ -205,4 +205,44 @@ jQuery(function ($) {
       },
     });
   });
+
+  // Sign in
+  $(".jve-pop-login-form").on("submit", function (e) {
+    
+    // Prevent default form submission
+    e.preventDefault();
+
+    var formData = new  FormData(this); // Serialize form data // Serialize form data // Create FormData object
+
+    $.ajaxSetup({ cache: false });
+
+    $.ajax({
+      type: "POST",
+      url: jve_ajax.ajaxurl,
+      data: {
+        username: formData.get('identifire'),
+        password: formData.get('password'),
+        remember: formData.get('remember') ? '1' : '0',
+        nonce: jve_ajax.nonce,
+        action: `jve_sign_in_ajax`,
+      },
+      beforeSend: function () { 
+        
+      },
+      success: function (response) {
+        $('#login').modal('hide');
+        Notiflix.Notify.success(`${response.message} <br /> ${response.reloading_message}`);
+        // Reload after 3 seconds
+        setTimeout(function() {
+          window.location.reload();
+      }, 3000);
+      },
+      error: function (xhr) {
+        Notiflix.Notify.failure(xhr.responseJSON.message);
+      },
+      complete: function () {
+        
+      },
+    });
+  });
 });

@@ -765,7 +765,7 @@ function jve_get_archive_filtered_posts_ajax( ) {
 add_action('wp_ajax_jve_get_archive_filtered_posts_ajax', 'jve_get_archive_filtered_posts_ajax');
 add_action('wp_ajax_nopriv_jve_get_archive_filtered_posts_ajax', 'jve_get_archive_filtered_posts_ajax');
 
-// Get video post
+// Get Contact
 function jve_contact_ajax( ) {
     
     try {
@@ -813,3 +813,59 @@ function jve_contact_ajax( ) {
 }
 add_action('wp_ajax_jve_contact_ajax', 'jve_contact_ajax');
 add_action('wp_ajax_nopriv_jve_contact_ajax', 'jve_contact_ajax');
+
+// Sign in
+function jve_sign_in_ajax( ) {
+    
+    try {
+        
+        // Check nonce
+        if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'],'jve-nonce') )
+            throw new Exception( __( 'Security error!', 'jve' ), 403);
+
+        // Validate input
+        $identifier = isset($_POST['username']) ? sanitize_text_field($_POST['username']) : '';
+        $password = isset( $_POST['password']) ? $_POST['password'] : '';
+        $remember = !empty($_POST['remember']);
+
+        if (empty($identifier) || empty($password)) {
+            throw new Exception(__( 'All fields are required!', 'jve' ), 403);
+        }
+        
+        // Try to get user by email or username
+        if (is_email($identifier)) {
+            $user = get_user_by('email', $identifier);
+        } else {
+            $user = get_user_by('login', $identifier);
+        }
+
+        if (!$user) {
+            throw new Exception(__( 'Invalid username or email.', 'jve' ), 403);
+        }
+
+        $creds = [
+            'user_login'    => $user->user_login,
+            'user_password' => $password,
+            'remember'      => $remember, // true if "remember me" is checked
+        ];
+        
+        $user_login = wp_signon($creds, is_ssl());
+
+        if (is_wp_error($user_login)) {
+            throw new Exception(__( 'Username/Email and password are not match!', 'jve' ), 403);
+        } else {
+            wp_send_json([
+                'message' => __('You have successfully logged in!', 'jve' ),
+                'reloading_message' => __('Page is reloding ...', 'jve' ),
+            ], 200);
+        }
+
+    } catch( Exception $ex ) {
+        wp_send_json([
+            'message' => $ex->getMessage()
+        ], $ex->getCode() ? $ex->getCode() : 403);
+    }   
+
+}
+add_action('wp_ajax_jve_sign_in_ajax', 'jve_sign_in_ajax');
+add_action('wp_ajax_nopriv_jve_sign_in_ajax', 'jve_sign_in_ajax');
