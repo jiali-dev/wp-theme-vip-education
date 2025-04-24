@@ -494,5 +494,20 @@ jQuery(function($) {
 		$(commentreplyModal).find('#comment-author').text(author);
 		$(commentreplyModal).find('#comment_parent').val(id);
 	});
+
+	$('.jve-signup-link').on('click', function(){
+		$('#login').modal("hide");
+		$('#signup').modal("show");
+	})
+
+	$('.jve-signin-link').on('click', function(){
+		$('#signup').modal("hide");
+		$('#login').modal("show");
+	})
+
+	$('.jve-forget-password-link').on('click', function(){
+		$('#login').modal("hide");
+		$('#forget-password').modal("show");
+	})
 	
 });

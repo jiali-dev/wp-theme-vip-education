@@ -867,10 +867,9 @@ function jve_sign_in_ajax( ) {
     }   
 
 }
-add_action('wp_ajax_jve_sign_in_ajax', 'jve_sign_in_ajax');
 add_action('wp_ajax_nopriv_jve_sign_in_ajax', 'jve_sign_in_ajax');
 
-// Sign in
+// Sign up
 function jve_sign_up_ajax( ) {
     
     try {
@@ -932,5 +931,136 @@ function jve_sign_up_ajax( ) {
     }   
 
 }
-add_action('wp_ajax_jve_sign_up_ajax', 'jve_sign_up_ajax');
 add_action('wp_ajax_nopriv_jve_sign_up_ajax', 'jve_sign_up_ajax');
+
+// Send password recovery link
+function jve_send_password_recovery_link_ajax( ) {
+    
+    try {
+        
+        // Check nonce
+        if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'],'jve-nonce') )
+            throw new Exception( __( 'Security error!', 'jve' ), 403);
+
+        // Validate input
+        $email = sanitize_email($_POST['email'] ?? '');
+
+        if ( !$email ) {
+            throw new Exception(__( 'Email is required!', 'jve' ), 403);
+        }
+        
+        if (!is_email($email)) {
+            throw new Exception(__('Invalid email address.', 'jve'), 403);
+        }
+
+        if ( !email_exists($email) ) {
+            throw new Exception(__('Email not found.', 'jve'), 403);
+        }
+
+        // Get user ID
+        $user = get_user_by( 'email', $email );
+
+        // Create password recovery token
+        $token = bin2hex(random_bytes(16));
+        update_user_meta($user->ID, '_password_recovery_token', $token);
+
+        // Send email with password recovery link
+        $recovery_link = add_query_arg(['passwordRecoveryToken' => $token], site_url());
+        $sent_message = SendMail::jve_send_mail( $email, __('Password Recovery', 'jve'), $recovery_link );
+        
+        if( $sent_message ) {
+
+            // If everything is fine, return success response
+            wp_send_json([
+                'message' => __( 'Password recovery link sent successfully!', 'jve' ),
+            ], 200);
+
+        } else {
+
+            // If everything is fine, return success response
+            throw new Exception(__( 'Message not sent, please try again!', 'jve' ), 403);
+
+        }
+    } catch( Exception $ex ) {
+        wp_send_json([
+            'message' => $ex->getMessage()
+        ], $ex->getCode() ? $ex->getCode() : 403);
+    }   
+
+}
+
+add_action('wp_ajax_nopriv_jve_send_password_recovery_link_ajax', 'jve_send_password_recovery_link_ajax');
+
+// Send password recovery link
+function jve_set_new_password_ajax( ) {
+    
+    try {
+        
+        // Check nonce
+        if ( empty($_POST['nonce']) || !isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'],'jve-nonce') )
+            throw new Exception( __( 'Security error!', 'jve' ), 403);
+
+        // Get and sanitize inputs
+        $password = isset($_POST['password']) ? $_POST['password'] : '';
+        $repeat_password = isset($_POST['repeat_password']) ? $_POST['repeat_password'] : '';
+        $token = isset($_POST['password_recovery_token']) ? sanitize_text_field($_POST['password_recovery_token']) : '';
+
+        if( empty($token) ) {
+            throw new Exception(__( 'Token is not valid!', 'jve' ), 403);
+        }
+
+        if (
+            !(
+                strlen($password) >= 8 &&
+                preg_match('/[A-Z]/', $password) &&
+                preg_match('/[0-9]/', $password) &&
+                preg_match('/[\W]/', $password)
+            )
+        )
+        {
+            throw new Exception(__( 'Password must be at least 8 characters long and contain at least one uppercase letter, one number, and one special character.', 'jve' ), 403);
+        }        
+
+        if ( $password !== $repeat_password ) {
+            throw new Exception(__( 'Password and repeat is not match!', 'jve' ), 403);
+        }
+        
+        // Find user by token (strict comparison)
+        $user_query = new WP_User_Query([
+            'number'     => 1,
+            'meta_query' => [
+                [
+                    'key'     => '_password_recovery_token',
+                    'value'   => $token,
+                    'compare' => '=',
+                ],
+            ],
+        ]);
+        $users = $user_query->get_results();
+
+        if (empty($users)) {
+            throw new Exception(__('No user found with that token.', 'jve'), 403);
+        }
+
+        $user = $users[0]; // WP_User object
+        
+        // Update password (also logs out the user everywhere)
+        wp_set_password($password, $user->ID);
+
+        // Optionally, delete the token after use
+        delete_user_meta($user->ID, '_password_recovery_token');
+
+        wp_send_json([
+            'message' => __('Your password has been successfully updated.', 'jve'),
+        ], 200);
+
+    } catch( Exception $ex ) {
+        wp_send_json([
+            'message' => $ex->getMessage()
+        ], $ex->getCode() ? $ex->getCode() : 403);
+    }   
+
+}
+
+add_action('wp_ajax_nopriv_jve_set_new_password_ajax', 'jve_set_new_password_ajax');
+

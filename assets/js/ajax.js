@@ -231,7 +231,7 @@ jQuery(function ($) {
         // Reload after 3 seconds
         setTimeout(function () {
           window.location.reload();
-        }, 3000);
+        }, 2000);
       },
       error: function (xhr) {
         Notiflix.Notify.failure(xhr.responseJSON.message);
@@ -269,7 +269,73 @@ jQuery(function ($) {
         // Reload after 3 seconds
         setTimeout(function () {
           window.location.reload();
-        }, 3000);
+        }, 2000);
+      },
+      error: function (xhr) {
+        Notiflix.Notify.failure(xhr.responseJSON.message);
+      },
+      complete: function () {},
+    });
+  });
+
+  // Get forget password link
+  $(".jve-forget-password-form").on("submit", function (e) {
+    // Prevent default form submission
+    e.preventDefault();
+
+    var formData = new FormData(this); // Serialize form data // Serialize form data // Create FormData object
+
+    $.ajaxSetup({ cache: false });
+
+    $.ajax({
+      type: "POST",
+      url: jve_ajax.ajaxurl,
+      data: {
+        email: formData.get("email"),
+        nonce: jve_ajax.nonce,
+        action: `jve_send_password_recovery_link_ajax`,
+      },
+      beforeSend: function () {},
+      success: function (response) {
+        $("#forget-password").modal("hide");
+        Notiflix.Notify.success(
+          response.message
+        );
+      },
+      error: function (xhr) {
+        Notiflix.Notify.failure(xhr.responseJSON.message);
+      },
+      complete: function () {},
+    });
+  });
+
+  // Set new password
+  $(".jve-new-password-form").on("submit", function (e) {
+    
+    // Prevent default form submission
+    e.preventDefault();
+
+    var formData = new FormData(this); // Serialize form data // Serialize form data // Create FormData object
+
+    $.ajaxSetup({ cache: false });
+
+    $.ajax({
+      type: "POST",
+      url: jve_ajax.ajaxurl,
+      data: {
+        password: formData.get("password"),
+        repeat_password: formData.get("repeat-password"),
+        password_recovery_token: formData.get("password-recovery-token"),
+        nonce: jve_ajax.nonce,
+        action: `jve_set_new_password_ajax`,
+      },
+      beforeSend: function () {},
+      success: function (response) {
+        Notiflix.Notify.success(
+          response.message
+        );
+        $("#forget-password").modal("hide");
+        $("#login").modal("show");
       },
       error: function (xhr) {
         Notiflix.Notify.failure(xhr.responseJSON.message);
