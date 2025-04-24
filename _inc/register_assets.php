@@ -53,6 +53,9 @@ function jve_register_assets() {
     if( is_archive(  ) || is_search(  )) {
         wp_enqueue_script('jve-archive');
     }
+    wp_register_script('jve-user-auth', JVE_JS_URI . '/user-auth.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('jve-user-auth');
+    
     wp_register_script('jve-ajax', JVE_JS_URI . '/ajax.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('jve-ajax');
     wp_localize_script( 'jve-ajax', 'jve_ajax', 

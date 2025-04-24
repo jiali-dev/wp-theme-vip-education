@@ -114,8 +114,13 @@ if (!defined('ABSPATH')) exit;
 				</div>
 			</footer>
 			<!-- ============================ Footer End ================================== -->
-			<?php get_template_part( 'partials/login/signin', 'signin' ) ?>
-			<?php get_template_part( 'partials/login/signup', 'signup' ) ?>
+			<?php if( !is_user_logged_in(  )): ?>
+			
+				<?php get_template_part( 'partials/user-auth/signin', 'signin' ) ?>
+				<?php get_template_part( 'partials/user-auth/signup', 'signup' ) ?>
+				<?php get_template_part( 'partials/user-auth/forget-password', 'forget-password' ) ?>
+			
+			<?php endif; ?>
 
 		</div>
 		<!-- ============================================================== -->
