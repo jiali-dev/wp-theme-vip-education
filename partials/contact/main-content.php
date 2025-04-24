@@ -50,7 +50,7 @@ if (!defined('ABSPATH')) exit;
                             <div class="form-group">
                                 <button class="btn btn-theme send-message-btn" type="submit">
                                     <?php _e( 'Send message', 'jve') ?> 
-                                    <span class="m-1 send-message-spinner"><i class="fa fa-spin fa-spinner"></i></span>
+                                    <span class="m-1 jve-spinner"><i class="fa fa-spin fa-spinner"></i></span>
                                 </button>
                             </div>
                         </div>

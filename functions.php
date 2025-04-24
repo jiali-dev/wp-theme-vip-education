@@ -39,11 +39,11 @@ require_once(JVE_HELPER_CLASS_PATH . '/Breadcrumb.php');
 // FilterPosts
 require_once(JVE_HELPER_CLASS_PATH . '/FilterPosts.php');
 
-// SendMail
-require_once(JVE_HELPER_CLASS_PATH . '/SendMail.php');
-
 // MailLayout
 require_once(JVE_HELPER_CLASS_PATH . '/MailLayout.php');
+
+// SendMail
+require_once(JVE_HELPER_CLASS_PATH . '/SendMail.php');
 
 // Widgets and Sidebars
 require_once(JVE_INC_PATH . '/widget/widgets.php');

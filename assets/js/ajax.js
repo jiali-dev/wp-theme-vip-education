@@ -186,7 +186,7 @@ jQuery(function ($) {
         action: `jve_contact_ajax`,
       },
       beforeSend: function () {
-        $(".send-message-spinner").show();
+        $(".jve-spinner").show();
         $(".send-message-btn").prop("disabled", true);
       },
       success: function (response) {
@@ -196,7 +196,7 @@ jQuery(function ($) {
         Notiflix.Notify.failure(xhr.responseJSON.message);
       },
       complete: function () {
-        $(".send-message-spinner").hide();
+        $(".jve-spinner").hide();
         $(".send-message-btn").prop("disabled", false);
         $(form).trigger("reset");
       },
@@ -295,7 +295,10 @@ jQuery(function ($) {
         nonce: jve_ajax.nonce,
         action: `jve_send_password_recovery_link_ajax`,
       },
-      beforeSend: function () {},
+      beforeSend: function () {
+        $(".jve-spinner").show();
+        $(".jve-recovery-password-link-btn").prop("disabled", true); 
+      },
       success: function (response) {
         $("#forget-password").modal("hide");
         Notiflix.Notify.success(
@@ -305,7 +308,11 @@ jQuery(function ($) {
       error: function (xhr) {
         Notiflix.Notify.failure(xhr.responseJSON.message);
       },
-      complete: function () {},
+      complete: function () {
+        $(".jve-spinner").hide();
+        $(".jve-recovery-password-link-btn").prop("disabled", false); 
+        $(this).trigger("reset");
+      },
     });
   });
 
