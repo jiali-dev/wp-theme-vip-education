@@ -789,6 +789,9 @@ function jve_contact_ajax( ) {
         $message = sanitize_textarea_field( $form_data['message'] );
         $options = get_option('smtp_settings');
         $assigned_email = $options['smtp_email'] ?? get_option('admin_email');
+        
+        $mailer = new SendMail();
+
         $sent_message = SendMail::jve_send_mail( $assigned_email, $title, MailLayout::jve_contact_layout($fullname,$title,$email,$message) );
         
         if( $sent_message ) {
@@ -966,7 +969,10 @@ function jve_send_password_recovery_link_ajax( ) {
 
         // Send email with password recovery link
         $recovery_link = add_query_arg(['passwordRecoveryToken' => $token], site_url());
-        $sent_message = SendMail::jve_send_mail( $email, __('Password Recovery', 'jve'), $recovery_link );
+        
+        $mailer = new SendMail();
+
+        $sent_message = SendMail::jve_send_mail( $email, __('Password Recovery', 'jve'), MailLayout::jve_contact_layout('Hello', __('Password Recovery', 'jve'),$email,'<a href="'.$recovery_link.'" target="_blank">Password recovery link</a>') );
         
         if( $sent_message ) {
 

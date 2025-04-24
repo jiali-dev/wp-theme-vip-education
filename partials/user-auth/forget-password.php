@@ -32,7 +32,10 @@ $passwordRecoveryToken = ( isset($_GET['passwordRecoveryToken']) && !empty($_GET
                             </div>
                             
                             <div class="form-group">
-                                <button type="submit" class="btn btn-md full-width pop-login jve-pop-login"><?php _e('Get password recovery link', 'jve' ) ?></button>
+                                <button type="submit" class="btn btn-md full-width pop-login jve-recovery-password-link-btn">
+                                    <?php _e('Get password recovery link', 'jve' ) ?>
+                                    <span class="m-1 jve-spinner"><i class="fa fa-spin fa-spinner"></i></span>
+                                </button>
                             </div>
 
                         </form>

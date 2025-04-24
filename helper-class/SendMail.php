@@ -12,7 +12,7 @@ class SendMail {
     public function jve_configure_phpmailer($phpmailer) {
         $options = get_option('smtp_settings');
         $host = $options['smtp_host'] ?? 'smtp.example.com';
-        $auth = isset($options['smtp_auth']) ? true : false;
+        $auth = $options['smtp_auth'] ? true : false;
         $port = $options['smtp_port'] ?? 587;
         $username = $options['smtp_username'] ?? '';
         $password = $options['smtp_password'] ?? '';
@@ -24,10 +24,6 @@ class SendMail {
         $phpmailer->Username = $username;
         $phpmailer->Password = $password;
 
-    }
-
-    public function debug_config() {
-        return $this->mailer_config;
     }
 
     public static function jve_send_mail($to, $subject, $message) {
